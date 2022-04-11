@@ -8,6 +8,7 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\LogFillter;
 
 class Filters extends BaseConfig
 {
@@ -23,6 +24,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'logfillter'    => LogFillter::class,
     ];
 
     /**
@@ -32,12 +34,24 @@ class Filters extends BaseConfig
      * @var array
      */
     public $globals = [
-        'before' => [
+        'before' => [  
+             'logfillter' => ['except' => [
+                                            'login', 'login/*',
+                                            'home', 'home/*', 
+                                            '/',
+
+                                            ]
+                            ],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
+            'logfillter' => ['except' => [
+                                            'home', 'home/*',
+                                            '/',   
+                                            ]
+                        ],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

@@ -1,0 +1,27 @@
+.login-margin{
+    margin:5px 30px; 
+    border: 1px solid #4caf50;
+}
+
+.alert-pass2{
+    margin: -40px 0 0 0;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .alert-pass2{
+        margin: -5px 0 0 0;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .alert-pass2{
+        margin: -10px 0 0 0;
+    }
+    
+}

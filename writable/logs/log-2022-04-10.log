@@ -1,0 +1,214 @@
+CRITICAL - 2022-04-10 02:31:21 --> Undefined property: stdClass::$password
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 60, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->login_p()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-10 02:31:42 --> Undefined property: stdClass::$password
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 60, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->login_p()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-10 02:33:23 --> Password Salah. is not a valid Validation template.
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Validation\Validation.php(485): CodeIgniter\Validation\Exceptions\ValidationException::forInvalidTemplate('Password Salah.')
+#1 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(74): CodeIgniter\Validation\Validation->listErrors('Password Salah.')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->login_p()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-10 03:06:39 --> Invalid file: welcome_message.php
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message...')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('welcome_message', Array, true)
+#2 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(9): view('welcome_message')
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-10 03:08:22 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 52, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:27:00 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:13 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:14 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:14 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:18 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:34 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('hom', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:27:38 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('home', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:28:37 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('/', 'before')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:28:42 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:29:14 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:29:16 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:31:11 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:31:12 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:31:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:31:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:31:19 --> Class 'CodeIgniter\Filters\LogFillter' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\Filters\Filters->run('login', 'after')
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2022-04-10 04:55:01 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:03 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:03 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:10 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:10 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:11 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-10 04:55:11 --> Undefined variable: view_footer
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\footer.php(221): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 221, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/footer', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(22): view('extent/footer', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
