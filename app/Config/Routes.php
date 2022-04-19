@@ -33,8 +33,27 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Users::login');
+$routes->get('/register', 'Register::index');
+
+
 $routes->post('/login/p', 'Users::login_p');
 $routes->get('/logout', 'Users::logout');
+
+
+$routes->get('/jadwal', 'Jadwal::index');
+$routes->get('/transaksi', 'Transaksi::index');
+
+$routes->get('/register/add_ajax_kb/(:any)', 'Register::add_ajax_kab/$1');
+$routes->get('/register/add_ajax_kc/(:any)', 'Register::add_ajax_kec/$1');
+$routes->get('/register/add_ajax_de/(:any)', 'Register::add_ajax_desa/$1');
+
+$routes->post('/register/d', 'Register::reg_add_prosess');
+
+/* $routes->post('/transaksi/ajx', 'Transaksi::trsk_ajx_prosess'); */
+$routes->post('/transaksi/check', 'Transaksi::trsk_check_prosess');
+$routes->post('/transaksi/p', 'Transaksi::trsk_p_prosess');
+
+
 
 /*
  * --------------------------------------------------------------------

@@ -1,0 +1,171 @@
+ERROR - 2022-04-15 02:28:16 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-04-15 02:29:19 --> Table 'wilayah_provinsi' already exists
+ERROR - 2022-04-15 02:30:14 --> Table 'wilayah_provinsi' already exists
+CRITICAL - 2022-04-15 03:53:23 --> The original file is not a valid file.
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(157): CodeIgniter\HTTP\Files\UploadedFile->move('D:\\xampp\\htdocs...', '1650012803_9668...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-15 03:54:36 --> The original file is not a valid file.
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(157): CodeIgniter\HTTP\Files\UploadedFile->move('D:\\xampp\\htdocs...', '1650012876_827c...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-15 03:55:56 --> The original file is not a valid file.
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(157): CodeIgniter\HTTP\Files\UploadedFile->move('D:\\xampp\\htdocs...', '1650012956_aa44...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-15 04:51:11 --> Class 'App\Controllers\File' not found
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-15 04:55:19 --> Undefined variable: file
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 156, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 04:58:48 --> The original file is not a valid file.
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(156): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/', '1650016728_7e10...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-15 18:05:44 --> Cannot access protected property CodeIgniter\HTTP\Files\UploadedFile::$name
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-15 18:14:19 --> Undefined variable: img
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(152): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 152, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->reg_add_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:19:07 --> syntax error, unexpected ';'
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/header', Array, true)
+#2 D:\xampp\htdocs\si-futsal\app\Controllers\Home.php(32): view('extent/header', Array)
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-15 19:39:11 --> Call to undefined function App\Controllers\get_instance()
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-15 19:40:40 --> Undefined property: App\Controllers\Users::$ion_auth
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 99, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:42:03 --> Undefined property: App\Controllers\Users::$ion_auth
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 99, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:46:32 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:47:44 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:48:27 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 99, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:00 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:08 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:10 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:11 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:42 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 19:51:46 --> Undefined variable: session
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Users.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 100, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->logout()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-15 23:30:42 --> syntax error, unexpected '}', expecting end of file
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_transaksi', Array, true)
+#2 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(20): view('v_transaksi', Array)
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->index()
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-15 23:41:44 --> syntax error, unexpected ';'
+#0 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_transaksi', Array, true)
+#2 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(20): view('v_transaksi', Array)
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->index()
+#4 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

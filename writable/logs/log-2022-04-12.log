@@ -1,0 +1,44 @@
+CRITICAL - 2022-04-12 23:34:26 --> Undefined variable: dtlv
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\header.php(283): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 283, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/header', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(20): view('extent/header', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-12 23:34:47 --> Undefined variable: dtlv
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\header.php(283): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 283, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/header', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(20): view('extent/header', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-12 23:35:23 --> Undefined variable: dtlv
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\header.php(283): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 283, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/header', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(18): view('extent/header', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-12 23:35:24 --> Undefined variable: dtlv
+#0 D:\xampp\htdocs\si-futsal\app\Views\extent\header.php(283): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 283, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('extent/header', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Register.php(18): view('extent/header', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Register->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,41 @@
+CRITICAL - 2022-04-16 00:11:56 --> Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP)
+#0 D:\xampp\htdocs\si-futsal\app\Views\v_transaksi.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'D:\\xampp\\htdocs...', 37, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_transaksi', Array, true)
+#4 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(20): view('v_transaksi', Array)
+#5 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->index()
+#6 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#7 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-16 18:53:45 --> Incorrect column name 'id_identitas '
+ERROR - 2022-04-16 18:54:11 --> Incorrect column name 'id_identitas '
+CRITICAL - 2022-04-16 23:53:24 --> Undefined offset: 1
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'D:\\xampp\\htdocs...', 35, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->trsk_ajx_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 23:53:25 --> Undefined offset: 1
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'D:\\xampp\\htdocs...', 35, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->trsk_ajx_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 23:53:27 --> Undefined offset: 1
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'D:\\xampp\\htdocs...', 35, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->trsk_ajx_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 23:53:27 --> Undefined offset: 1
+#0 D:\xampp\htdocs\si-futsal\app\Controllers\Transaksi.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'D:\\xampp\\htdocs...', 35, Array)
+#1 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Transaksi->trsk_ajx_prosess()
+#2 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Transaksi))
+#3 D:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

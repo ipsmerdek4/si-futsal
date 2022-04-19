@@ -19,19 +19,25 @@ class Home extends BaseController
                             'level' => $dataUser->level_users,
                             'logged_in' => TRUE
          */
-       $data = array(
-                'menu' => '1b',
-                'title' => 'Home [SI-Futsal]', 
-                'dtlv' => session()->get('level'),
-            );
+       
 
         if(session()->get('level') == 1)
         {
-            
+            $data = array(
+                'menu' => '1b',
+                'title' => 'Home [SI-Futsal]', 
+                'dtlv' => session()->get('level'),
+                'unm' => session()->get('username'),
+            );
             echo view('extent/header', $data);
             echo view('v_home', $data);
             echo view('extent/footer', $data);
         }else{ 
+            $data = array(
+                'menu' => '1b',
+                'title' => 'Home [SI-Futsal]', 
+                'dtlv' => session()->get('level'),
+            );
             echo view('extent/header', $data);
             echo view('v_home', $data);
             echo view('extent/footer', $data);

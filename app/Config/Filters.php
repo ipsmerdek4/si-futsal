@@ -39,6 +39,8 @@ class Filters extends BaseConfig
                                             'login', 'login/*',
                                             'home', 'home/*', 
                                             '/',
+                                            'register', 'register/*', 
+
 
                                             ]
                             ],
@@ -50,6 +52,11 @@ class Filters extends BaseConfig
             'logfillter' => ['except' => [
                                             'home', 'home/*',
                                             '/',   
+                                            'transaksi','transaksi/*',
+                                            'jadwal','jadwal/*', 
+                                            'history','history/*', 
+
+                                            
                                             ]
                         ],
             'toolbar',

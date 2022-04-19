@@ -1,189 +1,295 @@
+             
+              
 
 
 
 
-    
+            </div>  
+             <footer class="footer" style ="margin: -40px 0 0 0;"> 
+                    <div class="card">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="<?=base_url()?>">
+                                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                    &nbsp;&nbsp;Home
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?=base_url()?>/login">
+                                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                    &nbsp;&nbsp;Jadwal
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?=base_url()?>/login">
+                                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                                    &nbsp;&nbsp;Transaksi
+                                </a>
+                            </li>    
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">Si-Futsal</a>
+                    </p> 
+                </div>
+            </footer>
+
+
+        </div> 
+    </div> 
+</div>
+
+  
+</div>
+
+
 </body>
+
 <!--   Core JS Files   -->
-<script src="../../assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="../../assets/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../assets/js/material.min.js" type="text/javascript"></script> 
+<script src="<?=base_url()?>/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?=base_url()?>/assets/js/material.min.js" type="text/javascript"></script>
+
 
 
 
     <?php
-    if ($menu == '1a') { 
+    if ($menu == '1b') { 
     ?>
+    
+        <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+        <script src="<?=base_url()?>/assets/js/chartist.min.js"></script> 
+        <script src="<?=base_url()?>/assets/js/jquery-jvectormap.js"></script> 
+        <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
 
+
+        <script type="text/javascript"> 
+
+            $(window).on("load",function(){
+                $(".loader-wrapper").fadeOut(2000);
+            });
+
+
+            $().ready(function() {
+                $page = $('.page-view');
+                image_src = $page.data('image');
+
+                if(image_src !== undefined){
+                    image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
+                    $page.append(image_container);
+                }
+            });
+
+        </script>
  
 
-            <script type="text/javascript">
+    <?php
+    }elseif ($menu == '1c') { 
+    ?>
+
+
+
+        <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script> 
+        <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
+        
+        <!--  DataTables.net Plugin    -->
+        <script src="<?=base_url()?>/assets/js/jquery.datatables.js"></script>
+        <script src='<?=base_url()?>/datatables/Buttons-2.2.2/js/dataTables.buttons.js' type='text/javascript'></script>
+
+
+        <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+        <script src="<?=base_url()?>/assets/js/moment.min.js"></script>
+        <!-- DateTimePicker Plugin -->
+        <script src="<?=base_url()?>/assets/js/bootstrap-datetimepicker.js"></script>
+        <!--  Full Calendar Plugin    -->
+        <script src="<?=base_url()?>/assets/js/fullcalendar.min.js"></script>
+
+        <script type="text/javascript">
+
+            $.fn.dataTable.Buttons.defaults.dom.button.className = 'btn';
+            $(document).ready(function() {   
+
+            
+
+                var table =  $('#daftar_jdwl').DataTable({
+                    dom: 'Bfrtip',
+                            buttons: [
+                                {
+                                    text: 'Lapangan 1',
+                                    className: 'btn btn-primary',
+                                    action: function ( e, dt, node, config ) {
+                                        $(node).removeClass('dt-button')
+                                        alert( config );
+                                    }
+                                }, 
+                                {
+                                    text: 'Lapangan 2',
+                                    className: 'btn btn-danger',
+                                    action: function ( e, dt, node, config ) {
+                                        $(node).removeClass('dt-button')
+                                        alert( config );
+                                    }
+                                }
+                            ],
+                            responsive: true, 
+                            lengthChange: false, 
+                            autoWidth: false, 
+                            paging: false,
+                            language: {
+                                        search: "Pencarian :",
+                            },
+
+                    });
+    
+                    /*  */
+            
+                    $('.datetimepicker').datetimepicker({   
+                        format: 'DD-MM-YYYY', 
+                        icons: {
+                            time: "fa fa-clock-o",
+                            date: "fa fa-calendar",
+                            up: "fa fa-chevron-up",
+                            down: "fa fa-chevron-down",
+                            previous: 'fa fa-chevron-left',
+                            next: 'fa fa-chevron-right',
+                            today: 'fa fa-screenshot',
+                            clear: 'fa fa-trash',
+                            close: 'fa fa-remove',
+                            inline: true,
+                        },        
+                    });
+
+                    $('.datepicker').datetimepicker({
+                        format: 'MM/DD/YYYY ',
+                        icons: {
+                            time: "fa fa-clock-o",
+                            date: "fa fa-calendar",
+                            up: "fa fa-chevron-up",
+                            down: "fa fa-chevron-down",
+                            previous: 'fa fa-chevron-left',
+                            next: 'fa fa-chevron-right',
+                            today: 'fa fa-screenshot',
+                            clear: 'fa fa-trash',
+                            close: 'fa fa-remove',
+                            inline: true
+                        }
+                    });
+
+                    $('.timepicker').datetimepicker({
+                    //          format: 'H:mm',    // use this format if you want the 24hours timepicker
+                        format: 'h:mm A',    //use this format if you want the 12hours timpiecker with AM/PM toggle
+                        icons: {
+                            time: "fa fa-clock-o",
+                            date: "fa fa-calendar",
+                            up: "fa fa-chevron-up",
+                            down: "fa fa-chevron-down",
+                            previous: 'fa fa-chevron-left',
+                            next: 'fa fa-chevron-right',
+                            today: 'fa fa-screenshot',
+                            clear: 'fa fa-trash',
+                            close: 'fa fa-remove',
+                            inline: true
+
+                        }
+                    }); 
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            } );
+        </script>
+
+
+    <?php
+    }elseif ($menu == '1d') { 
+    ?> 
+        <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+        <script src="<?=base_url()?>/assets/js/moment.min.js"></script>
+        <!-- DateTimePicker Plugin -->
+        <script src="<?=base_url()?>/assets/js/bootstrap-datetimepicker.js"></script>
+        <!--  Full Calendar Plugin    -->
+        <script src="<?=base_url()?>/assets/js/fullcalendar.min.js"></script>
+        <!-- Select Plugin -->
+        <script src="<?=base_url()?>/select2-4.0.13/dist/js/select2.min.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="<?=base_url()?>/assets/js/jquery.validate.min.js"></script>
+        <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script> 
+        <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
+      
+        <script>
+           
+            $(document).ready(function() {    
+                $('.select-drop-input').select2({  
+                        
+                });  
+
+                $('.datepicker').datetimepicker({
+                    format: 'DD/MM/YYYY ',
+                    icons: {
+                        time: "fa fa-clock-o",
+                        date: "fa fa-calendar",
+                        up: "fa fa-chevron-up",
+                        down: "fa fa-chevron-down",
+                        previous: 'fa fa-chevron-left',
+                        next: 'fa fa-chevron-right',
+                        today: 'fa fa-screenshot',
+                        clear: 'fa fa-trash',
+                        close: 'fa fa-remove',
+                        inline: true
+                    }
+                }); 
+
                 $( ".close" ).click(function() {
                     /* $( this ).hide(); */
-                    $(".alert-pass" ).hide();
-
-                });
-
-                /* END ALERT PASS */
-                $().ready(function() {
-                    $page = $('.full-page');
-                    image_src = $page.data('image');
-
-                    if(image_src !== undefined){
-                        image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
-                        $page.append(image_container);
-                    }
-
-                    setTimeout(function() {
-                        // after 1000 ms we add the class animated to the login/register card
-                        $('.card').removeClass('card-hidden');
-                        $('.card2').removeClass('card-hidden');
-                    }, 500)
-                });
-            </script>
-
-    <?php
-    }elseif ($menu == '1b') { 
-    ?>
-    
-    <script src="../assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-    <!-- Forms Validations Plugin --> 
-    <script src="../assets/js/chartist.min.js"></script> 
-    <script src="../../assets/js/jquery-jvectormap.js"></script> 
-    <script src="../../assets/js/material-dashboard.js"></script>
-
-
-    <script type="text/javascript"> 
-
-        /* ----------==========     Daily Sales Chart initialization    ==========---------- */
-
-        dataDailySalesChart = {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-                [12, 17, 7, 17, 23, 18, 38]
-            ]
-        };
-
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-        }
-
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-        md.startAnimationForLineChart(dailySalesChart);
-
-
-
-        /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-        dataCompletedTasksChart = {
-            labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
-            series: [
-                [230, 750, 450, 300, 280, 240, 200, 190]
-            ]
-        };
-
-        optionsCompletedTasksChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
-        }
-
-        var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
-        // start animation for the Completed Tasks Chart - Line Chart
-        md.startAnimationForLineChart(completedTasksChart);
-
-
-        /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-        var dataWebsiteViewsChart = {
-          labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-          ]
-        };
-        var optionsWebsiteViewsChart = {
-            axisX: {
-                showGrid: false
-            },
-            low: 0,
-            high: 1000,
-            chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
-        };
-        var responsiveOptions = [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0];
-              }
-            }
-          }]
-        ];
-        var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
-
-        //start animation for the Emails Subscription Chart
-        md.startAnimationForBarChart(websiteViewsChart);
-
-     
+                    $(".alert-pass" ).hide(); 
+                 });
  
-         var mapData = {
-                "AU": 760,
-                "BR": 550,
-                "CA": 120,
-                "DE": 1300,
-                "FR": 540,
-                "GB": 690,
-                "GE": 200,
-                "IN": 200,
-                "RO": 600,
-                "RU": 300,
-                "US": 2920,
-            };
-
-            $('#worldMap').vectorMap({
-                map: 'world_mill_en',
-                backgroundColor: "transparent",
-                zoomOnScroll: false,
-                regionStyle: {
-                    initial: {
-                        fill: '#e4e4e4',
-                        "fill-opacity": 0.9,
-                        stroke: 'none',
-                        "stroke-width": 0,
-                        "stroke-opacity": 0
-                    }
-                },
-
-                series: {
-                    regions: [{
-                        values: mapData,
-                        scale: ["#AAAAAA","#444444"],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
+                 
             });
- 
 
+                 
+            function processForm( e ){
+                $.ajax({
+                    type: "POST", 
+                    url: "<?=base_url()?>/transaksi/check",  
+                    enctype: 'multipart/form-data', 
+                    data: {
+                        tgl_book: $("#tgl_book").val(), 
+                        lpng_book: $("#lpng_book").val(),
+                        wm_book: $("#wm_book").val(),
+                        wb_book: $("#wb_book").val(), 
+                    }, 
+                    cache: false, 
+                    success: function(data) {
+                        $('#response').html( data );
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr);
+                    }
+                });
 
-    </script>
- 
+                e.preventDefault();
+            }
 
+            $('#form-transaksi').submit( processForm ); 
+          
+            
+        </script>
+    
     <?php
     } 
-
- 
     ?>
 
 

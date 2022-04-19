@@ -15,12 +15,11 @@ class Users extends Controller{
     { 
         $data = array(
 			'menu' => '1a',
-			'title' => 'Login [SI-Futsal]', 
+			'title' => 'Login [SI-Futsal]',  
 		);
 
-        echo view('extent/header', $data);
-        echo view('v_login', $data);
-		echo view('extent/footer', $data);
+        
+        echo view('v_login', $data); 
     }
 
 
@@ -65,6 +64,7 @@ class Users extends Controller{
                             'level' => $dataUser->level_users,
                             'logged_in' => TRUE
                         ]);
+                        session()->setFlashdata('logingo','1');
                         return redirect()->to(base_url());
  
 
@@ -86,9 +86,21 @@ class Users extends Controller{
 
 
     function logout()
-    {
+    {         
+        
+/* 
         session()->destroy();
         return redirect()->to(base_url());
+ 
+ */
+
+    $itemget = ['username', 'ID', 'level', 'logged_in'];
+    session()->remove($itemget);
+    session()->setFlashdata('logingo','1');  
+
+    return redirect()->to(base_url());
+
+
     }
 
 
