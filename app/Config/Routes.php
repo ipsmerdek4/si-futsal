@@ -53,6 +53,10 @@ $routes->post('/register/d', 'Register::reg_add_prosess');
 $routes->post('/transaksi/check', 'Transaksi::trsk_check_prosess');
 $routes->post('/transaksi/p', 'Transaksi::trsk_p_prosess');
 
+$routes->post('/history/s', 'History::upload_prosess'); 
+$routes->get('/history/viewall', 'History::view_all');
+$routes->post('/history/viewall', 'History::view_all');
+$routes->post('/history/viewall/cancel', 'History::view_all_cancel');
 
 
 /*

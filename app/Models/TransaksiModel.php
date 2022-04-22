@@ -7,7 +7,7 @@ class TransaksiModel extends Model{
     protected $table      = 'tbl_transaksi';
     protected $primaryKey = "id_transaksi";
     protected $returnType = "object"; 
-    protected $allowedFields = ['id_identitas','tgl_booking_lapangan', 'booking_lapangan', 'booking_start', 'booking_play', 'total_harga', 'booking_status', 'tgl_pbt_transaksi'];
+    protected $allowedFields = ['kode_transaksi','id_identitas','tgl_booking_lapangan', 'booking_lapangan', 'booking_start', 'booking_play', 'total_harga', 'booking_status', 'tgl_pbt_transaksi'];
 
 
      function where3($a = null, $b = null, $c = null)

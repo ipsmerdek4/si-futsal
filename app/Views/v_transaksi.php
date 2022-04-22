@@ -9,18 +9,7 @@
     <div class="card-content">
         <h4 class="card-title title-transaksi">Transaksi Booking Lapangan</h4>  
         <!--  -->
-        <div class="col-md-12 alert-pass ">
-        <?php if (!empty(session()->getFlashdata('error'))) : ?> 
-            <div class="alert alert-warning">
-                <button type="button" aria-hidden="true" class="close">
-                    <i class="material-icons">close</i>
-                </button>
-                <span>
-                    <?php echo session()->getFlashdata('error'); ?>
-                </span> 
-            </div>
-        <?php endif; ?>    
-        </div>
+        
         
         <?php 
         if (isset($tgl_book)) {

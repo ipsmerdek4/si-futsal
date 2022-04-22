@@ -57,7 +57,8 @@
                                     <button class="btn btn-primary btn-xs" >
                                         <i class="material-icons">assignment</i> 1 (Satu)
                                         <div class="ripple-container"></div>
-                                    </button></td>
+                                    </button>
+                                </td>
                                 <td>
                                     <button class="btn btn-success btn-xs" >
                                         <i class="material-icons">check</i> Approve

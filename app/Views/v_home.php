@@ -161,7 +161,7 @@
                                     <div class="row">  
                                         <div class="col-md-3 col-xs-2 "  ></div>
                                         <div class="col-md-6 col-xs-8 "  >
-                                            <a class="btn btn-primary btn-block text-bokingnow"  >
+                                            <a href="<?=base_url()?>/transaksi" class="btn btn-primary btn-block text-bokingnow"  >
                                                 <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> 
                                                 &nbsp;&nbsp;Booking Sekarang 
                                                 <div class="ripple-container"></div>

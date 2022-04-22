@@ -210,7 +210,7 @@
            $classhide = '';
     ?>         
  
-            <link href='../../datatables/Buttons-2.2.2/css/buttons.dataTables.css' rel='stylesheet' type='text/css' />
+            <link href='<?=base_url()?>/datatables/Buttons-2.2.2/css/buttons.dataTables.css' rel='stylesheet' type='text/css' />
             
             <style> 
                 .main-panel { 
@@ -255,6 +255,14 @@
                     font-weight: bold;
                     padding: 15px !important;
                 }
+                
+                .table-jadwl>thead>tr>th{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 15px !important;
+                    font-weight: bold;
+                    padding: 15px !important;
+                }
                 .table-jadwl>tbody>tr>td{ 
                     border : 1px solid #bbbdbb !important;
                     text-align: center;
@@ -270,8 +278,7 @@
                     border-radius: 5px;
                     padding: 0 10px 0 10px; 
                     margin:  0 0 0 10px;
-                } 
- 
+                }
                 .title-jadwal{
                         font-weight:bold;
                         letter-spacing: 1px;
@@ -517,6 +524,293 @@
 
                     
                 }
+            </style>
+    <?php    
+        }elseif ($menu == '1e') {
+            $menu4 = ' '; 
+            $classhide = '';
+    ?> 
+
+            <link href='<?=base_url()?>/datatables/Buttons-2.2.2/css/buttons.dataTables.css' rel='stylesheet' type='text/css' />
+             
+            <style>
+                .main-panel { 
+                    width: calc(100% - 0px); 
+                }  
+                .verticalLine {
+                    /*border-left: thick solid white;*/
+                    border-left: 1px solid white;
+                    margin: 0 5px 0 8px;
+                }   
+                .footer{
+                    margin: -85px 30px 0 30px !important;
+                }
+                 .title-histori{
+                        font-weight:bold;
+                        letter-spacing: 1px;
+                        color: #707070;
+                        text-decoration: underline;
+                        margin-bottom: 55px !important; 
+                        text-transform: uppercase;
+                }
+
+                
+                .date-input-jadwal>.form-group{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding : 0 10px 3px 10px ;
+                    margin: -10px 0 0 0 !important;
+                }
+                .date-input-jadwal>.form-group>input{
+                    text-align: center;  
+                    letter-spacing: 2px;
+                }
+                .material-datatables>hr{ 
+                    border-top:3px solid #9c27b0;
+                    margin: 10px 0 0 0;
+                }
+                .date-button-jadwal>button{
+                    margin: -10px 0 0 0 !important;
+                    width:100%;
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    font-weight:bold;
+                    text-transform: capitalize;
+                }
+                .table-histori>thead>tr>th{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 15px !important;
+                    font-weight: bold;
+                    padding: 15px !important;
+                }
+                .table-histori>tfoot>tr>th{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 15px !important;
+                    font-weight: bold;
+                    padding: 15px !important;
+                }
+                .table-histori>tbody>tr>td{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 14px !important;
+                }
+                #daftar_history_wrapper>#daftar_history_filter>label{
+                    margin : 13px 0 0 0 !important; 
+                    color:#9c27b0;
+                    font-weight: bold;
+                }
+                #daftar_history_wrapper>#daftar_history_filter>label>input{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding: 0 10px 0 10px; 
+                    margin:  0 0 0 10px;
+                }
+                #all_history_wrapper>#all_history_filter>label{
+                    margin : 13px 0 0 0 !important; 
+                    color:#9c27b0;
+                    font-weight: bold;
+                }
+                #all_history_wrapper>#all_history_filter>label>input{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding: 0 10px 0 10px; 
+                    margin:  0 0 0 10px;
+                }
+                .title-jadwal{
+                        font-weight:bold;
+                        letter-spacing: 1px;
+                        color: #707070;
+                        text-decoration: underline;
+                        margin-bottom: 55px !important; 
+                        text-transform: uppercase;
+                }
+                .modal-alert-spc{
+                    border: 1px solid #ffcc12;
+                }
+                .modal-alert-spc>.modal-header{ 
+                        margin: 0 0 0 0;                
+                }
+                .modal-alert-spc>.modal-header>h4{  
+                        color: #ff9800;
+                        font-weight: bold !important;        
+                        letter-spacing: 1px;        
+                }
+                .modal-alert-spc>.modal-header>hr{ 
+                     border-top: 1px solid #ffcc12;
+                        margin: 10px 0 0 0;
+                } 
+                .modal-alert-spc>.modal-body{
+                    color: #ff9800 !important;
+                }
+
+                /* modal view picture */
+
+                /* Style the Image Used to Trigger the Modal */
+                #myImg {
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                #myImg:hover {opacity: 0.7;}
+
+                /* The Modal (background) */
+                .modal-picture {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    padding-top: 100px; /* Location of the box */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+                }
+
+                /* Modal Content (Image) */
+                .modal-content-picture {
+                    margin: auto;
+                    display: block;
+                    width: 70%;
+                }
+
+                /* Caption of Modal Image (Image Text) - Same Width as the Image */
+                #caption {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                    text-align: center;
+                    color: #ccc;
+                    padding: 10px 0;
+                    height: 150px;
+                }
+
+                /* Add Animation - Zoom in the Modal */
+                .modal-content-picture, #caption {
+                    animation-name: zoom;
+                    animation-duration: 0.6s;
+                }
+
+                @keyframes zoom {
+                    from {transform:scale(0)}
+                    to {transform:scale(1)}
+                }
+
+                /* The Close Button */
+                .closeX {
+                    position: absolute;
+                    top: 15px;
+                    right: 35px;
+                    color: #f1f1f1;
+                    font-size: 40px;
+                    font-weight: bold;
+                    transition: 0.3s;
+                }
+
+                .closeX:hover,
+                .closeX:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+             
+                /* end view picture */
+
+                td.text-bold{
+                    text-weight: bold !important;
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    .modal-content-picture {
+                        width: 100%;
+                    }
+                    ul>li.verticalLine {
+                        display: none;
+                        margin-left: 0;
+                        border-left: none;
+                    }  
+                    .date-input-jadwal>.form-group{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding : 0 10px 3px 10px ;
+                    margin: 4px 0 0 0 !important
+                    }
+                    
+                    .date-button-jadwal>button{
+                        margin: 5px 0 0 0 !important;
+                        width:100%;
+                        font-size: 12px;
+                        letter-spacing: 2px;
+                        font-weight:bold;
+                        text-transform: capitalize;
+                    }
+
+                 
+
+
+                }
+                @media only screen and (max-width: 430px) {   
+                    .title-histori{
+                        margin-top: 50px !important;
+                        margin-bottom: 25px !important;
+                        text-align: center;
+                    }
+                    .table-histori>thead>tr>th{  
+                        text-align: center;
+                    } 
+                    .table-histori>tbody>tr>td>ul>li{ 
+                        text-align: left; 
+                        margin-left: -100px; 
+                    } 
+                    .title-jadwal{ 
+                        margin-top: 50px !important;
+                        margin-bottom: 25px !important;
+                        text-align: center;
+                    }
+
+
+                    
+                }
+                @media only screen and (max-width: 395px) {  
+                    #daftar_history_wrapper>#daftar_history_filter>label>input{ 
+                        float:left;
+                        width:100%; 
+                        margin: 0 0 0 0;
+                    }  
+                    #all_history_wrapper>#all_history_filter>label>input{ 
+                        float:left;
+                        width:100%; 
+                        margin: 0 0 0 0;
+                    }  
+                    .table-histori>thead>tr>th{  
+                        text-align: center;
+                    } 
+                    .table-histori>tbody>tr>td>ul>li{ 
+                        text-align: left; 
+                        margin-left: -10px; 
+                    } 
+
+                    
+                }
+                @media only screen and (max-width: 320px) {   
+                    .table-histori>thead>tr>th{  
+                        text-align: center;
+                    } 
+                    .table-histori>tbody>tr>td>ul>li{ 
+                        text-align: left; 
+                        margin-left: -25px; 
+                    } 
+
+                    
+                }
+
+                 
             </style>
     <?php
         }

@@ -92,9 +92,7 @@
     <?php
     }elseif ($menu == '1c') { 
     ?>
-
-
-
+ 
         <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script> 
         <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
         
@@ -114,8 +112,6 @@
 
             $.fn.dataTable.Buttons.defaults.dom.button.className = 'btn';
             $(document).ready(function() {   
-
-            
 
                 var table =  $('#daftar_jdwl').DataTable({
                     dom: 'Bfrtip',
@@ -288,6 +284,218 @@
             
         </script>
     
+    <?php
+    }elseif ($menu == '1e') { 
+    ?> 
+        <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+        <script src="<?=base_url()?>/assets/js/moment.min.js"></script>
+        <!-- DateTimePicker Plugin -->
+        <script src="<?=base_url()?>/assets/js/bootstrap-datetimepicker.js"></script>
+        <!--  Full Calendar Plugin    -->
+        <script src="<?=base_url()?>/assets/js/fullcalendar.min.js"></script>
+        <!-- Select Plugin -->
+        <script src="<?=base_url()?>/select2-4.0.13/dist/js/select2.min.js"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="<?=base_url()?>/assets/js/jquery.validate.min.js"></script>
+
+        <!--  DataTables.net Plugin    -->
+        <script src="<?=base_url()?>/assets/js/jquery.datatables.js"></script>
+        <script src='<?=base_url()?>/datatables/Buttons-2.2.2/js/dataTables.buttons.js' type='text/javascript'></script>
+
+     
+        <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script> 
+        <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
+
+
+        <script>
+            
+            const rupiah = (number)=>{
+                return new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR"
+                }).format(number);
+            }
+                /*  */
+            $.fn.dataTable.Buttons.defaults.dom.button.className = 'btn';
+            $(document).ready(function() {    
+                /*  */
+                $('.datetimepicker').datetimepicker({   
+                    format: 'DD-MM-YYYY', 
+                    icons: {
+                        time: "fa fa-clock-o",
+                        date: "fa fa-calendar",
+                        up: "fa fa-chevron-up",
+                        down: "fa fa-chevron-down",
+                        previous: 'fa fa-chevron-left',
+                        next: 'fa fa-chevron-right',
+                        today: 'fa fa-screenshot',
+                        clear: 'fa fa-trash',
+                        close: 'fa fa-remove',
+                        inline: true,
+                    },        
+                });
+
+                /*  */ 
+                var table =  $('#daftar_history').DataTable({
+                    dom: 'Bfrtip',  
+                    footerCallback : function ( row, data, start, end, display ) {
+                        var api = this.api(), data;
+            
+                        // converting to interger to find total
+                        var intVal = function ( i ) {
+                            return typeof i === 'string' ?
+                                i.replace(/[\$,]/g, '')*1 :
+                                typeof i === 'number' ?
+                                    i : 0;
+                        };
+            
+                        // computing column Total of the complete result 
+                        var totaltransaksi = api
+                            .column( 4 )
+                            .data()
+                            .reduce( function (a, b) {
+                                return intVal(a) + intVal(b);
+                            }, 0 );
+                           
+                      
+                            
+                            if ($(window).width() >= 1000 ) { 
+                                $( api.column( 3 ).footer() ).html('Total');
+                                $( api.column( 4 ).footer() ).html(rupiah(totaltransaksi)); 
+                            }else if($(window).width() >= 285 ){
+                                $( api.column( 0 ).footer() ).html("Total"); 
+                                $( api.column( 1 ).footer() ).html(rupiah(totaltransaksi)); 
+                            }else{    
+                                $( api.column( 0 ).footer() ).html("Total : <br> " + rupiah(totaltransaksi)); 
+                            }
+
+                    },
+ 
+                    buttons: [
+                        <?php 
+                         ?> 
+                        {
+                            text: '<b>Konfirmasi<br>Pembayaran</b>',
+                            className: 'btn btn-primary',
+                            action: function ( e, dt, node, config ) { 
+                               $('#his_modal').modal('show'); 
+                                /* $(node).removeClass('dt-button')
+                                alert( config ); */
+                            }
+                        }, 
+                        <?php 
+                          ?>
+                        {
+                            text: '<b>Histori <br> Transaksi</b>',
+                            className: 'btn btn-danger',
+                            action: function ( e, dt, node, config ) {
+                                window.location.href = '/history/viewall';
+                                //$(node).removeClass('dt-button')
+                               // alert( config );
+                            }
+                        }
+                    ],
+                    responsive: true, 
+                    lengthChange: false, 
+                    autoWidth: false, 
+                    paging: false,
+                    language: {
+                                search: "Pencarian :",
+                    },
+                    columnDefs : [      
+                                      {
+                                          targets: 4,
+                                          className: ' text-sm-center',
+                                          render: $.fn.dataTable.render.number( ',', '.', 2, 'Rp ' ),
+                                      },
+                    ],
+
+                });
+                table.on( 'order.dt search.dt', function () {
+                        table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                            cell.innerHTML = i+1;
+                        } );
+                } ).draw();
+
+                /*  */
+                var tablen2 =  $('#all_history').DataTable({
+                    dom: 'Bfrtip',  
+                    buttons: [                      
+                        {
+                            text: '<i class="material-icons">arrow_back</i> <b>Kembali</b>',
+                            className: 'btn btn-danger',
+                            action: function ( e, dt, node, config ) {
+                                window.location.href = '/history';
+                                //$(node).removeClass('dt-button')
+                               // alert( config );
+                            }
+                        }
+                    ],
+                    responsive: true, 
+                    lengthChange: false, 
+                    autoWidth: false, 
+                    paging: true,
+                    language: {
+                                search: "Pencarian :",
+                    },  
+                    columnDefs : [      
+                                    {  
+                                        targets: 0,
+                                        className: ' text-sm-center',
+                                        orderable: false,
+                                        searchable: false,
+                                        render: function (data, type, row, meta) {
+                                            return meta.row + meta.settings._iDisplayStart + 1;
+                                        }  
+                                    }, 
+                    ], 
+                }); 
+                /*  */
+
+                
+
+            <?php if(session()->has("alert")) { ?> 
+               $('#alert_modal').modal('show')  
+            <?php } ?> 
+
+
+            });
+
+              /*  */
+
+            $(document).on("click", ".open-historicancel", function () {
+                var myhistoricancel = $(this).data('id');
+                $("#myhistoricancel").val( myhistoricancel ); 
+            });
+
+            /*  */
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("myImg");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("closeX")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+            modal.style.display = "none";
+            }
+
+
+          
+
+        </script>
+
     <?php
     } 
     ?>
