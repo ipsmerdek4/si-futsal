@@ -124,8 +124,11 @@ class Transaksi extends Controller{
                             $data_check[] =  $jam_view .'-3';   
                         }
                     }else{                 
-                        foreach ($checkjadwal as $value) {  
-                            $data_check[] =  $value->booking_start.'-1';  
+                        foreach ($checkjadwal as $value) {   
+                            if ($value->booking_status != 9) {
+                                $data_check[] =  $value->booking_start.'-1';  
+                            }
+                            
                         } 
                     }
                 

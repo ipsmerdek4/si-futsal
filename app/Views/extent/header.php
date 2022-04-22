@@ -211,7 +211,8 @@
     ?>         
  
             <link href='<?=base_url()?>/datatables/Buttons-2.2.2/css/buttons.dataTables.css' rel='stylesheet' type='text/css' />
-            
+            <link href="<?=base_url()?>/select2-4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
             <style> 
                 .main-panel { 
                     width: calc(100% - 0px); 
@@ -287,6 +288,29 @@
                         margin-bottom: 55px !important; 
                         text-transform: uppercase;
                 }
+                /*  */
+                
+                
+                .select2-container .select2-selection   { 
+                    border: none;  
+                    border-radius: 0 !important;
+                    border-bottom: 1px solid #D2D2D2; 
+                    height: 35px;
+                    letter-spacing: 1px;
+                    padding-top:3px; 
+                    collor: #9c27b0;
+                }  
+                .select2-container .select2-selection--single .select2-selection__arrow {
+                    height: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 2px;
+                    width: 10px;   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; 
+                }
+                 
 
 
                 @media only screen and (max-width: 1000px) {
@@ -726,6 +750,10 @@
                     text-weight: bold !important;
                 }
 
+                 
+
+
+
                 @media only screen and (max-width: 1000px) {
                     .modal-content-picture {
                         width: 100%;
@@ -972,7 +1000,7 @@
                     </li>  
                     <li>
                         <a href="<?=base_url()?>/login">
-                            <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                             &nbsp;&nbsp;Jadwal
                         </a>
                     </li>  

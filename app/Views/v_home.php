@@ -69,8 +69,7 @@
 
         
 
-                <div class="row">
-                    
+                <div class="row"> 
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="card card-stats" style="border: 1px solid #bfbfbf">
                             <div class="card-header" data-background-color="green">
@@ -78,7 +77,9 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Price</p>
-                                <h3 class="card-title" style="font-size:15px;font-weight:bold">Rp 140.000,-</h3>
+                                <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                <?="Rp " . number_format($dataHarga[0]->harga,2,',','.')?>
+                                </h3>
                             </div>
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
@@ -88,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="card card-stats" style="border: 1px solid #bfbfbf">
                             <div class="card-header" data-background-color="red">
@@ -95,7 +97,9 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Price</p>
-                                <h3 class="card-title" style="font-size:15px;font-weight:bold">Rp 240.000,-</h3>
+                                <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                <?="Rp " . number_format($dataHarga[1]->harga,2,',','.')?>
+                                </h3>
                             </div>
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
@@ -112,12 +116,22 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Bookings</p>
-                                <h3 class="card-title" style="font-size:15px;font-weight:bold">24/24</h3>
+                                <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                <?php  
+                                    $transnilai1 = 0; 
+                                    foreach ($dataTransaksi as $v_dataTransaksi) {
+                                        if ($v_dataTransaksi->booking_status != 9) {
+                                            $transnilai1++; 
+                                        }  
+                                    }
+                                    echo $transnilai1.'/16';
+                                ?> 
+                            </h3>
                             </div>
                             <div class="card-footer"  style="border-top: 1px solid #bfbfbf">
                                 <div class="stats ">
                                     <i class="material-icons text-primary">last_page</i>
-                                    <div class="text-primary">Total Booking.</div>
+                                    <div class="text-primary">Total Booking Hari ini.</div>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +143,15 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Tims</p>
-                                <h3 class="card-title" style="font-size:15px;font-weight:bold">30</h3>
+                                <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                <?php
+                                    $cek_total=0;
+                                    foreach ($dataIdentitas as $v_dataIdentitas) {
+                                       $cek_total++; 
+                                    }
+                                    echo $cek_total; 
+                                ?>
+                                </h3>
                             </div>
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
@@ -146,9 +168,12 @@
                     <div class="col-md-6 col-md-offset-3">
                         <div class="card card-chart " style="background: #f7f7f7">
                                     <div data-background-color="rose" >
-                                        <p class="text-center h4"  >11-April-2022</p>  
+                                        <p class="text-center h4"  >
+                                            <?=date("d-M-Y")?>
+                                        </p>  
                                         <hr>
-                                        <p class="text-center h4"  >12:00:00 WITA</p>  
+                                        <p class="text-center h4" id="jam" >  
+                                        </p>  
 
                                     </div>
                                     <br>
@@ -167,7 +192,9 @@
                                                 <div class="ripple-container"></div>
                                             </a>
                                         </div>
-                                    </div> 
+                                    </div>
+                                    <!-- 
+
                                     <div class="card-content">  
                                         <h4 class="card-title text-center">STATUS BOOKING</h4> 
                                     </div>
@@ -187,6 +214,8 @@
                                             <div class="ripple-container"></div>
                                         </button>   
                                     </div> 
+ -->
+
                                     <?php
                                         }else{
                                     ?> 
@@ -200,6 +229,7 @@
                                             </a>
                                         </div>
                                     </div> 
+                                    <!-- 
                                     <div class="card-content">  
                                         <h4 class="card-title text-center">STATUS BOOKING</h4> 
                                     </div>
@@ -216,7 +246,7 @@
                                         </div>
                                     </div>
 
-
+ -->
                                     <?php        
                                         } 
                                     ?>

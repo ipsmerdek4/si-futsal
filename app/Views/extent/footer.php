@@ -15,18 +15,26 @@
                                     &nbsp;&nbsp;Home
                                 </a>
                             </li> 
+                            <?php
+                                if ($dtlv == 1) {
+                            ?>
+                            
                             <li>
-                                <a href="<?=base_url()?>/login">
+                                <a href="<?=base_url()?>/jadwal">
                                     <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                                     &nbsp;&nbsp;Jadwal
                                 </a>
                             </li>
                             <li>
-                                <a href="<?=base_url()?>/login">
+                                <a href="<?=base_url()?>/transaksi">
                                     <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
                                     &nbsp;&nbsp;Transaksi
                                 </a>
-                            </li>    
+                            </li> 
+                            
+                            <?php
+                                }
+                            ?>   
                         </ul>
                     </nav>
                     <p class="copyright pull-right">
@@ -71,6 +79,15 @@
 
         <script type="text/javascript"> 
 
+            window.setTimeout("waktu()", 1000);
+
+            function waktu() {
+                var waktu = new Date();
+                setTimeout("waktu()", 1000); 
+                document.getElementById("jam").innerHTML =  ('0' + waktu.getHours()).slice(-2)   + ':' + ('0' + waktu.getMinutes()).slice(-2) + ':' + ('0' + waktu.getSeconds()).slice(-2) + ' WITA'; 
+            }
+
+
             $(window).on("load",function(){
                 $(".loader-wrapper").fadeOut(2000);
             });
@@ -100,6 +117,8 @@
         <script src="<?=base_url()?>/assets/js/jquery.datatables.js"></script>
         <script src='<?=base_url()?>/datatables/Buttons-2.2.2/js/dataTables.buttons.js' type='text/javascript'></script>
 
+        <!-- Select Plugin -->
+        <script src="<?=base_url()?>/select2-4.0.13/dist/js/select2.min.js"></script>
 
         <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
         <script src="<?=base_url()?>/assets/js/moment.min.js"></script>
@@ -110,12 +129,20 @@
 
         <script type="text/javascript">
 
+            $("#jadwaltagl").click(function(){ 
+                 window.location.href = '<?=base_url()?>/jadwal/'+ $("#jadwaltaglval").val() + '*' + $("#lapnganval").val(); 
+            }); 
+
             $.fn.dataTable.Buttons.defaults.dom.button.className = 'btn';
             $(document).ready(function() {   
+                 
+                $('.select-drop-input').select2({
+                        minimumResultsForSearch: -1
+                    });
 
                 var table =  $('#daftar_jdwl').DataTable({
                     dom: 'Bfrtip',
-                            buttons: [
+                            /* buttons: [
                                 {
                                     text: 'Lapangan 1',
                                     className: 'btn btn-primary',
@@ -132,7 +159,7 @@
                                         alert( config );
                                     }
                                 }
-                            ],
+                            ], */
                             responsive: true, 
                             lengthChange: false, 
                             autoWidth: false, 
@@ -205,6 +232,10 @@
             
             
             } );
+
+
+
+
         </script>
 
 

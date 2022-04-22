@@ -23,5 +23,18 @@ class TransaksiModel extends Model{
     }
  
 
+     function join_where($a = null, $b = null)
+    {
+        $builder = $this->db->table('tbl_transaksi');
+        $builder->join('tbl_identitas', 'tbl_identitas.id_identitas  = tbl_transaksi.id_identitas');  
+        
+        $builder->where('tgl_booking_lapangan', $a);
+        $builder->where('booking_lapangan', $b); 
+        $query = $builder->get();
+
+        return $query->getResult();
+    }
+
+
 
 }

@@ -82,6 +82,8 @@ class History extends Controller{
             echo view('extent/footer', $data);
  
             
+            
+
         }
     }
 
@@ -190,6 +192,7 @@ class History extends Controller{
                                     'tgl_booking_lapangan' => $tgl, 
                                 ])->findAll();
 
+ 
 
             $data = array(
                             'menu'          => '1e',

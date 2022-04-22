@@ -58,6 +58,7 @@ $routes->get('/history/viewall', 'History::view_all');
 $routes->post('/history/viewall', 'History::view_all');
 $routes->post('/history/viewall/cancel', 'History::view_all_cancel');
 
+$routes->get('/jadwal/(:any)', 'Jadwal::view_jadwal/$1');
 
 /*
  * --------------------------------------------------------------------
