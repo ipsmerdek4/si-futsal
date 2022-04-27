@@ -119,36 +119,34 @@
                                             if ($v_dataTransaksi->booking_start == $nilai) {
                                                 if ($v_dataTransaksi->booking_status != 9) { 
                                                     $nilaitotal += $nilaitrans;
-                                                        if ($v_dataTransaksi->booking_status == 1) { 
-                                                            echo '
-                                                                <button class="btn btn-warning btn-xs" >
-                                                                    <i class="material-icons">access_time</i> <b>Waiting ... </b>
-                                                                    <div class="ripple-container"></div>
-                                                                </button>
-                                                            '; 
-                                                        }elseif($v_dataTransaksi->booking_status == 2) {
-                                                            echo '
-                                                                <button class="btn btn-success btn-xs" >
-                                                                    <i class="material-icons">access_time</i> <b>Waiting ... </b>
-                                                                    <div class="ripple-container"></div>
-                                                                </button> 
-                                                            '; 
-                                                        }elseif($v_dataTransaksi->booking_status == 3) { 
-                                                            echo '
-                                                                <button class="btn btn-primary btn-xs" >
-                                                                    <i class="material-icons">check</i> <b>Approve</b>
-                                                                    <div class="ripple-container"></div>
-                                                                </button> 
-                                                                ';
-                                                        }elseif($v_dataTransaksi->booking_status == 9) { 
-                                                            echo '
-                                                                <button class="btn btn-danger btn-xs" >
-                                                                    <i class="material-icons">clear</i> <b>Cancel</b>
-                                                                    <div class="ripple-container"></div>
-                                                                </button>
-                                                                ';  
-                                                        }  
-                                                 } 
+                                                    if ($v_dataTransaksi->booking_status == 1) {
+                                                        echo '
+                                                        <button class="btn btn-warning btn-xs" >
+                                                            <i class="material-icons">access_time</i> <b>Waiting ... </b> 
+                                                        </button>'; 
+                                                    }elseif ($v_dataTransaksi->booking_status == 2) {
+                                                        echo '  
+                                                        <button class="btn btn-success btn-xs" >
+                                                            <i class="material-icons">access_time</i> <b>Waiting ... </b> 
+                                                        </button> ';
+                                                    }elseif ($v_dataTransaksi->booking_status == 3) {
+                                                        echo ' 
+                                                        <button class="btn btn-primary btn-xs" >
+                                                            <i class="material-icons">check</i> <b>Approve </b> 
+                                                        </button> '; 
+                                                    }elseif ($v_dataTransaksi->booking_status == 4) {
+                                                        echo ' 
+                                                            <button class="btn btn-primary btn-xs" >
+                                                                <i class="material-icons">check</i> 
+                                                                <b>Lunas</b> 
+                                                            </button> '; 
+                                                    }elseif ($v_dataTransaksi->booking_status == 9) {
+                                                        echo '
+                                                        <button class="btn btn-danger btn-xs" >
+                                                            <i class="material-icons">clear</i> <b>Cancel</b> 
+                                                        </button>';
+                                                    }    
+                                                } 
                                             } 
                                         }  
  

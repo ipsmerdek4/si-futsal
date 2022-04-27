@@ -84,7 +84,7 @@
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
                                     <i class="material-icons text-primary">last_page</i> 
-                                    <div class="text-primary">Harga Siang.</div>                                    
+                                    <div class="text-primary"><b>Harga Siang.</b></div>                                    
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
                                     <i class="material-icons text-primary">last_page</i> 
-                                    <div class="text-primary">Harga Malam.</div>     
+                                    <div class="text-primary"><b>Harga Malam.</b></div>     
                                 </div>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                             <div class="card-footer"  style="border-top: 1px solid #bfbfbf">
                                 <div class="stats ">
                                     <i class="material-icons text-primary">last_page</i>
-                                    <div class="text-primary">Total Booking Hari ini.</div>
+                                    <div class="text-primary"><b>Total Booking Hari ini.</b></div>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                             <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                 <div class="stats">
                                     <i class="material-icons text-primary">last_page</i> 
-                                    <div class="text-primary">Total Tim Terdaftar.</div>
+                                    <div class="text-primary"><b>Total Tim Terdaftar.</b></div>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                                             <div class="ripple-container"></div>
                                         </button>   
                                     </div> 
- -->
+                                    -->
 
                                     <?php
                                         }else{
@@ -246,15 +246,19 @@
                                         </div>
                                     </div>
 
- -->
+                                    -->
                                     <?php        
                                         } 
                                     ?>
-
-                                    
+ 
                                     
                         </div>
+                        
                     </div>
                 </div>
 
-
+                <div class="row" style="margin: -10px 0 0 0;" >
+                    <div class="col-md-10 col-md-offset-1">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.7781685804416!2d115.20949511460502!3d-8.712603593740742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2414000e5dd0f%3A0x3bd19c2e4689adee!2sNew%20Futsalholic%20Arena!5e0!3m2!1sen!2sid!4v1650691079502!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    
+                    </div>
+                </div>

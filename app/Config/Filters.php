@@ -52,7 +52,11 @@ class Filters extends BaseConfig
             'logfillter' => ['except' => [
                                             'home', 'home/*',
                                             '/',   
+                                            '/count_notif',
+                                            '/msg_notif',
                                             'transaksi','transaksi/*',
+                                            'transaksi_booking','transaksi_booking/*',
+                                            'transaksi_pembayaran','transaksi_pembayaran/*',  
                                             'jadwal','jadwal/*', 
                                             'history','history/*', 
 

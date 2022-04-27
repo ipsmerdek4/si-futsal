@@ -5,14 +5,13 @@ use CodeIgniter\Controller;
 use App\Models\TransaksiModel;  
 use App\Models\HargaModel;  
 use App\Models\IdentitasModel;  
-use App\Models\HistoriModel;  
+use App\Models\HistoriModel;    
 
 class Transaksi extends Controller{
 
     public function index()
-    { 
- 
-        if(session()->get('level') == 1)
+    {  
+        if((session()->get('level') == 1)||(session()->get('level') == 2))
         {
             $Identitas = new IdentitasModel();
             $id_user    = session()->get('ID');
@@ -30,16 +29,13 @@ class Transaksi extends Controller{
             );
             echo view('extent/header', $data);
             echo view('v_transaksi', $data);
-            echo view('extent/footer', $data);
-
+            echo view('extent/footer', $data); 
         }
-
-
     }
 
     public function trsk_check_prosess()
     {
-        if(session()->get('level') == 1)
+        if((session()->get('level') == 1)||(session()->get('level') == 2))
         {
 
             echo '<div class="check-spc"> ';
@@ -107,7 +103,11 @@ class Transaksi extends Controller{
                 }
                
             }else{
-                echo "<li>Maaf, Silahkan Selesaikan Booking Anda sebelumnya di- <a href='".base_url()."/history'>Histori</a>.</li>"; 
+                if (session()->get('level') == 2){
+                    echo "<li>Maaf, Silahkan Selesaikan Booking Anda sebelumnya di- <a href='".base_url()."/transaksi_pembayaran'>TRANSAKSI PEMBAYARAN</a>.</li>"; 
+                }elseif (session()->get('level') == 1){
+                    echo "<li>Maaf, Silahkan Selesaikan Booking Anda sebelumnya di- <a href='".base_url()."/history'>Histori</a>.</li>"; 
+                }
             }
             echo '</ul>';   
 
@@ -207,7 +207,17 @@ class Transaksi extends Controller{
                         cache: false,  
                         success: function(data) {
                             //alert(data);
-                            window.location.href = "<?=base_url()?>/history";
+                            <?php
+                            if (session()->get('level') == 2) {
+                            ?>
+                                window.location.href = "<?=base_url()?>/transaksi_pembayaran"; 
+                            <?php
+                            }elseif (session()->get('level') == 1) {
+                            ?>
+                                window.location.href = "<?=base_url()?>/history"; 
+                            <?php 
+                            }
+                            ?> 
                             //location.reload();
                         },
                         error: function(xhr, status, error) {
@@ -220,36 +230,22 @@ class Transaksi extends Controller{
 
 
             } //end perbolehkan akses
+ 
 
-
-
-
-
-
-            
-        }
-
-
-
-
-
-
-
-
-
+        } 
     }
-
-    
-    
+ 
     public function trsk_p_prosess()
     { 
+        if((session()->get('level') == 1)||(session()->get('level') == 2))
+        {
             $Transaksi = new TransaksiModel(); 
             $Harga = new HargaModel();    
-            $Histori = new HistoriModel();
+            $Histori = new HistoriModel(); 
 
             $total = $this->request->getVar('total');
             $pecah =  explode('-', $total);
-            $kodetransaksi = 'FUT'.date("mHydi");
+            $kodetransaksi = 'FUT'.date("mHYdis");
             $total_harga = $pecah[0];
             $id_user = $pecah[1];
             $lpng_book = $pecah[2];
@@ -260,7 +256,7 @@ class Transaksi extends Controller{
             $wm_book =  $pecah[4];
             $wb_book =  $pecah[5];
 
-             $Histori->insert([ 
+            $Histori->insert([ 
                         'kode_transaksi' => $kodetransaksi,
                         'id_identitas' => $id_user,
                         'tgl_booking_lapangan' => $tgl_book_new,
@@ -271,10 +267,11 @@ class Transaksi extends Controller{
                         'booking_bukti' => 0,
                         'booking_status' => 1,
                         'booking_TOKEN' => 0,
-                        'kode_unix' => rand(100,999),
+                        'kode_unix' => rand(100,999), 
                         'tgl_pbt_histori' => date("Y-m-d H-i-s"),
-                    ]);
+            ]);
 
+                 
             for ($i=0; $i < $wb_book ; $i++) { 
                 $pecah_wm_book = explode(':', $wm_book);
                 $jml_wm_book = $pecah_wm_book[0]+$i;
@@ -303,11 +300,378 @@ class Transaksi extends Controller{
                         'tgl_pbt_transaksi' => date("Y-m-d H-i-s"),
                     ]);
             }
- 
-
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
+        }  
     }
 
    
+    public function trs_booking($getdata = null)
+    {
+        if(session()->get('level') == 2)
+        {
+            
+            $Histori = new HistoriModel();
+
+            if (isset($getdata)) {
+                $pecahtgl = explode("-",$getdata);
+                $tgl = $pecahtgl[2].'-'.$pecahtgl[1].'-'.$pecahtgl[0];  
+            }else{
+                $tgl = date("Y-m-d");  
+            }
+
+            $dataHistori = $Histori->where([  
+                                        'tgl_booking_lapangan' => $tgl, 
+                                    ])->findAll();
+
+
+            $data = array(
+                'menu' => '1d',
+                'title' => 'Transaksi [SI-Futsal]', 
+                'dtlv' => session()->get('level'),
+                'unm' => session()->get('username'), 
+                'dataHistori' => $dataHistori,  
+                'sendtgl' => $tgl, 
+            );
+            echo view('extent/lv2/header', $data);
+            echo view('v_transaksi_booking_lv2', $data);
+            echo view('extent/lv2/footer', $data); 
+
+
+
+
+
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
+        } 
+    }
+
+
+
+
+    public function trs_pembayaran($getdata = null)
+    {
+        if(session()->get('level') == 2)
+        {
+            if (isset($getdata)) {
+                $pecahtgl = explode("-",$getdata);
+                $tgl = $pecahtgl[2].'-'.$pecahtgl[1].'-'.$pecahtgl[0];  
+            }else{
+                $tgl = date("Y-m-d");  
+            }
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+            $dataHistori = $Histori->join_where($tgl);
+            $dataHistori2 = $Histori->findAll();
+
+            foreach ($dataHistori2 as $vs_dataHistori) {
+                 if ($vs_dataHistori->tgl_booking_lapangan < date("Y-m-d")) {
+                     if ($vs_dataHistori->booking_status == 2) {
+                        $Histori->update($vs_dataHistori->id_histori , ['booking_status' => 3]);
+                        
+                        $dataTransaksi = $Transaksi->where([  
+                                                            'kode_transaksi' => $vs_dataHistori->kode_transaksi, 
+                                                            'id_identitas' => $vs_dataHistori->id_identitas, 
+                                                        ])->findAll();
+                        foreach ($dataTransaksi as $vs_dataTransaksi) {
+                            $Transaksi->update($vs_dataTransaksi->id_transaksi, ['booking_status' => 3]);
+                        }
+                     }elseif ($vs_dataHistori->booking_status == 1) {
+                        $Histori->update($vs_dataHistori->id_histori , ['booking_status' => 9]);
+                        $dataTransaksi = $Transaksi->where([  
+                                                            'kode_transaksi' => $vs_dataHistori->kode_transaksi, 
+                                                            'id_identitas' => $vs_dataHistori->id_identitas, 
+                                                        ])->findAll();
+                        foreach ($dataTransaksi as $vs_dataTransaksi) {
+                            $Transaksi->update($vs_dataTransaksi->id_transaksi, ['booking_status' => 9]);
+                        } 
+                     }
+                 } 
+            }
+
+
+
+
+            $data = array(
+                'menu' => '1e',
+                'title' => 'Transaksi [SI-Futsal]', 
+                'dtlv' => session()->get('level'),
+                'unm' => session()->get('username'), 
+                'dataHistori' => $dataHistori,  
+                'sendtgl' => $tgl, 
+            );
+            echo view('extent/lv2/header', $data);
+            echo view('v_transaksi_pembayaran_lv2', $data);
+            echo view('extent/lv2/footer', $data); 
+
+ 
+            
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
+        } 
+    }
+
+
+
+    public function ajax_trs_pembayaran()
+    {
+        if(session()->get('level') == 2)
+        { 
+                if (!$this->validate([
+                    'buktimanual' => [
+                        'rules' =>    'is_image[buktimanual]'
+                                    .'|mime_in[buktimanual,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                    .'|max_size[buktimanual,1000]',  
+                        'errors' => [    
+                            'is_image' => 'File harus berformat Gambar.',
+                            'mime_in' => 'File yang di izinkan image/jpg, image/jpeg,image/gif,image/png, image/webp.',   
+                            'max_size' => 'Ukuran File Paling besar 1Mb.',   
+                        ]
+                    ],  
+                ])) { 
+                    session()->setFlashdata('pesantrs_pembayaran', $this->validator->listErrors());
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                } 
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+            $id_histori = $this->request->getVar('_access_val');  
+            $dataHistori = $Histori->where([
+                                    'id_histori' => $id_histori,  
+                                ])->findAll();
+
+            $dataTransaksi = $Transaksi->where([
+                                    'kode_transaksi' => $dataHistori[0]->kode_transaksi, 
+                                    'id_identitas' => $dataHistori[0]->id_identitas, 
+                                ])->findAll();            
+          
+            if ($img = $this->request->getFile('buktimanual')) { 
+                if ($img->isValid() && ! $img->hasMoved())
+                {
+                    $newName = $img->getRandomName();
+                    $img->move('uploads/bukti/', $newName);           
+                }  else{
+                    session()->setFlashdata('pesantrs_pembayaran', '<ul><li>File Gambar Tidak terdeteksi</li></ul>');
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                }
+            }
+            
+
+            $data = [
+                'booking_bukti' => $newName,  //status cancel 
+                'booking_status' => 4,  //status waitting setelah upload bukti  
+            ]; 
+            $Histori->update($id_histori , $data);  
+        
+            foreach ($dataTransaksi as $valueX) {   
+                $data2 = [ 
+                    'booking_status' => 4,  //status waitting setelah upload bukti 
+                ];  
+                $Transaksi->update($valueX->id_transaksi, $data2);
+            }
+            
+             
+            return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+
+
+
+        }
+    }
+
+
+    public function ajax_trs_pembayaran_dua()
+    {
+        if(session()->get('level') == 2)
+        { 
+                if (!$this->validate([
+                    'buktimanual' => [
+                        'rules' =>    'is_image[buktimanual]'
+                                    .'|mime_in[buktimanual,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                    .'|max_size[buktimanual,1000]',  
+                        'errors' => [    
+                            'is_image' => 'File harus berformat Gambar.',
+                            'mime_in' => 'File yang di izinkan image/jpg, image/jpeg,image/gif,image/png, image/webp.',   
+                            'max_size' => 'Ukuran File Paling besar 1Mb.',   
+                        ]
+                    ],  
+                ])) { 
+                    session()->setFlashdata('pesantrs_pembayaran', $this->validator->listErrors());
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                } 
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+            $id_histori = $this->request->getVar('_access_val');  
+            $dataHistori = $Histori->where([
+                                    'id_histori' => $id_histori,  
+                                ])->findAll();
+
+            $dataTransaksi = $Transaksi->where([
+                                    'kode_transaksi' => $dataHistori[0]->kode_transaksi, 
+                                    'id_identitas' => $dataHistori[0]->id_identitas, 
+                                ])->findAll();            
+          
+            if ($img = $this->request->getFile('buktimanual')) { 
+                if ($img->isValid() && ! $img->hasMoved())
+                {
+                    $newName = "bukti_edit-".rand(1111,999999);
+                    $img->move('uploads/bukti/', $newName);           
+                }  else{
+                    session()->setFlashdata('pesantrs_pembayaran', '<ul><li>File Gambar Tidak terdeteksi</li></ul>');
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                }
+            }
+            
+
+            $data = [
+                'booking_bukti_update' => $newName,   
+                'booking_status' => 4,   
+                'booking_TOKEN' => rand(111111,999999),   
+            ]; 
+            $Histori->update($id_histori , $data);  
+        
+            foreach ($dataTransaksi as $valueX) {   
+                $data2 = [ 
+                    'booking_status' => 4,   
+                ];  
+                $Transaksi->update($valueX->id_transaksi, $data2);
+            }
+            
+             
+            return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+
+
+
+        }
+    }
+
+
+
+
+
+
+    public function ajax_trs_clc_pembayaran()
+    {
+        if(session()->get('level') == 2)
+        {
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+            $id_histori = $this->request->getVar('_access_val');  
+
+
+            $dataHistori = $Histori->where([
+                                    'id_histori' => $id_histori,  
+                                ])->findAll();
+
+            $dataTransaksi = $Transaksi->where([
+                                    'kode_transaksi' => $dataHistori[0]->kode_transaksi, 
+                                    'id_identitas' => $dataHistori[0]->id_identitas, 
+                                ])->findAll();     
+
+            /*  */
+            $Histori->update($id_histori , [ 'booking_status' => 9 ]);  
+            foreach ($dataTransaksi as $valueX) {    
+                $Transaksi->update($valueX->id_transaksi, [ 'booking_status' => 9 ]);  
+            }
+ 
+            return redirect()->to(base_url('/transaksi_pembayaran'))->withInput();  
+
+        }
+    }
+
+
+    public function ajax_apv_pembayaran()
+    {
+        if(session()->get('level') == 2)
+        {
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+            $id_histori = $this->request->getVar('_access_val');  
+
+
+            $dataHistori = $Histori->where([
+                                    'id_histori' => $id_histori,  
+                                ])->findAll();
+
+            $dataTransaksi = $Transaksi->where([
+                                    'kode_transaksi' => $dataHistori[0]->kode_transaksi, 
+                                    'id_identitas' => $dataHistori[0]->id_identitas, 
+                                ])->findAll();     
+
+            /*  */
+            $Histori->update($id_histori , [ 'booking_status' => 3 ]);  
+            foreach ($dataTransaksi as $valueX) {    
+                $Transaksi->update($valueX->id_transaksi, [ 'booking_status' => 3 ]);  
+            }
+ 
+            return redirect()->to(base_url('/transaksi_pembayaran'))->withInput();  
+ 
+
+        }
+    }
+
+
+
+
+    public function ajax_tkn_pembayaran()
+    {
+        if(session()->get('level') == 2)
+        {
+
+            $Histori = new HistoriModel();
+            $Transaksi = new TransaksiModel();
+
+             $id_histori = $this->request->getVar('_access_val');  
+             $Token = $this->request->getVar('_tkn_val');  
+
+
+            $dataHistori = $Histori->where([
+                                    'id_histori' => $id_histori,  
+                                ])->findAll();
+
+            $dataTransaksi = $Transaksi->where([
+                                    'kode_transaksi' => $dataHistori[0]->kode_transaksi, 
+                                    'id_identitas' => $dataHistori[0]->id_identitas, 
+                                ])->findAll();     
+ 
+            if ($dataHistori[0]->booking_TOKEN == $Token) {
+                if ($Token == 0) {   
+                    session()->setFlashdata('pesantrs_pembayaran', '<ul><li>Token yang di berikan Salah, <br>Silahkan Coba lagi.</li></ul>');
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                }else{ 
+                    $Histori->update($id_histori , [ 'booking_status' => 4 ]);  
+                    foreach ($dataTransaksi as $valueX) {    
+                        $Transaksi->update($valueX->id_transaksi, [ 'booking_status' => 4 ]);   
+                    }
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+                }
+            }else{
+                    session()->setFlashdata('pesantrs_pembayaran', '<ul><li>Token yang di berikan Salah, <br>Silahkan Coba lagi.</li></ul>');
+                    return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
+            }  
+
+
+
+       
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 
 

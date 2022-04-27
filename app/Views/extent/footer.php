@@ -75,7 +75,7 @@
         <script src="<?=base_url()?>/assets/js/chartist.min.js"></script> 
         <script src="<?=base_url()?>/assets/js/jquery-jvectormap.js"></script> 
         <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
-
+ 
 
         <script type="text/javascript"> 
 
@@ -103,6 +103,8 @@
                 }
             });
 
+
+            
         </script>
  
 
@@ -137,8 +139,8 @@
             $(document).ready(function() {   
                  
                 $('.select-drop-input').select2({
-                        minimumResultsForSearch: -1
-                    });
+                    minimumResultsForSearch: -1
+                });
 
                 var table =  $('#daftar_jdwl').DataTable({
                     dom: 'Bfrtip',
@@ -339,7 +341,13 @@
 
 
         <script>
-            
+            $(document).on("click", ".btn-konfirmasi", function () {
+                var access_val = $(this).data('id');
+                
+                $(".text-modal-spc ._file").html( access_val );  
+            });
+
+
             const rupiah = (number)=>{
                 return new Intl.NumberFormat("id-ID", {
                     style: "currency",
@@ -499,30 +507,33 @@
                 $("#myhistoricancel").val( myhistoricancel ); 
             });
 
-            /*  */
-
+            
+            
+             /* modal picture */
+             
             // Get the modal
-            var modal = document.getElementById("myModal");
+            var modal = $("#myModal");
+            var modalImg = modal.find('.modal-content-picture');
 
             // Get the image and insert it inside the modal - use its "alt" text as a caption
-            var img = document.getElementById("myImg");
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
-            img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            }
+            var img = $(".myImg");
+            var captionBox = $("#caption");
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("closeX")[0];
+            img.click(function() {
+                modalImg.attr('src', $(this).attr('src'));
+                captionBox.text( $(this).attr('alt') );
+                modal.show();
+            });
 
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-            modal.style.display = "none";
-            }
+            // Get the elements that closes the modal
+            var modalCloser = $(".closeX");
 
+            // When the user clicks on the close element, close the modal
+            modalCloser.click(function() {
+                modal.hide();
+            }); 
 
+            /* end modal picture */
           
 
         </script>

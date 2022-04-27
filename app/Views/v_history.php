@@ -14,10 +14,8 @@
         
 
         <?php
-            if (isset($lockviewall)) {
-
-        ?>
-    
+            if (isset($lockviewall)) { 
+        ?> 
             <form action="<?=base_url()?>/history/viewall" method="post">
             <div class="row"  >
                 <div class="col-md-1" style="width:90px;">
@@ -47,6 +45,7 @@
                         <th>Lapangan</th>
                         <th>Time</th>
                         <th>Harga</th>
+                        <th>Pembayaran<br>Awal</th>
                         <th>TOKEN</th>
                         <th>Status</th> 
                         <th>Opsi</th> 
@@ -61,7 +60,7 @@
                                 if ($val_dataHistori->booking_bukti == 0) {
                                     # code...
                                 }else{
-                                    echo '<img id="myImg" src="'.base_url().'/uploads/bukti/'.$val_dataHistori->booking_bukti.'" alt="'.$val_dataHistori->booking_bukti.'" style="width:100%;max-width:50px">';
+                                    echo '<img class="myImg" src="'.base_url().'/uploads/bukti/'.$val_dataHistori->booking_bukti.'" alt="'.$val_dataHistori->booking_bukti.'" style="width:100%;max-width:50px">';
                                 }
                             ?>
                             
@@ -91,11 +90,34 @@
                                 <div class="ripple-container"></div>
                             </button>  
                         </td>
+                        <td>
+                            <button class="btn btn-success btn-xs" > 
+                                <?php
+                                    $setengah =    (($val_dataHistori->total_harga*50)/100)+$val_dataHistori->kode_unix;
+                                ?>
+                                <b><?="Rp " . number_format($setengah,2,',','.');?></b>
+                                <div class="ripple-container"></div>
+                            </button>  
+                        </td>
                         <td> 
-                            <button class="btn btn-primary btn-xs" > 
+                            <?php 
+                            if ($val_dataHistori->booking_status == 3) {
+                            ?>
+                            <button class="btn btn-primary btn-xs btn-konfirmasi" data-id="<?=$val_dataHistori->booking_TOKEN?>"  data-toggle="modal" data-target="#_access_open"  >
                                 <b><?=$val_dataHistori->booking_TOKEN?></b>
                                 <div class="ripple-container"></div>
                             </button> 
+                            <?php 
+                            }else{
+                            ?> 
+                            <button class="btn btn-danger btn-xs"  >
+                                <b><?=$val_dataHistori->booking_TOKEN?></b>
+                                <div class="ripple-container"></div>
+                            </button>  
+
+                            <?php 
+                            } 
+                            ?> 
                             
                         </td>
                         <td>
@@ -116,8 +138,15 @@
                             <?php
                             }elseif ($val_dataHistori->booking_status == 3) {
                             ?>  
-                            <button class="btn btn-primary btn-xs" >
+                            <button class="btn btn-success btn-xs" >
                                 <i class="material-icons">check</i> <b>Approve</b>
+                                <div class="ripple-container"></div>
+                            </button> 
+                            <?php
+                            }elseif ($val_dataHistori->booking_status == 4) {
+                            ?>  
+                            <button class="btn btn-primary btn-xs" >
+                                <i class="material-icons">check</i> <b>Lunas</b>
                                 <div class="ripple-container"></div>
                             </button> 
                             <?php
@@ -133,7 +162,7 @@
                         </td>
                         <td>
                             <?php
-                            if (($val_dataHistori->booking_status == 9)||($val_dataHistori->booking_status == 2)||($val_dataHistori->booking_status == 3)) {
+                            if ($val_dataHistori->booking_status != 1){
                             ?>
                             <button class="btn btn-default btn-xs " >
                                 <i class="material-icons">clear</i> 
@@ -156,6 +185,42 @@
 
             </table>
           
+            
+            
+            <!-- modal -->
+            <div class="modal fade" id="_access_open" 
+                tabindex="-1" 
+                aria-labelledby="exampleModalLabel" 
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content ajx_pembayaran">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center title-spc-ajxpembayaran" >
+                                    TOKEN KONFIRMASI
+                                </h5> 
+                                <hr style="margin:10px 0 0 0; border-top: 1px solid #b3b3b3 !important;">
+                            </div> 
+                             
+                            
+                            <div class="modal-body"> 
+                                <div class="text-modal-spc">
+                                        <h5><b>TOKEN</b> Anda Adalah :.</h5> 
+                                        <div class="_file"></div>  
+                                </div>
+                                <hr class="hr-modal-spc">
+                                <div class="modal-footer text-center">  
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">  &nbsp; &nbsp; &nbsp; &nbsp;Kembali   &nbsp; &nbsp; &nbsp;  </button>
+                                </div>
+                             </div> 
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- modal -->
             <div class="modal fade" id="cancel_btn" 
                 tabindex="-1" 
@@ -206,6 +271,22 @@
                             <b>Status ini adalah Status menunggu Verifikasi dari Admin, Bahwa Anda sudah Konfirmasi Booking Lapangan.</b>
                     </li>
                     <li>
+                            <button class="btn btn-success btn-xs" >
+                                <i class="material-icons">check</i> <b>Approve</b>
+                                <div class="ripple-container"></div>
+                            </button> 
+
+                            <b>Status ini adalah Status Booking Lapangan dan Silahkan Tunjukan TOKEN ke Petugas di Lapangan.</b>
+                    </li>
+                    <li>
+                            <button class="btn btn-primary btn-xs" >
+                                <i class="material-icons">check</i> <b>Lunas</b>
+                                <div class="ripple-container"></div>
+                            </button> 
+
+                            <b>Status ini adalah Status Booking Lapangan bahwa Transaksi Sudah Selesai.</b>
+                    </li>
+                    <li>
                             <button class="btn btn-danger btn-xs" >
                                 <i class="material-icons">clear</i> <b>Cancel</b>
                                 <div class="ripple-container"></div>
@@ -213,27 +294,16 @@
 
                             <b>Status ini adalah Status Pembatalan Booking Lapangan.</b>
                     </li>
-                    <li>
-                            <button class="btn btn-primary btn-xs" >
-                                <i class="material-icons">check</i> <b>Approve</b>
-                                <div class="ripple-container"></div>
-                            </button> 
-
-                            <b>Status ini adalah Status Booking Lapangan dan Silahkan Tunjukan TOKEN ke Petugas di Lapangan.</b>
-                    </li>
                 </ul>
             </div>
  
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal modal-picture">
-
+            <!-- The Modal view picture -->
+            <div id="myModal" class="modal modal-picture">  
                 <!-- The Close Button -->
-                <span class="closeX">&times;</span>
-
+                <span class="closeX">&times;</span> 
                 <!-- Modal Content (The Image) -->
-                <img class="modal-content-picture" id="img01">
-
+                <img class="modal-content-picture" id="img01"> 
                 <!-- Modal Caption (Image Text) -->
                 <div id="caption"></div>
             </div>
@@ -242,9 +312,7 @@
         <?php
             }else{
         ?>
-
-        
-
+ 
             <div class="row"  >
                 <div class="col-md-1" style="width:90px;">
                     <b style="" >Tanggal :</b>
@@ -330,12 +398,7 @@
                 </tfoot>
             </table>
 
-
-            <style>
-              
-                
-            </style>
-
+ 
 
  
             <div class="modal fade" id="alert_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -377,10 +440,11 @@
                                 echo '<li>Tanggal : '.$vdataHistori->tgl_booking_lapangan.' </li>';
                                 echo '<li>Mulai Bermain : '.$vdataHistori->booking_start.' Wita </li>';
                                 echo '<li>Lama Bermain : '.$vdataHistori->booking_play	.' Jam </li>';
+                                echo '<li>  Total : Rp '.  number_format($vdataHistori->total_harga,2,',','.').'  </li>';
                                 echo '<hr>';
-                                echo '<li> <b>TOTAL : Rp '.  number_format($vdataHistori->total_harga,2,',','.').' + Kode unix </b> </li>';
+                                $get50peren = ($vdataHistori->total_harga*50)/100;
                                 echo '<li> <b>Kode unix Anda adalah : '.$vdataHistori->kode_unix.'</b> </li>';
-                                echo '<li> <b>Total Pembayaran Anda adalah : Rp '.number_format(($vdataHistori->total_harga + $vdataHistori->kode_unix),2,',','.').'</b> </li>';
+                                echo '<li> <b>Total Pembayaran Awal : Rp '.number_format(($get50peren + $vdataHistori->kode_unix),2,',','.').'  </b> </li>';
                                 echo ' <br>
                                     <b>Silahkan Lakukan Pembayaran dengan Transfer ke Rekening Berikut : </b> 
                                     <br><br>        
@@ -392,7 +456,11 @@
                                     <br>       ';
                                 echo '<small class="text-danger">*</small> Jika Sudah melakukan transfer silahkan upload bukti dengan cara screenshoot bukti transfer dan upload file ke bagan dibawah ini.';
                                 echo '<input class="" type="hidden" name="bukti" value="'.$vdataHistori->id_histori.'-'.$vdataHistori->kode_transaksi.'-'.$vdataHistori->id_identitas.'" readonly>';   
-                                echo '<input class="" type="file" name="gbrbukti">';   
+                                echo '<input class="" type="file" name="gbrbukti"> <br><br>';   
+                                
+                                echo 'Note <span class="text-danger">*</span> :';
+                                echo '<li>Total Pembayaran Awal adalah Sebagai Tanda Pembayaran Booking Lapangan, yang Berjumlah 50% dari Total.</li>';
+                                echo '<li>Untuk Pembayaran Sisa Silahkan Dilakukan Saat Selesai Menggunakan Lapangan Futsal.</li>';
 
                                 echo '   
                                     </div>

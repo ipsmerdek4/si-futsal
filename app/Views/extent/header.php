@@ -8,15 +8,15 @@
 
  
     <!--  my add CSS    -->
-    <link href="../../assets/css/build.css" rel="stylesheet" /> 
+    <link href="<?=base_url()?>/assets/css/build.css" rel="stylesheet" /> 
     <!-- Bootstrap core CSS     -->
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="../../assets/css/material-dashboard.css" rel="stylesheet" /> 
+    <link href="<?=base_url()?>/assets/css/material-dashboard.css" rel="stylesheet" /> 
     
     <!--     Fonts and icons     -->
-    <link href="../../assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="../../assets/css/google-roboto-300-700.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?=base_url()?>/assets/css/google-roboto-300-700.css" rel="stylesheet" />
  
 
     <style>
@@ -663,12 +663,42 @@
                 }
                 .modal-alert-spc>.modal-header>hr{ 
                      border-top: 1px solid #ffcc12;
-                        margin: 10px 0 0 0;
+                    margin: 10px 0 0 0;
                 } 
                 .modal-alert-spc>.modal-body{
                     color: #ff9800 !important;
                 }
 
+ 
+                /* modal konfirmasi pembayaran */
+                .text-modal-spc{
+                    width:100% !important;
+                }
+                .text-modal-spc>h5{ 
+                    text-align: center !important; 
+                    font-size: 14px;
+                    letter-spacing : 1px;
+                }
+                .text-modal-spc>._file>input{ 
+                    width: 100%;
+                    padding:5px;
+                    border: 1px solid #b3b3b3;
+                    text-align: center !important; 
+                    font-size: 14px;
+                    letter-spacing : 1px;
+                }
+                .hr-modal-spc{
+                    border-top: 1px solid #b3b3b3 !important; 
+                }
+                ._file{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #8e24aa;
+                }
+
+                /* END  */
+ 
                 /* modal view picture */
 
                 /* Style the Image Used to Trigger the Modal */
@@ -751,8 +781,8 @@
                 }
 
                  
-
-
+                 
+               
 
                 @media only screen and (max-width: 1000px) {
                     .modal-content-picture {
@@ -891,7 +921,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                
                 <?php 
-                    if ($dtlv == 1) {
+                    if (($dtlv == 1)||($dtlv == 2)   ) {
                 ?>
                 
 

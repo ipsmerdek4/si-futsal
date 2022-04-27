@@ -40,7 +40,12 @@ class tbl_histori extends Migration
 			'total_harga'       => [
 				'type'           => 'BIGINT',
 				'constraint'     => '12',
-			],  
+			], 
+			'new_total_harga'       => [
+				'type'           => 'BIGINT',
+				'constraint'     => '12',
+				'null'       	 => true,
+			],   
 			'booking_bukti'       => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '100',
@@ -56,7 +61,12 @@ class tbl_histori extends Migration
 			'kode_unix'       => [
 				'type'           => 'INT',
 				'constraint'     => '5',
-			],  
+			],     
+			'booking_bukti_update'       => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '100',
+				'null'       	 => true,
+			],     
 			'tgl_pbt_histori' => [
 				'type'           => 'DATETIME',
 				'null'       	 => true,

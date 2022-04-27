@@ -84,6 +84,8 @@ class History extends Controller{
             
             
 
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
         }
     }
 
@@ -95,7 +97,7 @@ class History extends Controller{
 
 
              if (!$this->validate([
-                 'gambarnya' => [
+                 'gbrbukti' => [
                       'rules' =>    'is_image[gbrbukti]'
                                     .'|mime_in[gbrbukti,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
                                     .'|max_size[gbrbukti,1000]',  
@@ -151,11 +153,8 @@ class History extends Controller{
                 ];  
                 $Transaksi->update($valueX->id_transaksi, $data2);
             }
-            
-            
-
-            session()->setFlashdata('error', 'Berhasil Terdaftar, Silahkan login.');
-            return redirect()->to(base_url('history/'))->withInput(); 
+             
+            return redirect()->to(base_url('/history'))->withInput(); 
    
 
         }
