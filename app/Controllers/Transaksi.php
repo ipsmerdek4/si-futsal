@@ -17,7 +17,7 @@ class Transaksi extends Controller{
             $id_user    = session()->get('ID');
 
             $dataidentitas = $Identitas->where([
-                                        'id_user' => $id_user,
+                                        'id_users' => $id_user,
                                     ])->first();
         
             $data = array(
@@ -65,7 +65,7 @@ class Transaksi extends Controller{
 
 
             $dataidentitas = $Identitas->where([
-                                        'id_user' => $id_user,
+                                        'id_users' => $id_user,
                                     ])->first(); 
             $dataHistori = $Histori->where([ 
                                         'id_identitas' => $dataidentitas->id_identitas,
@@ -170,7 +170,7 @@ class Transaksi extends Controller{
                         echo '</ul>';
                         echo '<br><div style="text-align:center">Apakah Anda Ingin Booking Jam ini ?</div>';
                         echo '<form id="form1">
-                                <input type="hidden" value="'.$total.'-'. $id_user.'-'.$lpng_book.'-'.$tgl_book.'-'.$pecah_wm_book[0].'-'.$wb_book.'" id="total" readonly> 
+                                <input type="hidden" value="'.$total.'-'. $dataidentitas->id_identitas.'-'.$lpng_book.'-'.$tgl_book.'-'.$pecah_wm_book[0].'-'.$wb_book.'" id="total" readonly> 
                             ';
                         echo '<div class="row">';
                             echo '<div class="col-md-6" >';  

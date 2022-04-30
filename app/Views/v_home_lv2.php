@@ -1,276 +1,142 @@
 
                 <div class="container-fluid">  
                     <br><br><br>
-                    <div class="row">
+
+
+                    <div class="row"> 
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header" data-background-color="orange">
-                                    <i class="material-icons">weekend</i>
+                            <div class="card card-stats" style="border: 1px solid #bfbfbf">
+                                <div class="card-header" data-background-color="green">
+                                    <i class="material-icons">monetization_on</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">Price</p>
+                                    <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                    <?="Rp " . number_format($dataHarga[0]->harga,2,',','.')?>
+                                    </h3>
+                                </div>
+                                <div class="card-footer" style="border-top: 1px solid #bfbfbf">
+                                    <div class="stats">
+                                        <i class="material-icons text-primary">last_page</i> 
+                                        <div class="text-primary"><b>Harga Siang.</b></div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" style="border: 1px solid #bfbfbf">
+                                <div class="card-header" data-background-color="red">
+                                    <i class="material-icons">monetization_on</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">Price</p>
+                                    <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                    <?="Rp " . number_format($dataHarga[1]->harga,2,',','.')?>
+                                    </h3>
+                                </div>
+                                <div class="card-footer" style="border-top: 1px solid #bfbfbf">
+                                    <div class="stats">
+                                        <i class="material-icons text-primary">last_page</i> 
+                                        <div class="text-primary"><b>Harga Malam.</b></div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats" style="border: 1px solid #bfbfbf">
+                                <div class="card-header" data-background-color="orange"> 
+                                    <i class="material-icons">bookmark</i>
                                 </div>
                                 <div class="card-content">
                                     <p class="category">Bookings</p>
-                                    <h3 class="card-title">184</h3>
+                                    <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                    <?php  
+                                        $transnilai1 = 0; 
+                                        foreach ($dataTransaksi as $v_dataTransaksi) {
+                                            if ($v_dataTransaksi->booking_status != 9) {
+                                                $transnilai1++; 
+                                            }  
+                                        }
+                                        echo $transnilai1.'/16';
+                                    ?> 
+                                </h3>
                                 </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons text-danger">warning</i>
-                                        <a href="#pablo">Get More Space...</a>
+                                <div class="card-footer"  style="border-top: 1px solid #bfbfbf">
+                                    <div class="stats ">
+                                        <i class="material-icons text-primary">last_page</i>
+                                        <div class="text-primary"><b>Total Booking Hari ini.</b></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-stats">
+                            <div class="card card-stats" style="border: 1px solid #bfbfbf">
                                 <div class="card-header" data-background-color="rose">
-                                    <i class="material-icons">equalizer</i>
+                                    <i class="material-icons">supervisor_account</i>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category">Website Visits</p>
-                                    <h3 class="card-title">75.521</h3>
+                                    <p class="category">Tims</p>
+                                    <h3 class="card-title" style="font-size:15px;font-weight:bold">
+                                    <?php
+                                        $cek_total=0;
+                                        foreach ($dataIdentitas as $v_dataIdentitas) {
+                                        $cek_total++; 
+                                        }
+                                        echo $cek_total; 
+                                    ?>
+                                    </h3>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" style="border-top: 1px solid #bfbfbf">
                                     <div class="stats">
-                                        <i class="material-icons">local_offer</i> Tracked from Google Analytics
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header" data-background-color="green">
-                                    <i class="material-icons">store</i>
-                                </div>
-                                <div class="card-content">
-                                    <p class="category">Revenue</p>
-                                    <h3 class="card-title">$34,245</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">date_range</i> Last 24 Hours
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header" data-background-color="blue">
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                                <div class="card-content">
-                                    <p class="category">Followers</p>
-                                    <h3 class="card-title">+245</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
+                                        <i class="material-icons text-primary">last_page</i> 
+                                        <div class="text-primary"><b>Total Tim Terdaftar.</b></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-chart">
-                                <div class="card-header" data-background-color="rose" data-header-animation="true">
-                                    <div class="ct-chart" id="websiteViewsChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                            <i class="material-icons">refresh</i>
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">Website Views</h4>
-                                    <p class="category">Last Campaign Performance</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                     
+                    <div class="row carousel-daftarskrang-v" style="margin: 0px 0 30px 0;">
+                        <div class="col-lg-12 col-md-12 col-sm-12">   
+
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li> 
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner carousel-daftarskrang" role="listbox">
+                                <div class="item active">
+                                    <img src="../../img/slide-no-info.gif" alt="..." style="width:100%;"> 
+                                    <div class="carousel-caption">
+                                         
                                     </div>
                                 </div>
+                                <div class="item">
+                                    <img src="../../img/slide2.jpg" alt="..." style="width:100%;"> 
+                                    <div class="carousel-caption">
+                                       
+                                    </div>
+                                </div> 
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-chart">
-                                <div class="card-header" data-background-color="green" data-header-animation="true">
-                                    <div class="ct-chart" id="dailySalesChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                            <i class="material-icons">refresh</i>
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">Daily Sales</h4>
-                                    <p class="category">
-                                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> updated 4 minutes ago
-                                    </div>
-                                </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-chart">
-                                <div class="card-header" data-background-color="blue" data-header-animation="true">
-                                    <div class="ct-chart" id="completedTasksChart"></div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
-                                            <i class="material-icons">refresh</i>
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">Completed Tasks</h4>
-                                    <p class="category">Last Campaign Performance</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> campaign sent 2 days ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Manage Listings</h3>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../assets/img/card-2.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Cozy 5 Stars Apartment</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>$899/night</h4>
-                                    </div>
-                                    <div class="stats pull-right">
-                                        <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../assets/img/card-3.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Office Studio</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the night life in London, UK.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>$1.119/night</h4>
-                                    </div>
-                                    <div class="stats pull-right">
-                                        <p class="category"><i class="material-icons">place</i> London, UK</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-product">
-                                <div class="card-image" data-header-animation="true">
-                                    <a href="#pablo">
-                                        <img class="img" src="../assets/img/card-1.jpg">
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-actions">
-                                        <button type="button" class="btn btn-danger btn-simple fix-broken-card">
-                                            <i class="material-icons">build</i> Fix Header!
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
-                                            <i class="material-icons">art_track</i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <h4 class="card-title">
-                                        <a href="#pablo">Beautiful Castle</a>
-                                    </h4>
-                                    <div class="card-description">
-                                        The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Milan.
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price">
-                                        <h4>$459/night</h4>
-                                    </div>
-                                    <div class="stats pull-right">
-                                        <p class="category"><i class="material-icons">place</i> Milan, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        
+                        </div>  
+                    </div> 
+
+ 
                 </div>

@@ -11,11 +11,11 @@ class WilayahKecamatan extends Migration
         $this->forge->addField([ 
 			'id'       => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '7',
+				'constraint'     => '12',
 			], 
 			'kabupaten_id'       => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '4',
+				'constraint'     => '8',
 			], 
 			'nm_kecamatan'       => [
 				'type'           => 'VARCHAR',

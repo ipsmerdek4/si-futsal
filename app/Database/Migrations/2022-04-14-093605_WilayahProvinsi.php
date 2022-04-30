@@ -11,7 +11,7 @@ class WilayahProvinsi extends Migration
         $this->forge->addField([ 
 			'id'       => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '2',
+				'constraint'     => '5',
 			], 
  
 			'nm_provinsi'       => [

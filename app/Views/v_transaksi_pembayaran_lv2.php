@@ -35,18 +35,7 @@ $session = session();
                                         </div>
                                     </div>  
 
-    <style>
-        .myImg{
-            border: 2px solid red;
-            padding: 5px;
-            margin : 5px;
-        }
-        .myImg-sebelum{
-            border: 2px solid #4caf50;
-        }
-    </style>
-
-
+ 
                                     <table id="transaksi_pembayaran" class="table table-striped table-no-bordered table-hover table-spc" cellspacing="0" width="100%" style="width:100%;color:#9c27b0;border-color:#9c27b0 !important;">
                                         <thead>
                                             <tr>

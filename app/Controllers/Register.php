@@ -14,18 +14,17 @@ class Register extends Controller{
    
     
     public function index()
-    { 
-
-            $Provinsis = new ProvinsiModel();
+    {   
+        $Provinsis = new ProvinsiModel();
            
          
-            $data = array(
-                'menu' => '1z',
-                'title' => 'Register [SI-Futsal]', 
-                'Provinsis' => $Provinsis->findAll(), 
-            ); 
-            echo view('v_register', $data); 
- 
+        $data = array(
+            'menu' => '1z',
+            'title' => 'Register [SI-Futsal]', 
+            'Provinsis' => $Provinsis->findAll(), 
+        ); 
+        echo view('v_register', $data); 
+       
 
     }
 
@@ -34,7 +33,7 @@ class Register extends Controller{
     { 
 
              if (!$this->validate([
-                 'gambarnya' => [
+                  'gambarnya' => [
                       'rules' =>  'is_image[gambarnya]'
                                     .'|mime_in[gambarnya,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
                                     .'|max_size[gambarnya,1000]'
@@ -161,7 +160,7 @@ class Register extends Controller{
             }     
             $Identitas->insert([ 
                 'gambar' => $newName,
-                'id_user' => $new_id_users,
+                'id_users' => $new_id_users,
                 'firstname' => $this->request->getVar('firstname'),
                 'lastname' => $this->request->getVar('lastname'),
                 'email' => $this->request->getVar('email'),
@@ -200,9 +199,7 @@ class Register extends Controller{
     
 
     function add_ajax_kab($id = null)
-    { 
-
-        
+    {  
         $WKabupaten = new KabupatenModel(); 
         $datakabupaten = $WKabupaten->where('provinsi_id', $id)->findAll();
  

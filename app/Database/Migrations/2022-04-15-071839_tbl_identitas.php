@@ -15,7 +15,7 @@ class tbl_identitas extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true
             ], 
-			'id_user'               => [
+			'id_users'               => [
 				'type'           => 'INT',
 				'constraint'     => '5',
 			], 
@@ -43,20 +43,20 @@ class tbl_identitas extends Migration
                 'type'           => 'TEXT', 
 			],  
 			'provinsi_id'       => [
-                'type'           => 'INT', 
+                'type'           => 'VARCHAR', 
                 'constraint'     => '5', 
 			],  
 			'kabupaten_id'       => [
-                'type'           => 'INT', 
-                'constraint'     => '5',
+                'type'           => 'VARCHAR', 
+                'constraint'     => '8',
 			],  
 			'kecamatan_id'       => [
-                'type'           => 'INT', 
-                'constraint'     => '5', 
+                'type'           => 'VARCHAR', 
+                'constraint'     => '12', 
 			],  
 			'desa_id'       => [
-                'type'           => 'INT', 
-                'constraint'     => '5',
+                'type'           => 'VARCHAR', 
+                'constraint'     => '20',
 			],  
 			'gambar'       => [
                 'type'           => 'TEXT',  

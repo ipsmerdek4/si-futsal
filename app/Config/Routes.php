@@ -90,6 +90,21 @@ $routes->post('/jadwal/cancelboking', 'Jadwal::progress_cencel_jadwal');
 $routes->post('/jadwal/editboking', 'Jadwal::progress_edit_jadwal'); 
 $routes->post('/jadwal/bedaharga', 'Jadwal::progress_bedaharga_jadwal'); 
 
+$routes->get('/pelanggan', 'Pelanggan::index');
+
+$routes->get('/pelanggan/add_ajax_kb/(:any)', 'Pelanggan::add_ajax_kab/$1');
+$routes->get('/pelanggan/add_ajax_kc/(:any)', 'Pelanggan::add_ajax_kec/$1');
+$routes->get('/pelanggan/add_ajax_de/(:any)', 'Pelanggan::add_ajax_desa/$1');
+
+$routes->post('/pelanggan/add', 'Pelanggan::progres_add_pelanggan'); 
+$routes->post('/pelanggan/d', 'Pelanggan::a_del_pelanggan'); 
+$routes->post('/pelanggan/del', 'Pelanggan::progres_del_pelanggan'); 
+
+
+$routes->get('/pelanggan/e', 'Pelanggan::a_edit_pelanggan'); 
+$routes->post('/pelanggan/edit', 'Pelanggan::p_edit_pelanggan'); 
+
+
 
 
 /*  */

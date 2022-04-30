@@ -59,7 +59,7 @@ class Filters extends BaseConfig
                                             'transaksi_pembayaran','transaksi_pembayaran/*',  
                                             'jadwal','jadwal/*', 
                                             'history','history/*', 
-
+                                            'pelanggan','pelanggan/*',
                                             
                                             ]
                         ],

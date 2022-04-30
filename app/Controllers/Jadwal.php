@@ -357,6 +357,7 @@ class Jadwal extends Controller{
                                     ])->findAll();
                     
                     $get_check_waktu_sama = $Transaksi->where([ 
+                                        'tgl_booking_lapangan' => date("Y-m-d"),
                                         'booking_lapangan' => $dataTransaksi[0]->booking_lapangan,
                                         'booking_start' => $time, 
                                     ])->first(); 
@@ -387,7 +388,7 @@ class Jadwal extends Controller{
                                                                                                 <li> Untuk Perubahan Harga dari : <b> Rp '.number_format($dataTransaksi[0]->total_harga,2,',','.').'</b> Ke Harga : <b>Rp '.number_format($get_harga[0]->harga,2,',','.').' </b></li>
                                                                                             </ul>
                                                                                         </h5> 
-                                                                                        <input type="text" name="_access_val_3" id="_access_val" value="'.$id_transaksi.'*'.$time.'*'.$lapangan.'*'.$get_harga[0]->harga.'" readonly> 
+                                                                                        <input type="hidden" name="_access_val_3" id="_access_val" value="'.$id_transaksi.'*'.$time.'*'.$lapangan.'*'.$get_harga[0]->harga.'" readonly> 
                                                                                         <div class="_file"></div>  
                                                                             </div>  
                                                                                 <hr class="hr-modal-spc"> 

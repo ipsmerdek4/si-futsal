@@ -64,6 +64,9 @@ class Home extends BaseController
                 'title'         => 'Home [SI-Futsal]', 
                 'dtlv'          => session()->get('level'),
                 'unm'           => session()->get('username'), 
+                'dataHarga'     => $dataHarga,
+                'dataIdentitas' => $dataIdentitas,
+                'dataTransaksi' => $dataTransaksi,
             );
             echo view('extent/lv2/header', $data);
             echo view('v_home_lv2', $data);

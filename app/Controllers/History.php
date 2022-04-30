@@ -7,12 +7,10 @@ use App\Models\TransaksiModel;
 use App\Models\HistoriModel;  
 
 class History extends Controller{
-
-
-
+ 
     public function index()
     {
-      if(session()->get('level') == 1)
+        if(session()->get('level') == 1)
         {
             $Identitas = new IdentitasModel();
             $Transaksi = new TransaksiModel();
@@ -21,7 +19,7 @@ class History extends Controller{
             $id_user    = session()->get('ID');
 
             $dataidentitas = $Identitas->where([
-                                        'id_user' => $id_user,
+                                        'id_users' => $id_user,
                                     ])->first();
 
             $tgl = date("Y-m-d"); 
@@ -33,6 +31,7 @@ class History extends Controller{
                                         'booking_status' => 1,
                                     ])->orderBy('booking_status', 'ASC')->findAll();
 
+ 
             $dataTransaksi2 = $Transaksi->where([
                                         'id_identitas' => $dataidentitas->id_identitas, 
                                         'booking_status' => 1,
@@ -68,6 +67,7 @@ class History extends Controller{
             /*  */
 
 
+ 
             $data = array(
                 'menu' => '1e',
                 'title' => 'Histori [SI-Futsal]', 
@@ -81,7 +81,7 @@ class History extends Controller{
             echo view('v_history', $data);
             echo view('extent/footer', $data);
  
-            
+             
             
 
         }else{
@@ -170,7 +170,7 @@ class History extends Controller{
 
             $id_user    = session()->get('ID'); 
             $dataidentitas = $Identitas->where([
-                                        'id_user' => $id_user,
+                                        'id_users' => $id_user,
                                     ])->first(); 
 
 
@@ -222,7 +222,7 @@ class History extends Controller{
             $id_user    = session()->get('ID');
 
             $dataidentitas = $Identitas->where([
-                                        'id_user' => $id_user,
+                                        'id_users' => $id_user,
                                     ])->first();
 
             $dataHistori = $Histori->where([ 

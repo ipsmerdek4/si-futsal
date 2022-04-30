@@ -11,11 +11,11 @@ class WilayahDesa extends Migration
         $this->forge->addField([ 
 			'id'       			=> [
 				'type'           => 'VARCHAR',
-				'constraint'     => '10',
+				'constraint'     => '20',
 			], 
 			'kecamatan_id'       => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '7',
+				'constraint'     => '12',
 			], 
 			'nm_desa'       	=> [
 				'type'           => 'VARCHAR',
