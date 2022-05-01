@@ -8,7 +8,7 @@
                                     <i class="material-icons">assignment_turned_in</i>
                                 </div>
                                 <div class="card-content card-title-spc">
-                                    <h4 class="card-title title-spc">Transaksi Booking</h4>
+                                    <h4 class="card-title title-spc">Transaksi Sewa</h4>
                                     <hr> 
                                        
                                         <br><br>
@@ -72,11 +72,32 @@
                                                         <div class="ripple-container"></div>
                                                     </button>
                                                 </td>
-                                                <td> 
-                                                    <button class="btn btn-primary btn-xs" >
-                                                        <?="Rp " . number_format($v_dataHistori->total_harga,2,',','.')?>
-                                                        <div class="ripple-container"></div>
-                                                    </button>
+                                                <td>    
+                                                        <?php 
+                                                        if ($v_dataHistori->new_total_harga != null) {
+                                                            if ($v_dataHistori->new_total_harga >= $v_dataHistori->total_harga) {
+                                                                $hrnew = ($v_dataHistori->new_total_harga - $v_dataHistori->total_harga)+$v_dataHistori->total_harga;
+                                                            ?> 
+                                                                <button class="btn btn-success btn-xs" >
+                                                                    <?="Rp " . number_format($hrnew ,2,',','.')?> 
+                                                                </button>
+                                                            <?php
+                                                            }elseif ($v_dataHistori->new_total_harga < $v_dataHistori->total_harga) {
+                                                                $hrnew = ($v_dataHistori->total_harga - $v_dataHistori->new_total_harga)+$v_dataHistori->total_harga;
+                                                            ?> 
+                                                                <button class="btn btn-danger btn-xs" >
+                                                                    <?="Rp " . number_format($hrnew ,2,',','.')?> 
+                                                                </button>
+                                                        <?php
+                                                            }
+                                                        }else{
+                                                        ?> 
+                                                            <button class="btn btn-primary btn-xs" >
+                                                                <?="Rp " . number_format($v_dataHistori->total_harga ,2,',','.')?> 
+                                                            </button>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                 </td>
                                                 <td> 
                                                     <button class="btn btn-success btn-xs" >
@@ -116,7 +137,14 @@
                                                         <button class="btn btn-primary btn-xs" >
                                                             <i class="material-icons">check</i> 
                                                             <b>Lunas</b> 
-                                                        </button>   
+                                                        </button> 
+                                                    <?php
+                                                    }elseif ($v_dataHistori->booking_status == 5) {
+                                                    ?>  
+                                                        <button class="btn btn-primary btn-xs" >
+                                                            <i class="material-icons">check</i> 
+                                                            <b>Lunas</b> 
+                                                        </button>  
                                                     <?php
                                                     }elseif ($v_dataHistori->booking_status == 9) {
                                                     ?> 

@@ -147,6 +147,12 @@
                                                                         <button class="btn btn-primary btn-xs" >
                                                                             <i class="material-icons">check</i> 
                                                                             <b>Lunas</b> 
+                                                                        </button> ';
+                                                                }elseif ($v_dataTransaksi->booking_status == 5) {
+                                                                    echo ' 
+                                                                        <button class="btn btn-primary btn-xs" >
+                                                                            <i class="material-icons">check</i> 
+                                                                            <b>Lunas</b> 
                                                                         </button> '; 
                                                                 }elseif ($v_dataTransaksi->booking_status == 9) {
                                                                     echo '
@@ -181,12 +187,14 @@
                                                                             </button> 
                                                                         ';
                                                                         $nilaitotal += $nilaitrans; 
-                                                                    }else{ 
+                                                                    }else{  
+                                                                        if ($v_dataTransaksi->booking_status != 5) {                                                                             
                                                                             echo ' 
                                                                             <button class="btn btn-success btn-xs btn-konfirmasi" data-id="'.$v_dataTransaksi->id_transaksi.'*2"  data-toggle="modal" data-target="#_access_open"  >
                                                                                 <i class="material-icons">create</i> <b>edit</b> 
                                                                             </button> 
                                                                             '; 
+                                                                        }
                                                                     } 
                                                                 }  
                                                                 

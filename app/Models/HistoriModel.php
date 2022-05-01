@@ -45,5 +45,7 @@ class HistoriModel extends Model{
 
         return $query->getResult();
     }
+    
+  
 
 }

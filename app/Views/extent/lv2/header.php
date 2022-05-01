@@ -154,8 +154,14 @@
             margin: 15px 0 4px 0;
             border-top: 1px solid #9c27b0; 
         }
+        /*  */
+        .info-spc{ 
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-
+        /*  */
 
         @media only screen and (max-width: 1050px) {   
             .nav-text-spc{  
@@ -232,6 +238,7 @@
     $menuselect2        = ""; 
     $menuselect3        = "";  
     $menuselect4        = "";
+    $menuselect5        = "";
     $menuselect41       = "";
     $menuselect42       = "";
     $menuselect43       = "";
@@ -1112,6 +1119,52 @@
                 
         </style>
 
+<?php
+    }elseif ($menu == "1g"){ 
+        $menuselect5 = "active"; 
+?>
+
+
+
+
+        <style>
+              /*  */
+                .card-title-spc>hr{
+                    border-top: 3px solid red;
+                    margin: 0 0 0 0;
+                    width:100%;
+                }
+                .title-spc{
+                    font-weight: bold;
+                    letter-spacing: 1px; 
+                      text-transform: uppercase;
+
+                }
+                   /* tangal edit */
+                .date-input-jadwal>.form-group{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding : 0 10px 3px 10px ;
+                    margin: -10px 0 0 0 !important;
+                }
+                .date-input-jadwal>.form-group>input{
+                    text-align: center;  
+                    letter-spacing: 2px; 
+                }
+                .bootstrap-datetimepicker-widget{ 
+                    z-index: 9999;
+                }
+                
+                .date-button-jadwal>button{
+                    margin: -10px 0 0 0 !important;
+                    width:100%;
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    font-weight:bold;
+                    text-transform: capitalize;
+                }
+
+        </style>
 
 <?php
     }
@@ -1153,7 +1206,7 @@
                     <div class="photo">
                         <img src="../img/lapangan_futsal-3.gif" />
                     </div>
-                    <div class="info">
+                    <div class="info info-spc">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <?=$unm?>
                          </a> 
@@ -1190,7 +1243,7 @@
                         <div class="collapse <?=$menuselect41?>" id="transaksi">
                             <ul class="nav">
                                 <li class="<?=$menuselect42?>">
-                                    <a href="<?=base_url()?>/transaksi_booking">Transaksi Booking</a>
+                                    <a href="<?=base_url()?>/transaksi_booking">Transaksi Sewa</a>
                                 </li>
                                 <li class="<?=$menuselect43?>">
                                     <a href="<?=base_url()?>/transaksi_pembayaran">Transaksi Pembayaran</a>
@@ -1199,8 +1252,8 @@
                         </div>
                     </li>
 
-                    <li class=" ">
-                        <a href="<?=base_url()?>">
+                    <li class="<?=$menuselect5?>">
+                        <a href="<?=base_url()?>/laporan">
                             <i class="material-icons">attachment</i>
                             <p>Laporan Transaksi</p>
                         </a>

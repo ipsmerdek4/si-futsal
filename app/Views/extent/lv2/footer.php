@@ -432,7 +432,7 @@
                     dom: 'Bfrtip',  
                     buttons: [                      
                         {
-                            text: '<b> <i class="material-icons">add_circle_outline</i> Booking</b>',
+                            text: '<b> <i class="material-icons">add_circle_outline</i> Sewa</b>',
                             className: 'btn btn-danger',
                             action: function ( e, dt, node, config ) {
                                 window.location.href = '/transaksi';
@@ -503,7 +503,6 @@
 
 <?php    
     }elseif ($menu == "1f") { //data transaksi booking
-
 ?>
 
         <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
@@ -548,29 +547,14 @@
                 <?php
                 }
                 ?>
-                
-                  
-               
-
-                
-
-
+                 
                 /*  */ 
                 $('.select-drop-input').select2({
                     //dropdownParent: $('#add_pelanggan')
                 });  
                 /*  */
  
-             
-
-                $('#add_pelanggan').on('hidden.bs.modal', function () {
-
-                        
-                        
-                       
-                          
-
-                });
+              
 
                 $('#pelanggan').DataTable({
                     dom: 'Bfrtip',  
@@ -813,6 +797,39 @@
 
 
         </script>
+
+<?php
+    }elseif ($menu == "1g"){ 
+        $menuselect5 = "active"; 
+?>
+
+        <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+        <script src="<?=base_url()?>/assets/js/moment.min.js"></script>
+        <!-- DateTimePicker Plugin -->
+        <script src="<?=base_url()?>/assets/js/bootstrap-datetimepicker.js"></script>
+        <!--  Full Calendar Plugin    -->
+        <script src="<?=base_url()?>/assets/js/fullcalendar.min.js"></script>
+
+        <script>
+                $('.datetimepicker').datetimepicker({   
+                    format: 'DD-MM-YYYY', 
+                    icons: {
+                        time: "fa fa-clock-o",
+                        date: "fa fa-calendar",
+                        up: "fa fa-chevron-up",
+                        down: "fa fa-chevron-down",
+                        previous: 'fa fa-chevron-left',
+                        next: 'fa fa-chevron-right',
+                        today: 'fa fa-screenshot',
+                        clear: 'fa fa-trash',
+                        close: 'fa fa-remove',
+                        inline: true,
+                    },        
+                });
+        </script>
+
+
+
 
 <?php
     }

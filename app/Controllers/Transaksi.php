@@ -518,7 +518,7 @@ class Transaksi extends Controller{
             if ($img = $this->request->getFile('buktimanual')) { 
                 if ($img->isValid() && ! $img->hasMoved())
                 {
-                    $newName = "bukti_edit-".rand(1111,999999);
+                    $newName = "bkt".$img->getRandomName();
                     $img->move('uploads/bukti/', $newName);           
                 }  else{
                     session()->setFlashdata('pesantrs_pembayaran', '<ul><li>File Gambar Tidak terdeteksi</li></ul>');
@@ -529,14 +529,14 @@ class Transaksi extends Controller{
 
             $data = [
                 'booking_bukti_update' => $newName,   
-                'booking_status' => 4,   
-                'booking_TOKEN' => rand(111111,999999),   
+                'booking_status' => 5,   
+                'booking_TOKEN' => 999999,   
             ]; 
             $Histori->update($id_histori , $data);  
         
             foreach ($dataTransaksi as $valueX) {   
                 $data2 = [ 
-                    'booking_status' => 4,   
+                    'booking_status' => 5,   
                 ];  
                 $Transaksi->update($valueX->id_transaksi, $data2);
             }

@@ -68,14 +68,10 @@ $session = session();
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-primary btn-xs" > 
-                                                        <?=$v_dataHistori->kode_transaksi?> </b> 
-                                                    </button>
+                                                    <b><?=$v_dataHistori->kode_transaksi?></b> 
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-primary btn-xs" > 
-                                                        <?=$v_dataHistori->tim?> 
-                                                    </button>
+                                                    <b><?=$v_dataHistori->tim?>/<br><?=$v_dataHistori->firstname?></b>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-primary btn-xs" >
@@ -89,13 +85,29 @@ $session = session();
                                                         <?=$v_dataHistori->booking_play?> Jam 
                                                     </button> 
                                                 </td>
-                                                <td>
+                                                <td> 
                                                     <button class="btn btn-primary btn-xs" >
                                                         <?="Rp " . number_format($v_dataHistori->total_harga,2,',','.')?> 
                                                     </button>
-                                                    <button class="btn btn-danger btn-xs" >
-                                                        <?="Rp " . number_format(($v_dataHistori->new_total_harga - $v_dataHistori->total_harga),2,',','.')?> 
-                                                    </button>
+                                                    <?php
+                                                        if ($v_dataHistori->new_total_harga != null) {
+                                                            if ($v_dataHistori->new_total_harga >= $v_dataHistori->total_harga) {
+                                                                $hrnew = ($v_dataHistori->new_total_harga - $v_dataHistori->total_harga);
+                                                            ?> 
+                                                                <button class="btn btn-success btn-xs" >
+                                                                    <?="+ Rp " . number_format($hrnew ,2,',','.')?> 
+                                                                </button>
+                                                            <?php
+                                                            }elseif ($v_dataHistori->new_total_harga < $v_dataHistori->total_harga) {
+                                                                $hrnew = ($v_dataHistori->total_harga - $v_dataHistori->new_total_harga);
+                                                            ?> 
+                                                                <button class="btn btn-danger btn-xs" >
+                                                                    <?="- Rp " . number_format($hrnew ,2,',','.')?> 
+                                                                </button>
+                                                            <?php
+                                                            }
+                                                        }
+                                                    ?>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-success btn-xs" >
@@ -130,6 +142,13 @@ $session = session();
                                                     </button> 
                                                     <?php
                                                     }elseif ($v_dataHistori->booking_status == 4) {
+                                                    ?>  
+                                                        <button class="btn btn-primary btn-xs" >
+                                                            <i class="material-icons">check</i> 
+                                                            <b>Lunas</b> 
+                                                        </button>  
+                                                    <?php
+                                                    }elseif ($v_dataHistori->booking_status == 5) {
                                                     ?>  
                                                         <button class="btn btn-primary btn-xs" >
                                                             <i class="material-icons">check</i> 

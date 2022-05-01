@@ -22,7 +22,7 @@ class Pelanggan extends Controller{
             $Identitas = new IdentitasModel();
             $Provinsis = new ProvinsiModel();
 
-            $dataIdentitas = $Identitas->joinAll();
+            $dataIdentitas = $Identitas->join_where_spc('level_users', '1');
            
     
             $data = array(

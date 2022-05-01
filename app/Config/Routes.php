@@ -106,6 +106,8 @@ $routes->post('/pelanggan/edit', 'Pelanggan::p_edit_pelanggan');
 
 
 
+$routes->get('/laporan', 'Laporan::index');  
+$routes->post('/laporan/cetak', 'Laporan::ctak');  
 
 /*  */
 
