@@ -60,7 +60,9 @@ class Filters extends BaseConfig
                                             'jadwal','jadwal/*', 
                                             'history','history/*', 
                                             'pelanggan','pelanggan/*',
+                                            'pegawai','pegawai/*',
                                             'laporan','laporan/*',
+                                            
                                             
                                             ]
                         ],

@@ -86,10 +86,35 @@
                                             <tr>
                                                 <td></td>
                                                 <td>
-                                                    <button class="btn btn-primary btn-xs" >
-                                                        <i class="material-icons">access_alarm</i> 
-                                                        <?=$nilai?> 
-                                                    </button>
+                                                    <?php
+                                                    $nilaitrans = 0;
+                                                    $nilaitotal = 0;
+                                                    foreach ($dataTransaksi as $v_dataTransaksi) { 
+                                                        $nilaitrans ++;
+                                                        if ($v_dataTransaksi->booking_start == $nilai) {
+                                                            if ($v_dataTransaksi->booking_status != 9) {
+                                                            
+                                                                $nilaitotal += $nilaitrans;
+                                                                echo ' 
+                                                                        <button class="btn btn-danger btn-xs" >
+                                                                            <i class="material-icons">access_alarm</i> 
+                                                                            '.$nilai.' 
+                                                                        </button> 
+                                                                ';
+                                                            } 
+                                                        } 
+                                                    }  
+            
+                                                    if ($nilaitotal == 0) {
+                                                         echo ' 
+                                                                <button class="btn btn-primary btn-xs" >
+                                                                    <i class="material-icons">access_alarm</i> 
+                                                                    '.$nilai.' 
+                                                                </button> 
+                                                        ';
+                                                    }
+ 
+                                                    ?>  
                                                 </td>
                                                 <td>
                                                     <?php

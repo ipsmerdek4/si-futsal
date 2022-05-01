@@ -109,13 +109,21 @@
                             </button> 
                             <?php 
                             }else{
+                                if ($val_dataHistori->booking_TOKEN != 999999) { 
                             ?> 
-                            <button class="btn btn-danger btn-xs"  >
-                                <b><?=$val_dataHistori->booking_TOKEN?></b>
-                                <div class="ripple-container"></div>
-                            </button>  
-
-                            <?php 
+                                <button class="btn btn-danger btn-xs"  >
+                                    <b><?=$val_dataHistori->booking_TOKEN?></b>
+                                    <div class="ripple-container"></div>
+                                </button>   
+                            <?php  
+                                }else{ 
+                            ?> 
+                                <button class="btn btn-danger btn-xs"  >
+                                    <b>-</b>
+                                    <div class="ripple-container"></div>
+                                </button>    
+                            <?php         
+                                }
                             } 
                             ?> 
                             
@@ -144,6 +152,13 @@
                             </button> 
                             <?php
                             }elseif ($val_dataHistori->booking_status == 4) {
+                            ?>  
+                            <button class="btn btn-primary btn-xs" >
+                                <i class="material-icons">check</i> <b>Lunas</b>
+                                <div class="ripple-container"></div>
+                            </button> 
+                            <?php
+                            }elseif ($val_dataHistori->booking_status == 5) {
                             ?>  
                             <button class="btn btn-primary btn-xs" >
                                 <i class="material-icons">check</i> <b>Lunas</b>

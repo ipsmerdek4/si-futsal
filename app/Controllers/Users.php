@@ -2,12 +2,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\UsersModel;  
-
-
-
-
-
+use App\Models\UsersModel;   
 
 class Users extends Controller{
 
@@ -83,22 +78,20 @@ class Users extends Controller{
     }
 
 
-
-
     function logout()
     {         
         
-/* 
-        session()->destroy();
+        /* 
+                session()->destroy();
+                return redirect()->to(base_url());
+        
+        */
+
+        $itemget = ['username', 'ID', 'level', 'logged_in'];
+        session()->remove($itemget);
+        session()->setFlashdata('logingo','1');  
+
         return redirect()->to(base_url());
- 
- */
-
-    $itemget = ['username', 'ID', 'level', 'logged_in'];
-    session()->remove($itemget);
-    session()->setFlashdata('logingo','1');  
-
-    return redirect()->to(base_url());
 
 
     }

@@ -12,8 +12,7 @@ class Home extends BaseController
 { 
     public function index()
     { 
-        /* 
-
+        /*  
         'username' => $dataUser->username_users,
                             'ID' => $dataUser->id_users ,
                             'level' => $dataUser->level_users,
@@ -34,13 +33,7 @@ class Home extends BaseController
         $dataTransaksi = $Transaksi->where([
                                         'tgl_booking_lapangan' => date("Y-m-d"), 
                                     ])->findAll(); 
-        /* end lv1 (user)  */
-
-        /* data lv2 (petugas)  */
-
-
-        /* end lv2 (petugas)  */
-
+       
 
         if(session()->get('level') == 1)
         {
@@ -57,8 +50,15 @@ class Home extends BaseController
             echo view('v_home', $data);
             echo view('extent/footer', $data);
 
-        }elseif(session()->get('level') == 2) {
-        
+        }elseif((session()->get('level') == 2)||(session()->get('level') == 3)) {
+
+            
+        $id_user = session()->get('ID'); 
+        $getdatauserall = $Identitas->where([
+                                        'id_users' => $id_user, 
+                                    ])->findAll(); 
+ 
+
         $data = array(
                 'menu'          => '1b',
                 'title'         => 'Home [SI-Futsal]', 
@@ -67,11 +67,12 @@ class Home extends BaseController
                 'dataHarga'     => $dataHarga,
                 'dataIdentitas' => $dataIdentitas,
                 'dataTransaksi' => $dataTransaksi,
+                'getdatauserall' => $getdatauserall,
             );
             echo view('extent/lv2/header', $data);
             echo view('v_home_lv2', $data);
             echo view('extent/lv2/footer', $data);
-
+  
 
         }else{ 
             $data = array(
@@ -91,7 +92,7 @@ class Home extends BaseController
 
     public function count_notif()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))  
         {
             $Histori = new HistoriModel(); 
 
@@ -107,7 +108,7 @@ class Home extends BaseController
 
     public function msg_notif()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))  
         {
             $Histori = new HistoriModel(); 
 

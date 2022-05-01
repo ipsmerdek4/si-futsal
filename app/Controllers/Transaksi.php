@@ -11,15 +11,17 @@ class Transaksi extends Controller{
 
     public function index()
     {  
-        if((session()->get('level') == 1)||(session()->get('level') == 2))
+        if((session()->get('level') == 1)||(session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $Identitas = new IdentitasModel();
             $id_user    = session()->get('ID');
 
             $dataidentitas = $Identitas->where([
                                         'id_users' => $id_user,
-                                    ])->first();
-        
+                                    ])->first(); 
+
+                         
+ 
             $data = array(
                 'menu' => '1d',
                 'title' => 'Transaksi [SI-Futsal]', 
@@ -29,13 +31,13 @@ class Transaksi extends Controller{
             );
             echo view('extent/header', $data);
             echo view('v_transaksi', $data);
-            echo view('extent/footer', $data); 
+            echo view('extent/footer', $data);  
         }
     }
 
     public function trsk_check_prosess()
     {
-        if((session()->get('level') == 1)||(session()->get('level') == 2))
+        if((session()->get('level') == 1)||(session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             echo '<div class="check-spc"> ';
@@ -73,8 +75,9 @@ class Transaksi extends Controller{
                                         'booking_status' => 1,  
                                     ])->first();
              
-          
-                
+                   
+                                
+             
           
             echo '<ul>';
             if (!$dataHistori) { 
@@ -104,13 +107,15 @@ class Transaksi extends Controller{
                
             }else{
                 if (session()->get('level') == 2){
-                    echo "<li>Maaf, Silahkan Selesaikan Booking Anda sebelumnya di- <a href='".base_url()."/transaksi_pembayaran'>TRANSAKSI PEMBAYARAN</a>.</li>"; 
+                    echo "<li>Maaf, Silahkan Selesaikan Transaksi Sewa Anda sebelumnya di- <a href='".base_url()."/transaksi_pembayaran'>TRANSAKSI PEMBAYARAN</a>.</li>"; 
+                }elseif (session()->get('level') == 3){
+                    echo "<li>Maaf, Silahkan Selesaikan Transaksi Sewa Anda sebelumnya di- <a href='".base_url()."/transaksi_pembayaran'>TRANSAKSI PEMBAYARAN</a>.</li>"; 
                 }elseif (session()->get('level') == 1){
-                    echo "<li>Maaf, Silahkan Selesaikan Booking Anda sebelumnya di- <a href='".base_url()."/history'>Histori</a>.</li>"; 
+                    echo "<li>Maaf, Silahkan Selesaikan Transaksi Sewa Anda sebelumnya di- <a href='".base_url()."/history'>Histori</a>.</li>"; 
                 }
             }
             echo '</ul>';   
-
+      
             $aksesdibolehkan = $akses+$akses2+$akses3 ; 
             if ($aksesdibolehkan == 3) {
                 
@@ -139,7 +144,7 @@ class Transaksi extends Controller{
                         foreach ($data_check as $key => $v_data_check) {
                             $pecah_v_data_check = explode('-', $v_data_check); 
                                 if ($pecah_v_data_check[1] == 1) {
-                                    echo '<li>Maaf, untuk Jam <b>'.$pecah_v_data_check[0] .'</b> Sudah di-Booking dapat di lihat di <a href="'.base_url().'/jadwal"><b>Jadwal</b></a>.</li>'; 
+                                    echo '<li>Maaf, untuk Jam <b>'.$pecah_v_data_check[0] .'</b> Sudah di-Sewa dapat di lihat di <a href="'.base_url().'/jadwal"><b>Jadwal</b></a>.</li>'; 
                                 }elseif ($pecah_v_data_check[1] == 3) {  
                                     echo '<li>Maaf, Untuk Jam <b>'. $pecah_v_data_check[0] .'</b> dan diatasnya Kami sudah Tutup akan Buka kembali Jam <b>08:00</b>.</li>';
                                 }  
@@ -168,7 +173,7 @@ class Transaksi extends Controller{
                         echo '<br><hr>';
                         echo 'Total : <b>Rp ' . number_format($total,2,',','.').'/Jam </b>';
                         echo '</ul>';
-                        echo '<br><div style="text-align:center">Apakah Anda Ingin Booking Jam ini ?</div>';
+                        echo '<br><div style="text-align:center">Apakah Anda Ingin Sewa Lapangan Pada Jam ini ?</div>';
                         echo '<form id="form1">
                                 <input type="hidden" value="'.$total.'-'. $dataidentitas->id_identitas.'-'.$lpng_book.'-'.$tgl_book.'-'.$pecah_wm_book[0].'-'.$wb_book.'" id="total" readonly> 
                             ';
@@ -176,7 +181,7 @@ class Transaksi extends Controller{
                             echo '<div class="col-md-6" >';  
                                 echo '<button id="kirimdonk" type="submit" class="btn btn-block btn-success">
                                             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                            &nbsp; Booking  
+                                            &nbsp; Lanjutkan  
                                     </button>'; 
                             echo '</div>';
                             echo '<div class="col-md-6" >';
@@ -189,10 +194,7 @@ class Transaksi extends Controller{
                         echo '</form>';
                     } 
                 echo '</div>';
-                    
-                
-
-
+                 
                 ?>
                 <script>
                 $("#kirimdonk").click(function(e) {
@@ -212,6 +214,10 @@ class Transaksi extends Controller{
                             ?>
                                 window.location.href = "<?=base_url()?>/transaksi_pembayaran"; 
                             <?php
+                            }elseif (session()->get('level') == 3) {
+                            ?>
+                                window.location.href = "<?=base_url()?>/transaksi_pembayaran"; 
+                            <?php 
                             }elseif (session()->get('level') == 1) {
                             ?>
                                 window.location.href = "<?=base_url()?>/history"; 
@@ -229,15 +235,23 @@ class Transaksi extends Controller{
                 <?php 
 
 
-            } //end perbolehkan akses
- 
+            } //end perbolehkan akses 
+
+
+  
+  
+
+
+
 
         } 
     }
- 
+
+
+
     public function trsk_p_prosess()
     { 
-        if((session()->get('level') == 1)||(session()->get('level') == 2))
+        if((session()->get('level') == 1)||(session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $Transaksi = new TransaksiModel(); 
             $Harga = new HargaModel();    
@@ -247,7 +261,7 @@ class Transaksi extends Controller{
             $pecah =  explode('-', $total);
             $kodetransaksi = 'FUT'.date("mHYdis");
             $total_harga = $pecah[0];
-            $id_user = $pecah[1];
+            $id_identitas = $pecah[1];
             $lpng_book = $pecah[2];
             $tgl_book = $pecah[3]; 
                 $pecah_tgl_book = explode('/', $tgl_book);
@@ -258,7 +272,7 @@ class Transaksi extends Controller{
 
             $Histori->insert([ 
                         'kode_transaksi' => $kodetransaksi,
-                        'id_identitas' => $id_user,
+                        'id_identitas' => $id_identitas,
                         'tgl_booking_lapangan' => $tgl_book_new,
                         'booking_lapangan' => $lpng_book,
                         'booking_start' => $wm_book,
@@ -290,7 +304,7 @@ class Transaksi extends Controller{
 
                 $Transaksi->insert([ 
                         'kode_transaksi' => $kodetransaksi,
-                        'id_identitas' => $id_user,
+                        'id_identitas' => $id_identitas,
                         'tgl_booking_lapangan' => $tgl_book_new,
                         'booking_lapangan' => $lpng_book,
                         'booking_start' => $jml_wm_book.":00",
@@ -300,6 +314,9 @@ class Transaksi extends Controller{
                         'tgl_pbt_transaksi' => date("Y-m-d H-i-s"),
                     ]);
             }
+
+ 
+
         }else{
             return redirect()->to(base_url('/'))->withInput();  
         }  
@@ -308,10 +325,11 @@ class Transaksi extends Controller{
    
     public function trs_booking($getdata = null)
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             
             $Histori = new HistoriModel();
+            $Identitas = new IdentitasModel();
 
             if (isset($getdata)) {
                 $pecahtgl = explode("-",$getdata);
@@ -324,6 +342,11 @@ class Transaksi extends Controller{
                                         'tgl_booking_lapangan' => $tgl, 
                                     ])->findAll();
 
+            $id_user = session()->get('ID'); 
+            $getdatauserall = $Identitas->where([
+                                        'id_users' => $id_user, 
+                                    ])->findAll();                           
+
 
             $data = array(
                 'menu' => '1d',
@@ -332,6 +355,7 @@ class Transaksi extends Controller{
                 'unm' => session()->get('username'), 
                 'dataHistori' => $dataHistori,  
                 'sendtgl' => $tgl, 
+                'getdatauserall' => $getdatauserall,
             );
             echo view('extent/lv2/header', $data);
             echo view('v_transaksi_booking_lv2', $data);
@@ -351,7 +375,7 @@ class Transaksi extends Controller{
 
     public function trs_pembayaran($getdata = null)
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             if (isset($getdata)) {
                 $pecahtgl = explode("-",$getdata);
@@ -362,6 +386,7 @@ class Transaksi extends Controller{
 
             $Histori = new HistoriModel();
             $Transaksi = new TransaksiModel();
+            $Identitas = new IdentitasModel();
 
             $dataHistori = $Histori->join_where($tgl);
             $dataHistori2 = $Histori->findAll();
@@ -392,7 +417,10 @@ class Transaksi extends Controller{
             }
 
 
-
+            $id_user = session()->get('ID'); 
+            $getdatauserall = $Identitas->where([
+                                        'id_users' => $id_user, 
+                                    ])->findAll();    
 
             $data = array(
                 'menu' => '1e',
@@ -401,6 +429,7 @@ class Transaksi extends Controller{
                 'unm' => session()->get('username'), 
                 'dataHistori' => $dataHistori,  
                 'sendtgl' => $tgl, 
+                'getdatauserall' => $getdatauserall,
             );
             echo view('extent/lv2/header', $data);
             echo view('v_transaksi_pembayaran_lv2', $data);
@@ -417,7 +446,7 @@ class Transaksi extends Controller{
 
     public function ajax_trs_pembayaran()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         { 
                 if (!$this->validate([
                     'buktimanual' => [
@@ -484,7 +513,7 @@ class Transaksi extends Controller{
 
     public function ajax_trs_pembayaran_dua()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         { 
                 if (!$this->validate([
                     'buktimanual' => [
@@ -549,14 +578,11 @@ class Transaksi extends Controller{
         }
     }
 
-
-
-
-
+ 
 
     public function ajax_trs_clc_pembayaran()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             $Histori = new HistoriModel();
@@ -588,7 +614,7 @@ class Transaksi extends Controller{
 
     public function ajax_apv_pembayaran()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             $Histori = new HistoriModel();
@@ -623,7 +649,7 @@ class Transaksi extends Controller{
 
     public function ajax_tkn_pembayaran()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             $Histori = new HistoriModel();
@@ -657,9 +683,7 @@ class Transaksi extends Controller{
                     session()->setFlashdata('pesantrs_pembayaran', '<ul><li>Token yang di berikan Salah, <br>Silahkan Coba lagi.</li></ul>');
                     return redirect()->to(base_url('/transaksi_pembayaran'))->withInput(); 
             }  
-
-
-
+ 
        
         }
     }

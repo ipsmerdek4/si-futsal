@@ -14,14 +14,23 @@ class Laporan extends Controller{
 
     public function index()
     {
-        if(session()->get('level') == 2) {
- 
+        if((session()->get('level') == 2)||(session()->get('level') == 3)) 
+        {
     
+            $Identitas = new IdentitasModel();
+
+            $id_user = session()->get('ID'); 
+            $getdatauserall = $Identitas->where([
+                                        'id_users' => $id_user, 
+                                    ])->findAll();   
+
+
             $data = array(
                 'menu'          => '1g',
                 'title'         => 'Laporan [SI-Futsal]', 
                 'dtlv'          => session()->get('level'),
                 'unm'           => session()->get('username'),  
+                'getdatauserall' => $getdatauserall,
             );
 
             
@@ -32,26 +41,28 @@ class Laporan extends Controller{
   
 
 
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
         }
     }
 
 
     public function ctak()
     {
-        if(session()->get('level') == 2) 
+        if((session()->get('level') == 2)||(session()->get('level') == 3)) 
         {
             $dompdfs = new Dompdf;
 
             
             $Transaksi  = new TransaksiModel();
-            $Histori    = new HistoriModel(); 
+            $Histori    = new HistoriModel();  
 
             $tgl = $this->request->getVar('tgl_transaksi'); 
 
             $pecah_tgl_book = explode('-', $tgl); 
             $tgl_ne            = $pecah_tgl_book[2].'-'.$pecah_tgl_book[1].'-'.$pecah_tgl_book[0]; 
                 
-
+           
             $dataHistori = $Histori->join_where( $tgl_ne ); 
   
             $data = array( 
@@ -73,27 +84,11 @@ class Laporan extends Controller{
 
             ));
 
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
         }
     } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 }

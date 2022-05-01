@@ -921,10 +921,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                
                 <?php 
-                    if (($dtlv == 1)||($dtlv == 2)   ) {
+                    if (($dtlv == 1)||($dtlv == 2)||($dtlv == 3)) {
                 ?>
-                
-
+                 
 
                 <ul class="nav navbar-nav ">
                     

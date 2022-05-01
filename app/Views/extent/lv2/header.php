@@ -239,6 +239,7 @@
     $menuselect3        = "";  
     $menuselect4        = "";
     $menuselect5        = "";
+    $menuselect6        = "";
     $menuselect41       = "";
     $menuselect42       = "";
     $menuselect43       = "";
@@ -399,6 +400,42 @@
                     width:90%;
                 }
 
+                @media only screen and (max-width: 1000px) {    
+                    .date-button-jadwal>button{
+                        margin: 5px 0 0 0 !important;
+                        width:100%;
+                        font-size: 12px;
+                        letter-spacing: 2px;
+                        font-weight:bold;
+                        text-transform: capitalize;
+                    }
+                    .date-input-jadwal>.form-group{
+                        border: 1px solid #9c9c9c  !important;
+                        border-radius: 5px;
+                        padding : 0 10px 3px 10px ;
+                        margin: 4px 0 0 0 !important
+                    }
+                    
+                }
+                
+
+                @media only screen and (max-width: 395px) {  
+                    #jadwal_lv2_filter>label>input{ 
+                        float:left;
+                        width:100%; 
+                        margin: 0 0 0 0;
+                    }    
+                    .dtr-title{ 
+                        width:100%;
+                    }
+                    .dtr-data>b{
+                        font-weight: normal;
+                    }
+
+                    
+                }
+
+
         </style>
 
 
@@ -515,14 +552,13 @@
                         float:left;
                         width:100%; 
                         margin: 0 0 0 0;
-                    }   
-                    .table-spc>thead>tr>th{  
-                        text-align: center;
-                    } 
-                    .table-spc>tbody>tr>td>ul>li{  
-                        text-align: left !important;   
-                        margin-left: -10px !important; 
-                    } 
+                    }    
+                    .dtr-title{ 
+                        width:100%;
+                    }
+                    .dtr-data>b{
+                        font-weight: normal;
+                    }
 
                     
                 }
@@ -791,13 +827,12 @@
                         width:100%; 
                         margin: 0 0 0 0;
                     }   
-                    .table-spc>thead>tr>th{  
-                        text-align: center;
-                    } 
-                    .table-spc>tbody>tr>td>ul>li{  
-                        text-align: left !important;   
-                        margin-left: -10px !important; 
-                    } 
+                    .dtr-title{ 
+                        width:100%;
+                    }
+                    .dtr-data>b{
+                        font-weight: normal;
+                    }
 
                     
                 }
@@ -1116,6 +1151,26 @@
                 .slider.round:before {
                     border-radius: 50%;
                 }
+
+
+                
+
+                @media only screen and (max-width: 395px) {  
+                    #pelanggan_filter>label>input{ 
+                        float:left;
+                        width:100%; 
+                        margin: 0 0 0 0;
+                    }    
+                    .dtr-title{ 
+                        width:100%;
+                    }
+                    .dtr-data>b{
+                        font-weight: normal;
+                    }
+
+                    
+                }
+
                 
         </style>
 
@@ -1123,9 +1178,7 @@
     }elseif ($menu == "1g"){ 
         $menuselect5 = "active"; 
 ?>
-
-
-
+ 
 
         <style>
               /*  */
@@ -1166,6 +1219,346 @@
 
         </style>
 
+
+<?php
+    }elseif ($menu == "1x"){ 
+        $menuselect6 = "active"; 
+?>
+
+        <link href='<?=base_url()?>/datatables/Buttons-2.2.2/css/buttons.dataTables.css' rel='stylesheet' type='text/css' />
+        
+        <link href="<?=base_url()?>/select2-4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="<?=base_url()?>/intl-tel-input-master/build/css/intlTelInput.css" rel="stylesheet" />
+
+        <style>
+                /*  */
+                .card-title-spc>hr{
+                    border-top: 3px solid red;
+                    margin: 0 0 0 0;
+                    width:100%;
+                }
+                .title-spc{
+                    font-weight: bold;
+                    letter-spacing: 1px; 
+                      text-transform: uppercase;
+
+                }
+                /* data tabeles  */ 
+                .table-spc>thead>tr>th{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 16px !important;
+                    font-weight: bold;
+                    padding: 15px !important;
+                } 
+                .table-spc>tbody>tr>td{ 
+                    border : 1px solid #bbbdbb !important;
+                    text-align: center;
+                    font-size: 14px !important;
+                }
+                #pelanggan_length>label{ 
+                    margin:  10px 0 0px 0;
+                    padding: 3px 8px 3px 8px !important;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    color:#9c27b0;
+                }
+
+                #pelanggan_length>label>select{ 
+                    border: 1px solid #9c9c9c !important;
+                    margin: -5px 5px 0 5px;
+                    padding: 5px 5px 5px 20px;
+                    
+                }
+
+                #pelanggan_filter>label{
+                    margin : 13px 0 0 0 !important; 
+                    color:#9c27b0;
+                    font-weight: bold;
+                }
+                #pelanggan_filter>label>input{
+                    border: 1px solid #9c9c9c  !important;
+                    border-radius: 5px;
+                    padding: 0 10px 0 10px; 
+                    margin:  0 0 0 10px;
+                }
+                /* end data tabeles  */
+                /* modal view picture */
+
+                /* Style the Image Used to Trigger the Modal */
+                #myImg {
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                #myImg:hover {opacity: 0.7;}
+
+                /* The Modal (background) */
+                .modal-picture {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    padding-top: 100px; /* Location of the box */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+                }
+
+                /* Modal Content (Image) */
+                .modal-content-picture {
+                    margin: auto;
+                    display: block;
+                    width: 70%;
+                }
+
+                /* Caption of Modal Image (Image Text) - Same Width as the Image */
+                #caption {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                    text-align: center;
+                    color: #ccc;
+                    padding: 10px 0;
+                    height: 150px;
+                }
+
+                /* Add Animation - Zoom in the Modal */
+                .modal-content-picture, #caption {
+                    animation-name: zoom;
+                    animation-duration: 0.6s;
+                }
+
+                @keyframes zoom {
+                    from {transform:scale(0)}
+                    to {transform:scale(1)}
+                }
+
+                /* The Close Button */
+                .closeX {
+                    position: absolute;
+                    top: 15px;
+                    right: 35px;
+                    color: #f1f1f1;
+                    font-size: 40px;
+                    font-weight: bold;
+                    transition: 0.3s;
+                }
+
+                .closeX:hover,
+                .closeX:focus {
+                    color: #bbb;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                /* end view picture */
+
+                /* modal add pelanggan */
+                .title-add-pelanggan{ 
+                    font-weight: bold;
+                    color: #8e24aa;
+                    letter-spacing: 1px;    
+                } 
+                .hr-modal-spc{
+                    border-top: 1px solid;
+                    width: 100%;
+                    margin: 20px auto 0 auto;
+                }
+                /* form div edit */
+                
+                .label-spcs{ 
+                    padding : 0;
+                    margin: 0;   
+                    color: #3b3b3b !important;  
+                } 
+                .label-spcs>label{   
+                    color: #3b3b3b !important;  
+                }
+
+                
+                .spc-hp-edit{  
+                    padding: 0px !important; 
+                }  
+                .spc-hp-edit>.input-group-addon{   
+                    padding-top:0;
+                }   
+                
+                 .spc-hp-edit>.check-hp{ 
+                     margin: 0px;  
+                     padding-bottom: 0;
+                }   
+ 
+                .box-hp-spc{
+                    border: 1px solid #555;
+                    width:100%;
+                    padding: 6px;
+                    color: #555;  
+                }
+                .box-p-spc{
+                    border: 1px solid #555;
+                    width:100%;
+                    padding: 5px;
+                    color: #555;  
+                }  
+
+                .select2-container .select2-selection   { 
+                    border: 1px solid #555;
+                    border-radius: 0 !important;  
+                    height: 33px;
+                    letter-spacing: 1px;
+                    padding-top:3px; 
+                    collor: #9c27b0;   
+                }  
+                .select2-container .select2-selection--single .select2-selection__arrow {
+                    height: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 5px;
+                    width: 10px;   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; 
+                }  
+                /* modal alert */
+                .modal-alert-spc{
+                    border: 1px solid #ffcc12;
+                }
+                .modal-alert-spc>.modal-header{ 
+                        margin: 0 0 0 0;                
+                }
+                .modal-alert-spc>.modal-header>h4{  
+                        color: #ff9800;
+                        font-weight: bold !important;        
+                        letter-spacing: 1px;        
+                }
+                .modal-alert-spc>.modal-header>hr{ 
+                    border-top: 1px solid #ffcc12;
+                    margin: 10px 0 0 0;
+                } 
+                .modal-alert-spc>.modal-body{
+                    color: black !important;
+                    letter-spacing: 1px;
+                }
+                .hr-alert-modal{
+                    border-top: 1px solid #ffcc12;
+                    width: 85%;
+                    margin: 20px auto 0 auto;
+                }
+                /* end alert model */
+                /* modal edit del */
+                .text-pelanggan{
+                    text-align: center;
+                    font-size: 16px;
+                    color: red;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+
+                /*  */
+
+
+                /* The switch - the box around the slider */
+                .switch {  
+                    position: relative;
+                    display: inline-block;
+                    width: 55px;
+                    height: 25px;
+                    margin-top: 10px;   
+                }
+
+                /* Hide default HTML checkbox */
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+
+                /* The slider */
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                .slider:before {
+                     
+                    border-radius: 10px;
+                    position: absolute;
+                    content: "";
+                    height: 15px;
+                    width: 16px;
+                    top: 5px;
+                    left: 7px;  
+                    bottom: 5px;
+                    background-color: white;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                input:checked + .slider {
+                    background-color: #2196F3;
+                }
+
+                input:focus + .slider {
+                    box-shadow: 0 0 1px #2196F3;
+                }
+
+                input:checked + .slider:before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
+                } 
+                /* Rounded sliders */
+                .slider.round {
+                    border-radius: 34px;
+                }
+
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+                
+
+
+
+                @media only screen and (max-width: 395px) {  
+                    #pelanggan_filter>label>input{ 
+                        float:left;
+                        width:100%; 
+                        margin: 0 0 0 0;
+                    }    
+                    .dtr-title{ 
+                        width:100%;
+                    }
+                    .dtr-data>b{
+                        font-weight: normal;
+                    }
+
+                    
+                }
+
+
+
+
+
+
+
+        </style>
+
+
+
+
 <?php
     }
 ?>
@@ -1204,7 +1597,7 @@
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="../img/lapangan_futsal-3.gif" />
+                        <img src="<?=base_url()?>/uploads/<?=$getdatauserall[0]->gambar?>" />
                     </div>
                     <div class="info info-spc">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -1218,7 +1611,19 @@
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
+                    </li>
+                    <?php 
+                        if ($dtlv == 3) {
+                    ?> 
+                    <li class="<?=$menuselect6?>">
+                        <a href="<?=base_url()?>/pegawai">
+                            <i class="material-icons">group</i>
+                            <p>Data Pegawai</p>
+                        </a>
                     </li> 
+                    <?php
+                        }
+                    ?>
                     <li class="<?=$menuselect2?>">
                         <a href="<?=base_url()?>/pelanggan">
                             <i class="material-icons">group</i>

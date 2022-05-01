@@ -206,12 +206,17 @@ class History extends Controller{
             echo view('extent/header', $data);
             echo view('v_history', $data);
             echo view('extent/footer', $data);
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
         }
     }
 
 
     public function view_all_cancel()
     { 
+        if(session()->get('level') == 1)
+        {
+
             $Identitas = new IdentitasModel();
             $Histori = new HistoriModel();
             $Transaksi = new TransaksiModel();
@@ -244,7 +249,9 @@ class History extends Controller{
             return redirect()->to(base_url('history/viewall'))->withInput(); 
 
  
-
+        }else{
+            return redirect()->to(base_url('/'))->withInput();  
+        }
 
     }
 

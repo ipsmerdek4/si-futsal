@@ -7,7 +7,7 @@
     
 
     <div class="card-content">
-        <h4 class="card-title title-transaksi">Transaksi Booking Lapangan</h4>  
+        <h4 class="card-title title-transaksi">Transaksi Sewa Lapangan</h4>  
         <!--  -->
         
         
@@ -183,17 +183,17 @@
                 </div> 
             
         </form>
+
+
+
                 <div class="col-md-6" style="border-left: 1px solid red;" >
                     
                         <div class="row"> 
                             <div class="col-md-12">
-                                <div class="form-group label-floating is-empty">
-                                
+                                <div class="form-group label-floating is-empty"> 
                                         <div id="response" class="">
                                             Silahkan lengkapi Pilihan Transaksi Terlebih Dahulu.
-                                        </div>
-                              
-                                         
+                                        </div> 
                                     </div>
                             </div>
                         </div>

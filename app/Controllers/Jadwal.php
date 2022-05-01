@@ -39,11 +39,17 @@ class Jadwal extends Controller{
             echo view('v_jadwal', $data);
             echo view('extent/footer', $data);
 
-        }elseif (session()->get('level') == 2) { 
+        }elseif((session()->get('level') == 2)||(session()->get('level') == 3))
+        { 
  
             $Transaksi  = new TransaksiModel();
             $Histori    = new HistoriModel(); 
-
+            $Identitas = new IdentitasModel();
+            
+            $id_user = session()->get('ID'); 
+            $getdatauserall = $Identitas->where([
+                                            'id_users' => $id_user, 
+                                        ])->findAll(); 
 
             $tgl = date("Y-m-d");
             $lapangan = 1;
@@ -56,7 +62,8 @@ class Jadwal extends Controller{
                 'title'         => 'Jadwal [SI-Futsal]', 
                 'dtlv'          => session()->get('level'),
                 'unm'           => session()->get('username'), 
-                'dataTransaksi' =>  $dataTransaksi,  
+                'dataTransaksi' =>  $dataTransaksi,
+                'getdatauserall' => $getdatauserall,
 
             );
 
@@ -113,7 +120,8 @@ class Jadwal extends Controller{
 
 
                 
-        }elseif (session()->get('level') == 2) { 
+        }elseif ((session()->get('level') == 2)||(session()->get('level') == 3))
+        { 
 
             $Transaksi  = new TransaksiModel();
             $Histori    = new HistoriModel(); 
@@ -157,7 +165,7 @@ class Jadwal extends Controller{
 
     public function post_opsi_jadwal()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $access_val = $this->request->getVar('access_val');
             $pecahkan_access_val = explode('*', $access_val);
@@ -269,7 +277,7 @@ class Jadwal extends Controller{
 
     public function progress_cencel_jadwal()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             $Transaksi  = new TransaksiModel(); 
@@ -314,7 +322,7 @@ class Jadwal extends Controller{
 
     public function progress_edit_jadwal()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $id_transaksi = $this->request->getVar('_access_val_2');
             $time = $this->request->getVar('_time_jadwal_lv2');
@@ -425,7 +433,7 @@ class Jadwal extends Controller{
 
     public function progress_bedaharga_jadwal()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $_access_val_3 = $this->request->getVar('_access_val_3');
             $pecah__access_val_3 = explode("*", $_access_val_3);

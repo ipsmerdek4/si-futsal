@@ -109,6 +109,23 @@ $routes->post('/pelanggan/edit', 'Pelanggan::p_edit_pelanggan');
 $routes->get('/laporan', 'Laporan::index');  
 $routes->post('/laporan/cetak', 'Laporan::ctak');  
 
+
+$routes->get('/pegawai', 'Pegawai::index');  
+
+$routes->post('/pegawai/add', 'Pegawai::progres_add_pegawai'); 
+
+$routes->post('/pegawai/d', 'Pegawai::a_del_pegawai'); 
+$routes->post('/pegawai/del', 'Pegawai::progres_del_pegawai'); 
+
+$routes->get('/pegawai/e', 'Pegawai::a_edit_pegawai'); 
+$routes->post('/pegawai/edit', 'Pegawai::p_edit_pegawai'); 
+
+
+$routes->get('/pegawai/add_ajax_kb/(:any)', 'Pegawai::add_ajax_kab/$1');
+$routes->get('/pegawai/add_ajax_kc/(:any)', 'Pegawai::add_ajax_kec/$1');
+$routes->get('/pegawai/add_ajax_de/(:any)', 'Pegawai::add_ajax_desa/$1');
+
+
 /*  */
 
 

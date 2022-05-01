@@ -109,8 +109,10 @@
     </thead> 
     <tbody> 
         <?php $no=0; $shareharga = 0;
-        foreach ($dataHistori as $item): $no++; 
-            if ($item->booking_status > 2) { 
+        foreach ($dataHistori as $item): 
+            if (($item->booking_status < 2)||($item->booking_status == 9)) { 
+            }else{
+                $no++; 
         ?>  
             <tr> 
                 <td class="row1" rowspan="2"> <?=$no?></td>

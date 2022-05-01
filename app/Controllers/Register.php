@@ -27,119 +27,117 @@ class Register extends Controller{
        
 
     }
-
-
+ 
     public function reg_add_prosess()
-    { 
-
-             if (!$this->validate([
-                  'gambarnya' => [
-                      'rules' =>  'is_image[gambarnya]'
-                                    .'|mime_in[gambarnya,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
-                                    .'|max_size[gambarnya,1000]'
-                                    .'|max_dims[gambarnya,800,800]', //ukuran gambar 1024x768
-                      'errors' => [  
-                          'is_image' => 'File harus berformat Gambar.',
-                          'mime_in' => 'File yang di izinkan image/jpg, image/jpeg,image/gif,image/png, image/webp.',   
-                          'max_size' => 'Ukuran File Paling besar 1Mb.',    
-                          'max_dims' => 'Ukuran Gambar Max 800x800.',   
-                      ]
-                  ], 
-                  'firstname' => [
-                      'rules' => 'required|min_length[5]|max_length[100] ',
-                      'errors' => [
-                          'required'   => 'Nama Lengkap Harus diisi.',
-                          'min_length' => 'Nama Lengkap Minimal 5 Karakter.',
-                          'max_length' => 'Nama Lengkap Maksimal 100 Karakter.',   
-                      ]
-                  ], 
-                  'lastname' => [
-                      'rules' => 'required|min_length[2]|max_length[20] ',
-                      'errors' => [
-                          'required'   => 'Nama Panggilan Harus diisi.',
-                          'min_length' => 'Nama Panggilan Minimal 2 Karakter.',
-                          'max_length' => 'Nama Panggilan Maksimal 20 Karakter.',   
-                      ]
-                  ], 
-                  'email' => [
-                      'rules' => 'required|min_length[5]|max_length[100] ',
-                      'errors' => [
-                          'required'   => 'Email Harus diisi.',
-                          'min_length' => 'Nama Panggilan Minimal 5 Karakter.',
-                          'max_length' => 'Nama Panggilan Maksimal 100 Karakter.',   
-                      ]
-                  ], 
-                  'hp' => [
-                      'rules' => 'required|min_length[9]|max_length[15] ',
-                      'errors' => [
-                          'required'   => 'Nomer HP/Wa Harus diisi.',
-                          'min_length' => 'Nomer HP/Wa Minimal 9 Karakter.',
-                          'max_length' => 'Nomer HP/Wa Maksimal 15 Karakter.',   
-                      ]
-                  ],  
-                        /*  */ 
-                  'username' => [
-                      'rules' => 'required|min_length[3]|max_length[15] ',
-                      'errors' => [
-                          'required'   => 'Username Harus diisi.',
-                          'min_length' => 'Username Minimal 3 Karakter.',
-                          'max_length' => 'Username Maksimal 15 Karakter.',   
-                      ]
-                  ], 
-                  'password' => [
-                      'rules' => 'required|min_length[6]|max_length[15] ',
-                      'errors' => [
-                          'required'   => 'Password Harus diisi.',
-                          'min_length' => 'Password Minimal 6 Karakter.',
-                          'max_length' => 'Password Maksimal 15 Karakter.',   
-                      ]
-                  ], 
-                  'tim' => [
-                      'rules' => 'required|min_length[6]|max_length[15]|is_unique[tbl_identitas.tim]',
-                      'errors' => [
-                          'required'   => 'Nama Tim Harus diisi.',
-                          'min_length' => 'Nama Tim Minimal 6 Karakter.',
-                          'max_length' => 'Nama Tim Maksimal 15 Karakter.',   
-                          'is_unique' => 'Nama Tim Sudah Ada, Silahkan gunakan yang lain.',   
-                      ]
-                  ], 
-                        /*  */
-                  
-                  'alamat' => [
-                      'rules' => 'required|min_length[6]',
-                      'errors' => [
-                          'required'   => 'Alamat Harus diisi.',
-                          'min_length' => 'Alamat Minimal 6 Karakter.',  
-                      ]
-                  ], 
-                  'provinsi' => [
-                      'rules' => 'required',
-                      'errors' => [
-                          'required'   => 'Provinsi Harus di Pilih.',   
-                      ]
-                  ], 
-                  'kabupaten' => [
-                      'rules' => 'required',
-                      'errors' => [
-                          'required'   => 'Kabupaten Harus di Pilih.',   
-                      ]
-                  ], 
-                  'kecamatan' => [
-                      'rules' => 'required',
-                      'errors' => [
-                          'required'   => 'Kecamatan Harus di Pilih.',   
-                      ]
-                  ], 
-                  'desa' => [
-                      'rules' => 'required',
-                      'errors' => [
-                          'required'   => 'Desa Harus di Pilih.',   
-                      ]
-                  ], 
-              ])) {
-                  session()->setFlashdata('error', $this->validator->listErrors());
-                  return redirect()->to(base_url('/register'))->withInput(); 
-              } 
+    {  
+            if (!$this->validate([
+                'gambarnya' => [
+                    'rules' =>  'is_image[gambarnya]'
+                                .'|mime_in[gambarnya,image/jpg,image/jpeg,image/gif,image/png,image/webp]'
+                                .'|max_size[gambarnya,1000]'
+                                .'|max_dims[gambarnya,800,800]', //ukuran gambar 1024x768
+                    'errors' => [  
+                        'is_image' => 'File harus berformat Gambar.',
+                        'mime_in' => 'File yang di izinkan image/jpg, image/jpeg,image/gif,image/png, image/webp.',   
+                        'max_size' => 'Ukuran File Paling besar 1Mb.',    
+                        'max_dims' => 'Ukuran Gambar Max 800x800.',   
+                    ]
+                ], 
+                'firstname' => [
+                    'rules' => 'required|min_length[5]|max_length[100] ',
+                    'errors' => [
+                        'required'   => 'Nama Lengkap Harus diisi.',
+                        'min_length' => 'Nama Lengkap Minimal 5 Karakter.',
+                        'max_length' => 'Nama Lengkap Maksimal 100 Karakter.',   
+                    ]
+                ], 
+                'lastname' => [
+                    'rules' => 'required|min_length[2]|max_length[20] ',
+                    'errors' => [
+                        'required'   => 'Nama Panggilan Harus diisi.',
+                        'min_length' => 'Nama Panggilan Minimal 2 Karakter.',
+                        'max_length' => 'Nama Panggilan Maksimal 20 Karakter.',   
+                    ]
+                ], 
+                'email' => [
+                    'rules' => 'required|min_length[5]|max_length[100] ',
+                    'errors' => [
+                        'required'   => 'Email Harus diisi.',
+                        'min_length' => 'Nama Panggilan Minimal 5 Karakter.',
+                        'max_length' => 'Nama Panggilan Maksimal 100 Karakter.',   
+                    ]
+                ], 
+                'hp' => [
+                    'rules' => 'required|min_length[9]|max_length[15] ',
+                    'errors' => [
+                        'required'   => 'Nomer HP/Wa Harus diisi.',
+                        'min_length' => 'Nomer HP/Wa Minimal 9 Karakter.',
+                        'max_length' => 'Nomer HP/Wa Maksimal 15 Karakter.',   
+                    ]
+                ],  
+                    /*  */ 
+                'username' => [
+                    'rules' => 'required|min_length[3]|max_length[15] ',
+                    'errors' => [
+                        'required'   => 'Username Harus diisi.',
+                        'min_length' => 'Username Minimal 3 Karakter.',
+                        'max_length' => 'Username Maksimal 15 Karakter.',   
+                    ]
+                ], 
+                'password' => [
+                    'rules' => 'required|min_length[6]|max_length[15] ',
+                    'errors' => [
+                        'required'   => 'Password Harus diisi.',
+                        'min_length' => 'Password Minimal 6 Karakter.',
+                        'max_length' => 'Password Maksimal 15 Karakter.',   
+                    ]
+                ], 
+                'tim' => [
+                    'rules' => 'required|min_length[6]|max_length[15]|is_unique[tbl_identitas.tim]',
+                    'errors' => [
+                        'required'   => 'Nama Tim Harus diisi.',
+                        'min_length' => 'Nama Tim Minimal 6 Karakter.',
+                        'max_length' => 'Nama Tim Maksimal 15 Karakter.',   
+                        'is_unique' => 'Nama Tim Sudah Ada, Silahkan gunakan yang lain.',   
+                    ]
+                ], 
+                    /*  */
+                
+                'alamat' => [
+                    'rules' => 'required|min_length[6]',
+                    'errors' => [
+                        'required'   => 'Alamat Harus diisi.',
+                        'min_length' => 'Alamat Minimal 6 Karakter.',  
+                    ]
+                ], 
+                'provinsi' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required'   => 'Provinsi Harus di Pilih.',   
+                    ]
+                ], 
+                'kabupaten' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required'   => 'Kabupaten Harus di Pilih.',   
+                    ]
+                ], 
+                'kecamatan' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required'   => 'Kecamatan Harus di Pilih.',   
+                    ]
+                ], 
+                'desa' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required'   => 'Desa Harus di Pilih.',   
+                    ]
+                ], 
+            ])) {
+                session()->setFlashdata('error', $this->validator->listErrors());
+                return redirect()->to(base_url('/register'))->withInput(); 
+            } 
 
             $Users = new UsersModel();
             $Identitas = new IdentitasModel();
@@ -183,12 +181,7 @@ class Register extends Controller{
             ]);
 
             session()->setFlashdata('error', 'Berhasil Terdaftar, Silahkan login.');
-            return redirect()->to(base_url('login/'))->withInput(); 
- 
-
-  
-
-
+            return redirect()->to(base_url('login/'))->withInput();  
 
     }
 

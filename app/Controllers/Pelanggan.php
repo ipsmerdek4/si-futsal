@@ -16,14 +16,17 @@ class Pelanggan extends Controller{
 
     public function index()
     {
-        if(session()->get('level') == 2) {
+        if((session()->get('level') == 2)||(session()->get('level') == 3)) {
 
 
             $Identitas = new IdentitasModel();
             $Provinsis = new ProvinsiModel();
 
             $dataIdentitas = $Identitas->join_where_spc('level_users', '1');
-           
+            $id_user = session()->get('ID'); 
+            $getdatauserall = $Identitas->where([
+                                            'id_users' => $id_user, 
+                                        ])->findAll(); 
     
             $data = array(
                 'menu'          => '1f',
@@ -32,6 +35,7 @@ class Pelanggan extends Controller{
                 'unm'           => session()->get('username'), 
                 'dataIdentitas' => $dataIdentitas, 
                 'Provinsis'     => $Provinsis->findAll(), 
+                'getdatauserall' => $getdatauserall,
             );
 
             
@@ -48,7 +52,7 @@ class Pelanggan extends Controller{
  
     public function progres_add_pelanggan()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             if (!$this->validate([
@@ -218,7 +222,7 @@ class Pelanggan extends Controller{
 
     public function a_del_pelanggan()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
             $id_identitas = $this->request->getVar('access_val');
             
@@ -250,9 +254,9 @@ class Pelanggan extends Controller{
 
     public function progres_del_pelanggan()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
-            echo $id_identitas = $this->request->getVar('user_id');
+            $id_identitas = $this->request->getVar('user_id');
 
             $Identitas = new IdentitasModel();
             $Users = new UsersModel();
@@ -286,7 +290,7 @@ class Pelanggan extends Controller{
     
     public function a_edit_pelanggan()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
 
             $Identitas = new IdentitasModel(); 
@@ -300,9 +304,9 @@ class Pelanggan extends Controller{
         }
     }
 
-     public function p_edit_pelanggan()
+    public function p_edit_pelanggan()
     {
-        if(session()->get('level') == 2)
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
         {
          
             if (!$this->validate([
@@ -549,7 +553,8 @@ class Pelanggan extends Controller{
 
     function add_ajax_kab( $id = null)
     {  
-        if(session()->get('level') == 2) {
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
+        {
 
             $WKabupaten = new KabupatenModel(); 
     
@@ -588,7 +593,8 @@ class Pelanggan extends Controller{
 
     function add_ajax_kec($id = null)
     { 
-        if(session()->get('level') == 2) { 
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
+        { 
             $WKecamatan = new KecamatanModel(); 
 
 
@@ -631,7 +637,8 @@ class Pelanggan extends Controller{
 
     function add_ajax_desa($id = null)
     {
-        if(session()->get('level') == 2) { 
+        if((session()->get('level') == 2)||(session()->get('level') == 3))
+        { 
 
             $WDesa = new DesaModel(); 
 

@@ -77,15 +77,35 @@
                                     }
                                     $nilai = $nilai .':00:00';
                                 echo "<tr>";
-                                echo "<td>".($i+1)."</td>";
-                                echo '
-                                    <td><button class="btn btn-primary btn-xs" >
-                                        <i class="material-icons">access_alarm</i> 
-                                    '. $nilai  .'
-                                        <div class="ripple-container"></div>
-                                    </button></td>
-                                
-                                ';
+                                echo "<td>".($i+1)."</td>"; 
+                                echo '<td>';
+                                $nilaitrans = 0;
+                                $nilaitotal = 0;
+                                foreach ($dataTransaksi as $v_dataTransaksi) { 
+                                    $nilaitrans ++;
+                                    if ($v_dataTransaksi->booking_start == $nilai) {
+                                        if ($v_dataTransaksi->booking_status != 9) {
+                                        
+                                            $nilaitotal += $nilaitrans;
+                                            echo ' 
+                                                    <button class="btn btn-danger btn-xs" >
+                                                        <i class="material-icons">access_alarm</i> 
+                                                        '.$nilai.' 
+                                                    </button> 
+                                            ';
+                                        } 
+                                    } 
+                                }  
+
+                                if ($nilaitotal == 0) {
+                                        echo ' 
+                                            <button class="btn btn-primary btn-xs" >
+                                                <i class="material-icons">access_alarm</i> 
+                                                '.$nilai.' 
+                                            </button> 
+                                    ';
+                                } 
+                                echo '</td>'; 
                                 echo '<td>'; 
                                         $nilaitrans = 0;
                                         $nilaitotal = 0;
@@ -135,6 +155,12 @@
                                                             <i class="material-icons">check</i> <b>Approve </b> 
                                                         </button> '; 
                                                     }elseif ($v_dataTransaksi->booking_status == 4) {
+                                                        echo ' 
+                                                            <button class="btn btn-primary btn-xs" >
+                                                                <i class="material-icons">check</i> 
+                                                                <b>Lunas</b> 
+                                                            </button> '; 
+                                                    }elseif ($v_dataTransaksi->booking_status == 5) {
                                                         echo ' 
                                                             <button class="btn btn-primary btn-xs" >
                                                                 <i class="material-icons">check</i> 
