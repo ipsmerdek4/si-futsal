@@ -23,8 +23,8 @@ The following are the steps for the SI-FUTSAL installation:
 	    Options Indexes FollowSymLinks MultiViews <br>
 	    AllowOverride All <br>
 	    Require all granted <br>
-	</Directory> <br>
-</VirtualHost> <br>
+	<&#47;Directory> <br>
+<&#47;VirtualHost> <br>
 
 
 
