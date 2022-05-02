@@ -15,16 +15,16 @@ The following are the steps for the SI-FUTSAL installation:
 	location : xampp/apache/conf/extra/httpd-vhosts.conf
 	
 	
-<VirtualHost si-futsal.local:80>
-	ServerName si-futsal.local
-	ServerAlias si-futsal.local
-	DocumentRoot "C:/xampp/htdocs/si-futsal/public"
-	<Directory "C:/xampp/htdocs/si-futsal/public">
-	    Options Indexes FollowSymLinks MultiViews
-	    AllowOverride All
-	    Require all granted
-	</Directory>
-</VirtualHost>
+<VirtualHost si-futsal.local:80> <br>
+	ServerName si-futsal.local <br>
+ 	ServerAlias si-futsal.local <br>
+	DocumentRoot "C:/xampp/htdocs/si-futsal/public" <br>
+	<Directory "C:/xampp/htdocs/si-futsal/public"> <br>
+	    Options Indexes FollowSymLinks MultiViews <br>
+	    AllowOverride All <br>
+	    Require all granted <br>
+	</Directory> <br>
+</VirtualHost> <br>
 
 
 
@@ -40,10 +40,10 @@ The following are the steps for the SI-FUTSAL installation:
 7. open .env
 	edit 
 
-	database.default.hostname = 127.0.0.1
- 	database.default.database = si-futsal //match the database name in your phpmyadmin
- 	database.default.username = root  //match your username
- 	database.default.password =       //match your password
+	database.default.hostname = 127.0.0.1 <br>
+ 	database.default.database = si-futsal //match the database name in your phpmyadmin <br>
+ 	database.default.username = root  //match your username <br>
+ 	database.default.password =       //match your password <br>
 
 
 8. open cmd/ Command Prompt $: php spark migrate
