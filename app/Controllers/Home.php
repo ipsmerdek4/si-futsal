@@ -5,19 +5,19 @@ use CodeIgniter\Controller;
 use App\Models\HargaModel;  
 use App\Models\IdentitasModel;  
 use App\Models\TransaksiModel;  
-use App\Models\HistoriModel;   
+use App\Models\HistoriModel;     
 
  
 class Home extends BaseController
 { 
     public function index()
     { 
-        /*  
-        'username' => $dataUser->username_users,
-                            'ID' => $dataUser->id_users ,
-                            'level' => $dataUser->level_users,
-                            'logged_in' => TRUE
-        */
+            /*  
+            'username' => $dataUser->username_users,
+                                'ID' => $dataUser->id_users ,
+                                'level' => $dataUser->level_users,
+                                'logged_in' => TRUE
+            */
     
         $Harga      = new HargaModel();
         $Identitas  = new IdentitasModel();
@@ -58,6 +58,7 @@ class Home extends BaseController
                                         'id_users' => $id_user, 
                                     ])->findAll(); 
  
+ 
 
         $data = array(
                 'menu'          => '1b',
@@ -73,6 +74,7 @@ class Home extends BaseController
             echo view('v_home_lv2', $data);
             echo view('extent/lv2/footer', $data);
   
+
 
         }else{ 
             $data = array(

@@ -8,7 +8,7 @@
     
 
     <div class="card-content">
-        <h4 class="card-title title-histori">History Booking Lapangan</h4>  
+        <h4 class="card-title title-histori">History Sewa Lapangan</h4>  
         <div class="material-datatables">
         <!--  -->
         

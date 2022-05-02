@@ -1,0 +1,2 @@
+ERROR - 2022-05-02 00:56:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, `level_users`, `tgl_pbt_users`) VALUES ('1','admin','admin','2y',3,'2022-0...' at line 1
+ERROR - 2022-05-02 12:55:05 --> Duplicate entry '1101010001' for key 'PRIMARY'
