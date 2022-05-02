@@ -16,14 +16,14 @@ The following are the steps for the SI-FUTSAL installation:
 	
 	
 <VirtualHost si-futsal.local&#58;80> <br>
-	ServerName si-futsal.local <br>
- 	ServerAlias si-futsal.local <br>
-	DocumentRoot "C:/xampp/htdocs/si-futsal/public" <br>
-	<Directory "C:/xampp/htdocs/si-futsal/public"> <br>
-	    Options Indexes FollowSymLinks MultiViews <br>
-	    AllowOverride All <br>
-	    Require all granted <br>
-	<&#47;Directory> <br>
+&#32;&#32;&#32;ServerName si-futsal.local <br>
+&#32;&#32;&#32;ServerAlias si-futsal.local <br>
+&#32;&#32;&#32;DocumentRoot "C:/xampp/htdocs/si-futsal/public" <br>
+&#32;&#32;&#32;<Directory "C:/xampp/htdocs/si-futsal/public"> <br>
+&#32;&#32;&#32;&#32;&#32;Options Indexes FollowSymLinks MultiViews <br>
+&#32;&#32;&#32;&#32;&#32;AllowOverride All<br>
+&#32;&#32;&#32;&#32;&#32;Require all granted <br>
+&#32;&#32;&#32;<&#47;Directory> <br>
 <&#47;VirtualHost> <br>
 
 
