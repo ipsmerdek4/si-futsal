@@ -15,7 +15,7 @@ The following are the steps for the SI-FUTSAL installation:
 	location : xampp/apache/conf/extra/httpd-vhosts.conf
 	
 	
-<VirtualHost si-futsal.local:80> <br>
+<VirtualHost si-futsal.local&#58;80> <br>
 	ServerName si-futsal.local <br>
  	ServerAlias si-futsal.local <br>
 	DocumentRoot "C:/xampp/htdocs/si-futsal/public" <br>
