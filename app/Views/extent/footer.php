@@ -539,6 +539,123 @@
         </script>
 
     <?php
+    }elseif ($menu == '1z') { 
+    ?> 
+       
+        <!-- Select Plugin -->
+        <script src="<?=base_url()?>/select2-4.0.13/dist/js/select2.min.js"></script>
+
+        <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+        <script src="<?=base_url()?>/assets/js/jasny-bootstrap.min.js"></script>
+
+        <!-- phone -->
+        <script src="<?=base_url()?>/intl-tel-input-master/build/js/intlTelInput.js"></script>
+        <script src="<?=base_url()?>/jQuery-Mask-Plugin-master/dist/jquery.mask.js"></script>
+        
+
+        <script src="<?=base_url()?>/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script> 
+        <script src="<?=base_url()?>/assets/js/material-dashboard.js"></script>
+
+        <script>
+            
+            
+            $.fn.modal.Constructor.prototype.enforceFocus = function() {};
+
+            $(document).ready(function() {    
+                <?php 
+                if(session()->getFlashData('pesan_profil')){
+                ?> 
+                    $('#alert_modalX').modal('show');   
+                <?php
+                }
+                ?>
+                /*  */ 
+                $('.select-drop-input').select2({
+                    //dropdownParent: $('#add_pelanggan')
+                });  
+                /*  */
+                $("#opn-pass").hide(); 
+                $("#showpass").click(function() {
+                    if ($(this).is(":checked")){
+                        $("#opn-pass").show();
+                    }else{
+                        $("#opn-pass").hide();
+                    }
+                });
+                /*  */ 
+                
+             });
+
+            
+            //load alamat
+            $("#provinsi").change(function (){
+                var url = "<?php echo site_url('profil/add_ajax_kb');?>/"+$(this).val();
+                $('#kabupaten').load(url);
+                return false;
+            })
+
+            $("#kabupaten").change(function (){
+                var url = "<?php echo site_url('profil/add_ajax_kc');?>/"+$(this).val();
+                $('#kecamatan').load(url);
+                return false;
+            })
+
+            $("#kecamatan").change(function (){
+                var url = "<?php echo site_url('profil/add_ajax_de');?>/"+$(this).val();
+                $('#desa').load(url);
+                return false;
+            })
+
+
+               $(document).on("click", ".btn-profil", function () {  
+                    var access_val = $(this).data('id');    
+                    var data = { access_val : access_val, };  
+                    $.getJSON("<?=base_url()?>/profil/v", data, function (result) {   
+                        $.each(result.tampil, function() {
+                            $(".title-spc-p").html("Edit Profil");   
+                            $("#_actprofil").attr('action', '<?=base_url()?>/profil/e');  
+                            
+                            $("#firstname").val( this['firstname'] );  
+                            $("#lastname").val( this['lastname'] );   
+                            $("#tim").val( this['tim'] );  
+                            $("#tim").val( this['tim'] ); 
+                            $("#phone111").val( this['hp'] ); 
+                            $("#email").val( this['email'] );  
+                            $("#phone111").val( this['hp'] );   
+                            $("#alamat").val( this['alamat'] ); 
+                            $("#username").val( this['username_users'] );        
+
+                            $(".ex-user").html(''+
+                                '<input type="hidden" value = "'+ this['id_users'] +'" name="profil" >'+
+                            ''); 
+
+
+                        });  
+                        return false;
+                    }); 
+                }); 
+
+
+              /* format telp */
+                var inputtlp = document.querySelector("#phone111");
+                window.intlTelInput(inputtlp, { 
+                    initialCountry: "id",
+                    separateDialCode: true,
+                    preferredCountries: ["id",], 
+                    allowDropdown:false,
+                    utilsScript: "<?=base_url()?>/intl-tel-input-master/build/js/utils.js",
+
+                });
+                $( '#phone111' ).mask('99-999-999-999');
+
+                
+                
+            /* END format telp  */
+
+        </script>
+
+
+    <?php
     } 
     ?>
 

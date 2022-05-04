@@ -870,6 +870,254 @@
 
                  
             </style>
+
+    <?php    
+        }elseif ($menu == '1z') { 
+    ?> 
+
+            <link href="<?=base_url()?>/select2-4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+            <link href="<?=base_url()?>/intl-tel-input-master/build/css/intlTelInput.css" rel="stylesheet" />
+
+
+            <style>
+                .main-panel { 
+                    width: calc(100% - 0px); 
+                }  
+                .verticalLine {
+                    /*border-left: thick solid white;*/
+                    border-left: 1px solid white;
+                    margin: 0 5px 0 8px;
+                }   
+                .footer{
+                    margin: -85px 30px 0 30px !important;
+                }
+                /*  */
+                .title-spc{
+                        font-weight:bold;
+                        letter-spacing: 1px;
+                        color: #707070;
+                        text-decoration: underline;
+                        margin-bottom: 55px !important; 
+                        text-transform: uppercase;
+                }
+
+                /*  */
+                .profil-top-spc{
+                    border: 1px solid #9c27b0;
+                    border-radius: 5px;
+                    padding: 15px;
+                }
+                .txt-profil-1{ 
+                    float: left;
+                    width: 150px;
+                    font-weight : bold;
+                    letter-spacing: 1px;
+                } 
+                .txt-profil-2{
+                    float: left; 
+                    font-weight : bold;
+                    letter-spacing: 1px;
+                    width: 60%;
+                    text-transform: capitalize ;
+                }
+                .v-profil>br{
+                    clear:both;
+                }
+                
+                /* modal edit */
+                .title-spc-p{
+                    font-weight: bold;
+                    color: #8e24aa;
+                    letter-spacing: 1px;    
+                }
+                 .hr-modal-spc{
+                    border-top: 1px solid;
+                    width: 100%;
+                    margin: 20px auto 0 auto;
+                }
+                /* form div edit */
+                
+                .label-spcs{ 
+                    padding : 0;
+                    margin: 0;   
+                    color: #3b3b3b !important;  
+                } 
+                .label-spcs>label{   
+                    color: #3b3b3b !important;  
+                }
+
+                
+                .spc-hp-edit{  
+                    padding: 0px !important; 
+                }  
+                .spc-hp-edit>.input-group-addon{   
+                    padding-top:0;
+                }   
+                
+                 .spc-hp-edit>.check-hp{ 
+                     margin: 0px;  
+                     padding-bottom: 0;
+                }   
+ 
+                .box-hp-spc{
+                    border: 1px solid #555;
+                    width:100%;
+                    padding: 6px;
+                    color: #555;  
+                }
+                .box-p-spc{
+                    border: 1px solid #555;
+                    width:100%;
+                    padding: 5px;
+                    color: #555;  
+                }  
+
+                .select2-container .select2-selection   { 
+                    border: 1px solid #555;
+                    border-radius: 0 !important;  
+                    height: 33px;
+                    letter-spacing: 1px;
+                    padding-top:3px; 
+                    collor: #9c27b0;   
+                }  
+                .select2-container .select2-selection--single .select2-selection__arrow {
+                    height: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 5px;
+                    width: 10px;   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; 
+                }  
+                /* modal alert */
+                .modal-alert-spc{
+                    border: 1px solid #ffcc12;
+                }
+                .modal-alert-spc>.modal-header{ 
+                        margin: 0 0 0 0;                
+                }
+                .modal-alert-spc>.modal-header>h4{  
+                        color: #ff9800;
+                        font-weight: bold !important;        
+                        letter-spacing: 1px;        
+                }
+                .modal-alert-spc>.modal-header>hr{ 
+                    border-top: 1px solid #ffcc12;
+                    margin: 10px 0 0 0;
+                } 
+                .modal-alert-spc>.modal-body{
+                    color: black !important;
+                    letter-spacing: 1px;
+                }
+                .hr-alert-modal{
+                    border-top: 1px solid #ffcc12;
+                    width: 85%;
+                    margin: 20px auto 0 auto;
+                }
+                /* end alert model */
+
+                
+                /* The switch - the box around the slider */
+                .switch {  
+                    position: relative;
+                    display: inline-block;
+                    width: 55px;
+                    height: 25px;
+                    margin-top: 10px;   
+                }
+
+                /* Hide default HTML checkbox */
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+
+                /* The slider */
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                .slider:before {
+                     
+                    border-radius: 10px;
+                    position: absolute;
+                    content: "";
+                    height: 15px;
+                    width: 16px;
+                    top: 5px;
+                    left: 7px;  
+                    bottom: 5px;
+                    background-color: white;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+
+                input:checked + .slider {
+                    background-color: #2196F3;
+                }
+
+                input:focus + .slider {
+                    box-shadow: 0 0 1px #2196F3;
+                }
+
+                input:checked + .slider:before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
+                } 
+                /* Rounded sliders */
+                .slider.round {
+                    border-radius: 34px;
+                }
+
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+
+
+                @media only screen and (max-width: 1000px) {   
+                    ul>li.verticalLine {
+                        display: none;
+                        margin-left: 0;
+                        border-left: none;
+                    }
+                    .txt-profil-1{ 
+                        text-align: center;
+                        float: none;
+                        width: 100%;
+                        font-weight : bold;
+                        letter-spacing: 1px;
+                    } 
+                    .txt-profil-2{
+                        text-align: center;
+                        float: none; 
+                        font-weight : normal;
+                        letter-spacing: 1px;
+                        width: 100%;
+                        text-transform: capitalize ;
+                    }
+                    .end{
+                        display: none;
+                    } 
+                    .button-spcs{
+                        text-align: center;
+                    }
+
+
+                }
+            </style>
+
     <?php
         }
     ?>
@@ -978,7 +1226,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="<?=base_url()?>/profil">
                                         <div class="h6 ext-h5-spc top-spc"  >
                                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                             &nbsp;&nbsp;Profil

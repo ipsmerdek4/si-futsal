@@ -1,0 +1,9 @@
+__ci_last_regenerate|i:1651666953;_ci_previous_url|s:39:"http://si-futsal.local/index.php/profil";username|s:4:"onix";ID|s:1:"2";level|s:1:"1";logged_in|b:1;pesan_profil|s:237:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Password Minimal 3 Karakter.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:12:"pesan_profil";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:13:{s:9:"firstname";s:8:"Muhammad";s:8:"lastname";s:7:"Fhauzan";s:3:"tim";s:11:"asdasdsad12";s:2:"hp";s:14:"31-232-131-231";s:5:"email";s:18:"ojan1990@gmail.com";s:6:"alamat";s:36:"jalan imam bonjol gg.segina VI no.31";s:8:"provinsi";s:2:"12";s:9:"kabupaten";s:4:"1202";s:9:"kecamatan";s:7:"1202010";s:4:"desa";s:10:"1202010003";s:8:"username";s:4:"onix";s:8:"checkbox";s:2:"on";s:8:"password";s:2:"12";}}_ci_validation_errors|s:57:"a:1:{s:8:"password";s:28:"Password Minimal 3 Karakter.";}";

@@ -1,0 +1,11 @@
+__ci_last_regenerate|i:1651647309;_ci_previous_url|s:39:"http://si-futsal.local/index.php/profil";username|s:4:"onix";ID|s:1:"2";level|s:1:"1";logged_in|b:1;pesan_profil|s:315:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Nama Lengkap Harus diisi.</li>
+					<li>Nama Panggilan Harus diisi.</li>
+					<li>Nomer HP/Wa Harus diisi.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:12:"pesan_profil";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:12:{s:9:"firstname";s:0:"";s:8:"lastname";s:0:"";s:3:"tim";s:0:"";s:2:"hp";s:0:"";s:5:"email";s:18:"ojan1990@gmail.com";s:6:"alamat";s:36:"jalan imam bonjol gg.segina VI no.31";s:8:"provinsi";s:2:"12";s:9:"kabupaten";s:4:"1202";s:9:"kecamatan";s:7:"1202010";s:4:"desa";s:10:"1202010003";s:8:"username";s:4:"onix";s:8:"password";s:0:"";}}_ci_validation_errors|s:146:"a:3:{s:9:"firstname";s:25:"Nama Lengkap Harus diisi.";s:8:"lastname";s:27:"Nama Panggilan Harus diisi.";s:2:"hp";s:24:"Nomer HP/Wa Harus diisi.";}";

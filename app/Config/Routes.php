@@ -129,6 +129,19 @@ $routes->get('/pegawai/add_ajax_de/(:any)', 'Pegawai::add_ajax_desa/$1');
 /*  */
 
 
+$routes->get('/profil', 'Profil::index'); 
+
+$routes->get('/profil/v', 'Profil::a_edit_prfil');  
+$routes->post('/profil/e', 'Profil::edit_profil_P'); 
+
+$routes->get('/profil/add_ajax_kb/(:any)', 'Profil::add_ajax_kab/$1');
+$routes->get('/profil/add_ajax_kc/(:any)', 'Profil::add_ajax_kec/$1');
+$routes->get('/profil/add_ajax_de/(:any)', 'Profil::add_ajax_desa/$1');
+
+
+
+
+
 
 /*
  * --------------------------------------------------------------------

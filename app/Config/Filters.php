@@ -54,6 +54,7 @@ class Filters extends BaseConfig
                                             '/',   
                                             '/count_notif',
                                             '/msg_notif',
+                                            'profil','profil/*',
                                             'transaksi','transaksi/*',
                                             'transaksi_booking','transaksi_booking/*',
                                             'transaksi_pembayaran','transaksi_pembayaran/*',  
