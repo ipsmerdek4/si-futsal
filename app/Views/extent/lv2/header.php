@@ -1597,7 +1597,19 @@
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="<?=base_url()?>/uploads/<?=$getdatauserall[0]->gambar?>" />
+                        asds
+                        <?php
+                            if (isset($getdatauserall[0]->gambar)) {
+                                if ($getdatauserall[0]->gambar != "") { 
+                                    echo '<img src="'.base_url().'/uploads/'.$getdatauserall[0]->gambar.'" />';
+                                }else{
+                                    echo '<img src="'.base_url().'/assets/img/default-avatar.png" style="margin: -20px 0 0 0;" />';
+                                }
+                            }else{
+                                echo '<img src="'.base_url().'/assets/img/default-avatar.png" style="margin: -20px 0 0 0;" />';
+                            }
+                        ?>
+                        
                     </div>
                     <div class="info info-spc">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
