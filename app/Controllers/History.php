@@ -12,6 +12,16 @@ class History extends Controller{
     {
         if(session()->get('level') == 1)
         {
+            $tglview = $this->request->getVar('tglallx');
+            if (isset($tglview)) {   
+                $pecah_tgl_book = explode('-', $tglview);
+                $tahunedit      = explode(' ', $pecah_tgl_book[2]);
+                $tgl   = $tahunedit[0].'-'.$pecah_tgl_book[1].'-'.$pecah_tgl_book[0];   
+            }else{
+                $tgl = date("Y-m-d");   
+            }
+  
+
             $Identitas = new IdentitasModel();
             $Transaksi = new TransaksiModel();
             $Histori = new HistoriModel();
@@ -22,7 +32,7 @@ class History extends Controller{
                                         'id_users' => $id_user,
                                     ])->first();
 
-            $tgl = date("Y-m-d"); 
+         
 
 
             $dataTransaksi = $Transaksi->where([
@@ -69,13 +79,14 @@ class History extends Controller{
 
  
             $data = array(
-                'menu' => '1e',
-                'title' => 'Histori [SI-Futsal]', 
-                'dtlv' => session()->get('level'),
-                'unm' => session()->get('username'),
-                'dataidentitas' => $dataidentitas,
-                'dataTransaksi' => $dataTransaksi,
-                'dataHistori' => $dataHistori,
+                'menu'                  => '1e',
+                'title'                 => 'Histori [SI-Futsal]', 
+                'dtlv'                  => session()->get('level'),
+                'unm'                   => session()->get('username'),
+                'dataidentitas'         => $dataidentitas,
+                'dataTransaksi'         => $dataTransaksi,
+                'dataHistori'           => $dataHistori,
+                'tgl'                   => $tgl,
             );
             echo view('extent/header', $data);
             echo view('v_history', $data);

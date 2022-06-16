@@ -1,0 +1,14 @@
+CRITICAL - 2022-06-16 10:26:21 --> Undefined variable $tglView
+#0 C:\xampp\htdocs\si-futsal\app\Controllers\History.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 90)
+#1 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\History->index()
+#2 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\History))
+#3 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-16 10:26:43 --> Undefined variable $tglView
+#0 C:\xampp\htdocs\si-futsal\app\Controllers\History.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 89)
+#1 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\History->index()
+#2 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\History))
+#3 C:\xampp\htdocs\si-futsal\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\si-futsal\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

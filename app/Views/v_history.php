@@ -327,16 +327,27 @@
         <?php
             }else{
         ?>
- 
+            <form action="<?=base_url()?>/history" method="post"> 
             <div class="row"  >
                 <div class="col-md-1" style="width:90px;">
-                    <b style="" >Tanggal :</b>
+                    <b>Tanggal :</b>
                 </div>
                 <div class="col-md-2 date-input-jadwal"  > 
                     <div class="form-group"> 
-                        <input type="text" class="form-control" value="<?=date('d-m-Y')?>" disabled />
+                        <?php
+                            $pecah_tgl_book = explode('-', $tgl);
+                            $tahunedit      = explode(' ', $pecah_tgl_book[0]);
+                            $tglxx          = $pecah_tgl_book[2].'-'.$pecah_tgl_book[1].'-'.$tahunedit[0];  
+                        ?>
+                        <input type="text" class="form-control datetimepicker" name="tglallx" value="<?=$tglxx?>"  />
                     </div>
                 </div> 
+                <div class="col-md-2 date-button-jadwal"  >  
+                        <button class="btn btn-success">
+                        <i class="material-icons">view_day</i> 
+                            Tampilkan
+                        </button> 
+                </div>
             </div> 
             <hr> 
             <table id="daftar_history" class="table table-striped table-no-bordered table-hover table-histori" cellspacing="0" width="100%" style="width:100%;color:#9c27b0;border-color:#9c27b0 !important;">
@@ -356,41 +367,41 @@
                         <td></td>
                         <td>#<?=$val->kode_transaksi?></td>
                         <td> 
-                            <button class="btn btn-primary btn-xs" >
+                            <div class="btn btn-primary btn-xs" >
                                 <i class="material-icons">assignment</i> <b> Lapangan <?=$val->booking_lapangan?> </b>
                                 <div class="ripple-container"></div>
-                            </button>
+                            </div>
                         </td>
                         <td>
-                            <button class="btn btn-primary btn-xs" >
+                            <div class="btn btn-primary btn-xs" >
                                 <i class="material-icons">access_alarm</i> 
                                 <?=$val->booking_start?>
                                 <div class="ripple-container"></div>
-                            </button>
+                            </div>
                         </td>
                         <td><?=$val->total_harga?></td>
                         <td>
                             <?php 
                             if ($val->booking_status == 1) {
                             ?>
-                            <button class="btn btn-warning btn-xs" >
+                            <div class="btn btn-warning btn-xs" >
                                 <i class="material-icons">access_time</i> <b>Waiting ... </b>
                                 <div class="ripple-container"></div>
-                            </button>
+                            </div>
                             <?php
                             }elseif ($val->booking_status == 2) {
                             ?>  
-                            <button class="btn btn-success btn-xs" >
+                            <div class="btn btn-success btn-xs" >
                                 <i class="material-icons">access_time</i> <b>Waiting ... </b>
                                 <div class="ripple-container"></div>
-                            </button> 
+                            </div> 
                             <?php
                             }elseif ($val->booking_status == 9) {
                             ?> 
-                            <button class="btn btn-danger btn-xs" >
+                            <div class="btn btn-danger btn-xs" >
                                 <i class="material-icons">clear</i> <b>Cancel</b>
                                 <div class="ripple-container"></div>
-                            </button>
+                            </div>
                             <?php 
                             } 
                             ?>
@@ -412,6 +423,7 @@
                     </tr>
                 </tfoot>
             </table>
+            </form>
 
  
 
