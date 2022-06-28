@@ -54,7 +54,7 @@
                                 <br> 
                                 <div class="v-profil">
                                     <div class="txt-profil-1">Alamat </div> 
-                                    <div class="txt-profil-2"><?=$getidentitas[0]->alamat?>, <?=$getidentitas[0]->nm_provinsi?>, <?=$getidentitas[0]->nm_kabupaten?>, <?=$getidentitas[0]->nm_kecamatan?>, <?=$getidentitas[0]->nm_desa?></div> 
+                                    <div class="txt-profil-2"><?=$getidentitas[0]->alamat?>, <?=$getidentitas[0]->provinsi_name?>, <?=$getidentitas[0]->kabupaten_name?>, <?=$getidentitas[0]->kecamatan_name?>, <?=$getidentitas[0]->desa_name?></div> 
                                     <br>
                                 </div> 
                             </div>
@@ -185,12 +185,7 @@
                                                 <label class="control-label">Provinsi
                                                     <small>(required)</small>
                                                 </label>
-                                                <select name="provinsi" id="provinsi"  class="box-p-spc select-drop-input"  style="width:100%" >
-                                                    <option value="" selected>- Pilih Provinsi -</option>  
-                                                    <?php  foreach ($dataProvinsis as $item1): ?>  
-                                                    <option value="<?=$item1->id?>" <?php echo ($item1->id == $getidentitas[0]->provinsi_id) ? "selected" : ""?> ><?=$item1->nm_provinsi?></option>  
-                                                    <?php endforeach; ?>                            
-                                                </select> 
+                                                <input name="provinsi" id="provinsi" type="text" class="box-p-spc" > 
                                             </div>
                                         </div> 
                                         <div class="input-group">
@@ -201,12 +196,7 @@
                                                 <label class="control-label">Kabupaten
                                                     <small>(required)</small>
                                                 </label>
-                                                <select name="kabupaten" id="kabupaten"  class="box-p-spc select-drop-input kabupaten"  style="width:100%" >
-                                                    <option value="">- Pilih Kabupaten -</option> 
-                                                    <?php  foreach ($dataKabupaten as $item2): ?>  
-                                                    <option value="<?=$item2->id?>" <?php echo ($item2->id == $getidentitas[0]->kabupaten_id) ? "selected" : ""?> ><?=$item2->nm_kabupaten?></option> 
-                                                    <?php endforeach; ?>                            
-                                                </select> 
+                                                <input name="kabupaten" id="kabupaten" type="text" class="box-p-spc" > 
                                             </div>
                                         </div> 
                                         <div class="input-group">
@@ -217,13 +207,7 @@
                                                 <label class="control-label">Kecamatan
                                                     <small>(required)</small>
                                                 </label>
-                                                <select name="kecamatan" id="kecamatan" class="box-p-spc select-drop-input"  style="width:100%" >
-                                                    <option value="">- Pilih Kecamatan -</option> 
-                                                    <?php  foreach ($dataKecamatan as $item3): ?>  
-                                                    <option value="<?=$item3->id?>" <?php echo ($item3->id == $getidentitas[0]->kecamatan_id) ? "selected" : ""?> ><?=$item3->nm_kecamatan?></option> 
-                                                    <?php endforeach; ?>                            
-
-                                                </select> 
+                                                <input name="kecamatan" id="kecamatan" type="text" class="box-p-spc" >  
                                             </div>
                                         </div> 
                                         <div class="input-group">
@@ -234,12 +218,7 @@
                                                 <label class="control-label">Desa
                                                     <small>(required)</small>
                                                 </label>
-                                                <select name="desa" id="desa"  class="box-p-spc select-drop-input"  style="width:100%" >
-                                                    <option value="">- Pilih Desa -</option> 
-                                                    <?php  foreach ($datadesa as $item4): ?>  
-                                                    <option value="<?=$item4->id?>" <?php echo ($item4->id == $getidentitas[0]->desa_id	) ? "selected" : ""?> ><?=$item4->nm_desa?></option> 
-                                                    <?php endforeach; ?>                            
-                                                </select> 
+                                                <input name="desa" id="desa" type="text" class="box-p-spc" >  
                                             </div>
                                         </div>  
 

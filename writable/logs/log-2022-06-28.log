@@ -1,0 +1,567 @@
+CRITICAL - 2022-06-28 09:17:40 --> Function imagecreatefromgif() not found.  Cannot convert gif image: C:\Windows\Temp\ca_C3B2.tmp.  Please install the image PHP extension.
+in VENDORPATH\dompdf\dompdf\src\Adapter\CPDF.php on line 777.
+ 1 VENDORPATH\dompdf\dompdf\src\Adapter\CPDF.php(841): Dompdf\Adapter\CPDF->_convert_to_png('C:\\Windows\\Temp\\ca_C3B2.tmp', 'gif')
+ 2 VENDORPATH\dompdf\dompdf\src\Renderer\Image.php(65): Dompdf\Adapter\CPDF->image('C:\\Windows\\Temp\\ca_C3B2.tmp', 90.0, 22.5, 75.0, 75.0, 'normal')
+ 3 VENDORPATH\dompdf\dompdf\src\Renderer.php(290): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 VENDORPATH\dompdf\dompdf\src\Renderer.php(127): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 VENDORPATH\dompdf\dompdf\src\Renderer.php(194): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 VENDORPATH\dompdf\dompdf\src\Renderer.php(194): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 7 VENDORPATH\dompdf\dompdf\src\FrameReflower\Page.php(150): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 8 VENDORPATH\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(891): Dompdf\FrameReflower\Page->reflow(null)
+ 9 VENDORPATH\dompdf\dompdf\src\Dompdf.php(820): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+10 APPPATH\Controllers\Laporan.php(81): Dompdf\Dompdf->render()
+11 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Laporan->ctak()
+12 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+13 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:30:21 --> Function imagecreatefromgif() not found.  Cannot convert gif image: C:\Windows\Temp\ca_6152.tmp.  Please install the image PHP extension.
+in VENDORPATH\dompdf\dompdf\src\Adapter\CPDF.php on line 777.
+ 1 VENDORPATH\dompdf\dompdf\src\Adapter\CPDF.php(841): Dompdf\Adapter\CPDF->_convert_to_png('C:\\Windows\\Temp\\ca_6152.tmp', 'gif')
+ 2 VENDORPATH\dompdf\dompdf\src\Renderer\Image.php(65): Dompdf\Adapter\CPDF->image('C:\\Windows\\Temp\\ca_6152.tmp', 90.0, 22.5, 75.0, 75.0, 'normal')
+ 3 VENDORPATH\dompdf\dompdf\src\Renderer.php(290): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 VENDORPATH\dompdf\dompdf\src\Renderer.php(127): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 VENDORPATH\dompdf\dompdf\src\Renderer.php(194): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 VENDORPATH\dompdf\dompdf\src\Renderer.php(194): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 7 VENDORPATH\dompdf\dompdf\src\FrameReflower\Page.php(150): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+ 8 VENDORPATH\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(891): Dompdf\FrameReflower\Page->reflow(null)
+ 9 VENDORPATH\dompdf\dompdf\src\Dompdf.php(820): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+10 APPPATH\Controllers\Laporan.php(81): Dompdf\Dompdf->render()
+11 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Laporan->ctak()
+12 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+13 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 09:45:19 --> Unknown column 'desa_id' in 'field list'
+ERROR - 2022-06-28 09:48:32 --> Duplicate entry '1' for key 'PRIMARY'
+ERROR - 2022-06-28 09:49:33 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 09:49:33 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', [], false)
+ 5 APPPATH\Models\IdentitasModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(25): App\Models\IdentitasModel->joinAll()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 09:49:37 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 09:49:37 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', [], false)
+ 5 APPPATH\Models\IdentitasModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(25): App\Models\IdentitasModel->joinAll()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 09:49:40 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 09:49:40 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`', [], false)
+ 5 APPPATH\Models\IdentitasModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(25): App\Models\IdentitasModel->joinAll()
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:10 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pegawai.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:19 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pegawai.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:20 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pegawai.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:21 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pegawai.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:21 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pegawai.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 09:51:26 --> Undefined property: stdClass::$nm_provinsi
+in APPPATH\Views\v_pegawai.php on line 43.
+ 1 APPPATH\Views\v_pegawai.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nm_provinsi', 'APPPATH\\Views\\v_pegawai.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_pegawai.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_pegawai', [], true)
+ 5 APPPATH\Controllers\Pegawai.php(42): view('v_pegawai', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 09:53:12 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 09:53:12 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = :id_identitas :', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(300): App\Models\IdentitasModel->join_where('1')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->a_edit_pegawai()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 10:19:12 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 10:19:12 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = :id_identitas :', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(297): App\Models\IdentitasModel->join_where('4')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->a_edit_pegawai()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 10:20:40 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 10:20:40 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = :id_identitas :', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(297): App\Models\IdentitasModel->join_where('4')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->a_edit_pegawai()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 10:20:43 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 10:20:43 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = :id_identitas :', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(297): App\Models\IdentitasModel->join_where('4')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->a_edit_pegawai()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 10:20:50 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 10:20:50 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `id_identitas` = :id_identitas :', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(35): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pegawai.php(297): App\Models\IdentitasModel->join_where('1')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pegawai->a_edit_pegawai()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegawai))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:28:31 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Pelanggan.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pelanggan->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:29:37 --> Undefined variable $Provinsis
+in APPPATH\Views\v_pelanggan.php on line 171.
+ 1 APPPATH\Views\v_pelanggan.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Provinsis', 'APPPATH\\Views\\v_pelanggan.php', 171)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_pelanggan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_pelanggan', [], true)
+ 5 APPPATH\Controllers\Pelanggan.php(41): view('v_pelanggan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pelanggan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:32:22 --> Undefined property: stdClass::$nm_provinsi
+in APPPATH\Views\v_pelanggan.php on line 42.
+ 1 APPPATH\Views\v_pelanggan.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nm_provinsi', 'APPPATH\\Views\\v_pelanggan.php', 42)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_pelanggan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_pelanggan', [], true)
+ 5 APPPATH\Controllers\Pelanggan.php(41): view('v_pelanggan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pelanggan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pelanggan))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:41:05 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Profil.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-06-28 10:41:43 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+CRITICAL - 2022-06-28 10:41:43 --> Table 'si-futsal.wilayah_provinsi' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `tbl_identitas`.`id_users` = \'3\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `tbl_identitas`.`id_users` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `tbl_identitas`.`id_users` = \'3\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_identitas`
+JOIN `tbl_user` ON `tbl_user`.`id_users` = `tbl_identitas`.`id_users`
+JOIN `wilayah_provinsi` ON `wilayah_provinsi`.`id` = `tbl_identitas`.`provinsi_id`
+JOIN `wilayah_kabupaten` ON `wilayah_kabupaten`.`id` = `tbl_identitas`.`kabupaten_id`
+JOIN `wilayah_kecamatan` ON `wilayah_kecamatan`.`id` = `tbl_identitas`.`kecamatan_id`
+JOIN `wilayah_desa` ON `wilayah_desa`.`id` = `tbl_identitas`.`desa_id`
+WHERE `tbl_identitas`.`id_users` = :tbl_identitas.id_users:', [...], false)
+ 5 APPPATH\Models\IdentitasModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Profil.php(23): App\Models\IdentitasModel->join_profil_a('3')
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:42:03 --> Undefined property: stdClass::$nm_provinsi
+in APPPATH\Views\v_profil.php on line 57.
+ 1 APPPATH\Views\v_profil.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nm_provinsi', 'APPPATH\\Views\\v_profil.php', 57)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:42:34 --> Undefined variable $dataProvinsis
+in APPPATH\Views\v_profil.php on line 190.
+ 1 APPPATH\Views\v_profil.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProvinsis', 'APPPATH\\Views\\v_profil.php', 190)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:42:35 --> Undefined variable $dataProvinsis
+in APPPATH\Views\v_profil.php on line 190.
+ 1 APPPATH\Views\v_profil.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProvinsis', 'APPPATH\\Views\\v_profil.php', 190)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:43:04 --> Undefined variable $dataProvinsis
+in APPPATH\Views\v_profil.php on line 190.
+ 1 APPPATH\Views\v_profil.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataProvinsis', 'APPPATH\\Views\\v_profil.php', 190)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:43:14 --> Undefined variable $dataKabupaten
+in APPPATH\Views\v_profil.php on line 203.
+ 1 APPPATH\Views\v_profil.php(203): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataKabupaten', 'APPPATH\\Views\\v_profil.php', 203)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:43:21 --> Undefined variable $dataKecamatan
+in APPPATH\Views\v_profil.php on line 216.
+ 1 APPPATH\Views\v_profil.php(216): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataKecamatan', 'APPPATH\\Views\\v_profil.php', 216)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_profil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_profil', [], true)
+ 5 APPPATH\Controllers\Profil.php(36): view('v_profil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Profil->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Profil))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:50:02 --> Class "App\Models\ProvinsiModel" not found
+in APPPATH\Controllers\Register.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Register->index()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:50:56 --> Undefined variable $Provinsis
+in APPPATH\Views\v_register.php on line 240.
+ 1 APPPATH\Views\v_register.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Provinsis', 'APPPATH\\Views\\v_register.php', 240)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_register.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('v_register', [], true)
+ 5 APPPATH\Controllers\Register.php(24): view('v_register', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Register->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:52:35 --> Class "App\Controllers\KabupatenModel" not found
+in APPPATH\Controllers\Register.php on line 194.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Register->add_ajax_kab('asdasdasda')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:52:36 --> Class "App\Controllers\KecamatanModel" not found
+in APPPATH\Controllers\Register.php on line 209.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Register->add_ajax_kec('asdasdas')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 10:52:36 --> Class "App\Models\DesaModel" not found
+in APPPATH\Controllers\Register.php on line 222.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Register->add_ajax_desa('dasdasd')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

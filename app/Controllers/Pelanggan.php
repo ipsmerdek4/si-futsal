@@ -19,8 +19,7 @@ class Pelanggan extends Controller{
         if((session()->get('level') == 2)||(session()->get('level') == 3)) {
 
 
-            $Identitas = new IdentitasModel();
-            $Provinsis = new ProvinsiModel();
+            $Identitas = new IdentitasModel(); 
 
             $dataIdentitas = $Identitas->join_where_spc('level_users', '1');
             $id_user = session()->get('ID'); 
@@ -33,8 +32,7 @@ class Pelanggan extends Controller{
                 'title'         => 'Pelanggan [SI-Futsal]', 
                 'dtlv'          => session()->get('level'),
                 'unm'           => session()->get('username'), 
-                'dataIdentitas' => $dataIdentitas, 
-                'Provinsis'     => $Provinsis->findAll(), 
+                'dataIdentitas' => $dataIdentitas,   
                 'getdatauserall' => $getdatauserall,
             );
 
@@ -98,8 +96,7 @@ class Pelanggan extends Controller{
                         'min_length' => 'Nomer HP/Wa Minimal 9 Karakter.',
                         'max_length' => 'Nomer HP/Wa Maksimal 15 Karakter.',   
                     ]
-                ],  
-                    /*  */ 
+                ],   
                 'username' => [
                     'rules' => 'required|min_length[3]|max_length[15] ',
                     'errors' => [
@@ -124,9 +121,7 @@ class Pelanggan extends Controller{
                         'max_length' => 'Nama Tim Maksimal 15 Karakter.',   
                         'is_unique' => 'Nama Tim Sudah Ada, Silahkan gunakan yang lain.',   
                     ]
-                ], 
-                    /*  */
-                
+                ],  
                 'alamat' => [
                     'rules' => 'required|min_length[6]',
                     'errors' => [
@@ -137,25 +132,25 @@ class Pelanggan extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
             ])) {
@@ -198,10 +193,10 @@ class Pelanggan extends Controller{
                     'hp' => $this->request->getVar('hp'),
                     'tim' => $this->request->getVar('tim'),
                     'alamat' => $this->request->getVar('alamat'),
-                    'provinsi_id' => $this->request->getVar('provinsi'),
-                    'kabupaten_id' => $this->request->getVar('kabupaten'),
-                    'kecamatan_id' => $this->request->getVar('kecamatan'),
-                    'desa_id' => $this->request->getVar('desa'),
+                    'provinsi_name' => $this->request->getVar('provinsi'),
+                    'kabupaten_name' => $this->request->getVar('kabupaten'),
+                    'kecamatan_name' => $this->request->getVar('kecamatan'),
+                    'desa_name' => $this->request->getVar('desa'),
                     'tgl_pbt_identitas' => date('Y-m-d H:i:s'),
                 ]);
  
@@ -373,25 +368,25 @@ class Pelanggan extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
             ])) {
@@ -456,10 +451,10 @@ class Pelanggan extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{ 
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -472,10 +467,10 @@ class Pelanggan extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -495,10 +490,10 @@ class Pelanggan extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -511,10 +506,10 @@ class Pelanggan extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -549,7 +544,7 @@ class Pelanggan extends Controller{
 
 
 
-
+/* 
 
     function add_ajax_kab( $id = null)
     {  
@@ -676,7 +671,7 @@ class Pelanggan extends Controller{
             
         }
     }
-    
+     */
 
 
 }

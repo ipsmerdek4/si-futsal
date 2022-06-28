@@ -39,7 +39,7 @@
                                                 <td><?=$v_dataIdentitas->tim?></td>
                                                 <td><?='+62'.$v_dataIdentitas->hp?></td>
                                                 <td><?=$v_dataIdentitas->email?></td>
-                                                <td><?=$v_dataIdentitas->alamat.', '.$v_dataIdentitas->nm_provinsi.', '.$v_dataIdentitas->nm_kabupaten.', '.$v_dataIdentitas->nm_kecamatan.', '.$v_dataIdentitas->nm_desa?></td>
+                                                <td><?=$v_dataIdentitas->alamat.', '.$v_dataIdentitas->provinsi_name.', '.$v_dataIdentitas->kabupaten_name.', '.$v_dataIdentitas->kecamatan_name.', '.$v_dataIdentitas->desa_name?></td>
                                                 <td>
                                                         <button class="btn btn-success btn-xs btn--pelanggan" data-id="<?=$v_dataIdentitas->id_identitas?>"  data-toggle="modal" data-target="#add_pelanggan"  >
                                                              &nbsp;<i class="material-icons">check</i> 
@@ -166,12 +166,7 @@
                                                                             <label class="control-label">Provinsi
                                                                                 <small>(required)</small>
                                                                             </label>
-                                                                            <select name="provinsi" id="provinsi"  class="box-p-spc select-drop-input"  style="width:100%" >
-                                                                                <option value="" selected>- Pilih Provinsi -</option> 
-                                                                                <?php  foreach ($Provinsis as $item1): ?>  
-                                                                                <?='<option value="'.$item1->id.'">'.$item1->nm_provinsi.'</option>'?> 
-                                                                                <?php endforeach; ?> 
-                                                                            </select> 
+                                                                            <input name="provinsi" id="provinsi" type="text" class="box-p-spc"> 
                                                                         </div>
                                                                     </div> 
                                                                     <div class="input-group">
@@ -182,9 +177,7 @@
                                                                             <label class="control-label">Kabupaten
                                                                                 <small>(required)</small>
                                                                             </label>
-                                                                            <select name="kabupaten" id="kabupaten"  class="box-p-spc select-drop-input kabupaten"  style="width:100%" >
-                                                                                <option value="">- Pilih Kabupaten -</option> 
-                                                                            </select> 
+                                                                            <input name="kabupaten" id="kabupaten" type="text" class="box-p-spc">  
                                                                         </div>
                                                                     </div> 
                                                                     <div class="input-group">
@@ -195,9 +188,7 @@
                                                                             <label class="control-label">Kecamatan
                                                                                 <small>(required)</small>
                                                                             </label>
-                                                                            <select name="kecamatan" id="kecamatan" class="box-p-spc select-drop-input"  style="width:100%" >
-                                                                                <option value="">- Pilih Kecamatan -</option> 
-                                                                            </select> 
+                                                                            <input name="kecamatan" id="kecamatan" type="text" class="box-p-spc">   
                                                                         </div>
                                                                     </div> 
                                                                     <div class="input-group">
@@ -208,9 +199,7 @@
                                                                             <label class="control-label">Desa
                                                                                 <small>(required)</small>
                                                                             </label>
-                                                                            <select name="desa" id="desa"  class="box-p-spc select-drop-input"  style="width:100%" >
-                                                                                <option value="">- Pilih Desa -</option> 
-                                                                            </select> 
+                                                                            <input name="desa" id="desa" type="text" class="box-p-spc">    
                                                                         </div>
                                                                     </div>  
 

@@ -42,21 +42,21 @@ class tbl_identitas extends Migration
 			'alamat'       => [
                 'type'           => 'TEXT', 
 			],  
-			'provinsi_id'       => [
+			'provinsi_name'       => [
                 'type'           => 'VARCHAR', 
-                'constraint'     => '5', 
+                'constraint'     => '100', 
 			],  
-			'kabupaten_id'       => [
+			'kabupaten_name'       => [
                 'type'           => 'VARCHAR', 
-                'constraint'     => '8',
+                'constraint'     => '100', 
 			],  
-			'kecamatan_id'       => [
+			'kecamatan_name'       => [
                 'type'           => 'VARCHAR', 
-                'constraint'     => '12', 
+                'constraint'     => '100', 
 			],  
-			'desa_id'       => [
+			'desa_name'       => [
                 'type'           => 'VARCHAR', 
-                'constraint'     => '20',
+                'constraint'     => '100', 
 			],  
 			'gambar'       => [
                 'type'           => 'TEXT',  

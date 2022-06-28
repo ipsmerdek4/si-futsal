@@ -4,10 +4,10 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\IdentitasModel;  
 use App\Models\UsersModel;  
-use App\Models\ProvinsiModel;   
-use App\Models\DesaModel;  
-use App\Models\KabupatenModel;  
-use App\Models\KecamatanModel;  
+//use App\Models\ProvinsiModel;   
+//use App\Models\DesaModel;  
+//use App\Models\KabupatenModel;  
+//use App\Models\KecamatanModel;  
 
 class Profil extends Controller{
 
@@ -18,23 +18,9 @@ class Profil extends Controller{
         if(session()->get('level') == 1)
         {
             $Identitas = new IdentitasModel();
-            $Users = new UsersModel();
-            $Provinsis = new ProvinsiModel();
-            $Kabupaten = new KabupatenModel();
-            $Kecamatan = new KecamatanModel();
-            $Desa = new DesaModel();
+            $Users = new UsersModel(); 
 
-            $getidentitas = $Identitas->join_profil_a(session()->get('ID'));
-            $dataProvinsis = $Provinsis->findAll();
-            $dataKabupaten = $Kabupaten->where([
-                                        'provinsi_id' => $getidentitas[0]->provinsi_id,
-                                    ])->findAll(); 
-            $dataKecamatan = $Kecamatan->where([
-                                        'kabupaten_id' => $getidentitas[0]->kabupaten_id,
-                                    ])->findAll(); 
-            $datadesa = $Desa->where([
-                                        'kecamatan_id' => $getidentitas[0]->kecamatan_id,
-                                    ])->findAll(); 
+            $getidentitas = $Identitas->join_profil_a(session()->get('ID')); 
 
 
             $data = array(
@@ -42,11 +28,7 @@ class Profil extends Controller{
                 'title'         => 'profil [SI-Futsal]', 
                 'dtlv'          => session()->get('level'),
                 'unm'           => session()->get('username'), 
-                'getidentitas'  => $getidentitas,
-                'dataProvinsis' => $dataProvinsis, 
-                'dataKabupaten' => $dataKabupaten,
-                'dataKecamatan' => $dataKecamatan,
-                'datadesa'      => $datadesa,
+                'getidentitas'  => $getidentitas, 
             );
 
 
@@ -126,25 +108,25 @@ class Profil extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
             ])) {
@@ -211,10 +193,10 @@ class Profil extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{ 
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -227,10 +209,10 @@ class Profil extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -250,10 +232,10 @@ class Profil extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -266,10 +248,10 @@ class Profil extends Controller{
                         'hp' => $this->request->getVar('hp'),
                         'tim' => $this->request->getVar('tim'),
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -309,16 +291,11 @@ class Profil extends Controller{
         }
     }
 
-
-
-
-
-
-
-
-
-
+ 
     
+
+
+    /* 
     function add_ajax_kab($id = null)
     {  
         $WKabupaten = new KabupatenModel(); 
@@ -361,7 +338,7 @@ class Profil extends Controller{
     }
     
 
-
+ */
 
 
 

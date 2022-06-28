@@ -637,7 +637,7 @@
                 });
 
         
-                $("#provinsi").on("select2:select", function (e) { 
+                /* $("#provinsi").on("select2:select", function (e) { 
                         var select_val = $(e.currentTarget).val();
                         kabupaten_id(select_val, null);  
                         kecamatan_id(null, null);   
@@ -651,7 +651,7 @@
                 $("#kecamatan").on("select2:select", function (e) { 
                         var select_val = $(e.currentTarget).val();
                         desa_id(select_val, null);   
-                });
+                }); */
 
 
                 $(document).on("click", ".btn--pelanggan", function () {  
@@ -704,10 +704,15 @@
                                     '</div>'+
                             ''); 
  
-                            $("#provinsi").val( this['provinsi_id'] ).change();  
-                            kabupaten_id( this['provinsi_id'], this['kabupaten_id'] ); 
+                            $("#provinsi").val( this['provinsi_name'] ).change();  
+                            $("#kabupaten").val( this['kabupaten_name'] ).change();  
+                            $("#kecamatan").val( this['kecamatan_name'] ).change();  
+                            $("#desa").val( this['desa_name'] ).change();  
+
+
+                            /* kabupaten_id( this['provinsi_id'], this['kabupaten_id'] ); 
                             kecamatan_id( this['kabupaten_id'], this['kecamatan_id'] ); 
-                            desa_id( this['kecamatan_id'], this['desa_id'] );
+                            desa_id( this['kecamatan_id'], this['desa_id'] ); */
 
 
                             $("#opn-pass").hide(); 
@@ -732,7 +737,7 @@
                 }); 
 
 
-                function kabupaten_id(provinsi = null, kabupaten = null ) { 
+                /* function kabupaten_id(provinsi = null, kabupaten = null ) { 
                     var url = "<?php echo site_url('pelanggan/add_ajax_kb');?>/"+ provinsi + "*" + kabupaten;
                     $('#kabupaten').load(url);
                     return false;  
@@ -748,7 +753,7 @@
                     var url = "<?php echo site_url('pelanggan/add_ajax_de');?>/"+ kecamatan + "*" + desa;
                     $('#desa').load(url);
                     return false;
-                }
+                } */
 
                
 
@@ -963,7 +968,7 @@
                 });
 
         
-                $("#provinsi").on("select2:select", function (e) { 
+            /*     $("#provinsi").on("select2:select", function (e) { 
                         var select_val = $(e.currentTarget).val();
                         kabupaten_id(select_val, null);  
                         kecamatan_id(null, null);   
@@ -977,7 +982,7 @@
                 $("#kecamatan").on("select2:select", function (e) { 
                         var select_val = $(e.currentTarget).val();
                         desa_id(select_val, null);   
-                });
+                }); */
 
 
                 $(document).on("click", ".btn--pelanggan", function () {  
@@ -1031,11 +1036,16 @@
                                     '</div>'+
                             ''); 
  
-                            $("#provinsi").val( this['provinsi_id'] ).change();  
-                            $("#level").val( this['level_users'] ).change();  
+                            $("#provinsi").val( this['provinsi_name'] ).change();  
+                            $("#kabupaten").val( this['kabupaten_name'] ).change();  
+                            $("#kecamatan").val( this['kecamatan_name'] ).change();  
+                            $("#desa").val( this['desa_name'] ).change();  
+
+
+                            $("#level").val( this['level_users'] ).change();  /* 
                             kabupaten_id( this['provinsi_id'], this['kabupaten_id'] ); 
                             kecamatan_id( this['kabupaten_id'], this['kecamatan_id'] ); 
-                            desa_id( this['kecamatan_id'], this['desa_id'] );
+                            desa_id( this['kecamatan_id'], this['desa_id'] ); */
 
 
                             $("#opn-pass").hide(); 
@@ -1060,7 +1070,7 @@
                 }); 
 
 
-                function kabupaten_id(provinsi = null, kabupaten = null ) { 
+                 /*function kabupaten_id(provinsi = null, kabupaten = null ) { 
                     var url = "<?php echo site_url('pegawai/add_ajax_kb');?>/"+ provinsi + "*" + kabupaten;
                     $('#kabupaten').load(url);
                     return false;  
@@ -1076,8 +1086,8 @@
                     var url = "<?php echo site_url('pegawai/add_ajax_de');?>/"+ kecamatan + "*" + desa;
                     $('#desa').load(url);
                     return false;
-                }
-
+                }*/
+ 
                
 
 
@@ -1126,10 +1136,7 @@
 
         </script>
 
-
-
-
-
+ 
 
 <?php
     }

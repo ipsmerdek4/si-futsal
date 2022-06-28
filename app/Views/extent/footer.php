@@ -588,7 +588,7 @@
 
             
             //load alamat
-            $("#provinsi").change(function (){
+            /* $("#provinsi").change(function (){
                 var url = "<?php echo site_url('profil/add_ajax_kb');?>/"+$(this).val();
                 $('#kabupaten').load(url);
                 return false;
@@ -604,7 +604,7 @@
                 var url = "<?php echo site_url('profil/add_ajax_de');?>/"+$(this).val();
                 $('#desa').load(url);
                 return false;
-            })
+            }) */
 
 
                $(document).on("click", ".btn-profil", function () {  
@@ -623,6 +623,10 @@
                             $("#email").val( this['email'] );  
                             $("#phone111").val( this['hp'] );   
                             $("#alamat").val( this['alamat'] ); 
+                            $("#provinsi").val( this['provinsi_name'] ); 
+                            $("#kabupaten").val( this['kabupaten_name'] ); 
+                            $("#kecamatan").val( this['kecamatan_name'] ); 
+                            $("#desa").val( this['desa_name'] ); 
                             $("#username").val( this['username_users'] );        
 
                             $(".ex-user").html(''+

@@ -235,37 +235,25 @@
                                                 <div class="col-sm-3 control-address">
                                                     <div class="form-group  ">
                                                         <label class="control-label">Provinsi</label>
-                                                        <select name="provinsi" id="provinsi"  class="form-control select-drop-input" style="width:100%" >
-                                                            <option value="">- Pilih Provinsi -</option> 
-                                                            <?php  foreach ($Provinsis as $item1): ?>  
-                                                            <?='<option value="'.$item1->id.'">'.$item1->nm_provinsi.'</option>'?> 
-                                                            <?php endforeach; ?>                                                                          
-                                                                                        
-                                                        </select> 
+                                                        <input name="provinsi" id="provinsi" type="text" class="form-control"> 
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3 col-sm-offset-1 control-address">
                                                     <div class="form-group  ">
                                                         <label class="control-label">Kabupaten</label>
-                                                        <select name="kabupaten" id="kabupaten"  class="form-control select-drop-input" style="width:100%" >
-                                                            <option value="">- Pilih Kabupaten -</option> 
-                                                        </select> 
+                                                        <input name="kabupaten" id="kabupaten" type="text" class="form-control"> 
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-3 control-address">
                                                     <div class="form-group  ">
                                                         <label class="control-label">Kecamatan</label>
-                                                        <select name="kecamatan" id="kecamatan"  class="form-control select-drop-input" style="width:100%" >
-                                                            <option value="">- Pilih Kecamatan -</option> 
-                                                        </select> 
+                                                        <input name="kecamatan" id="kecamatan" type="text" class="form-control"> 
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 control-address">
                                                     <div class="form-group  ">
                                                         <label class="control-label">Desa</label>
-                                                        <select name="desa" id="desa"  class="form-control select-drop-input" style="width:100%" >
-                                                            <option value="">- Pilih Desa -</option> 
-                                                        </select> 
+                                                        <input name="desa" id="desa" type="text" class="form-control"> 
                                                     </div>
                                                 </div>
                                             </div>

@@ -4,10 +4,10 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\IdentitasModel;  
 use App\Models\UsersModel;  
-use App\Models\DesaModel;  
-use App\Models\KabupatenModel;  
-use App\Models\KecamatanModel;  
-use App\Models\ProvinsiModel;   
+//use App\Models\DesaModel;  
+//use App\Models\KabupatenModel;  
+//use App\Models\KecamatanModel;  
+//use App\Models\ProvinsiModel;   
 
 
 
@@ -19,8 +19,7 @@ class Pegawai extends Controller{
         if((session()->get('level') == 2)||(session()->get('level') == 3)) {
 
 
-            $Identitas = new IdentitasModel();
-            $Provinsis = new ProvinsiModel();
+            $Identitas = new IdentitasModel(); 
 
             $dataIdentitas = $Identitas->joinAll();
                  
@@ -30,13 +29,12 @@ class Pegawai extends Controller{
                                         ])->findAll(); 
     
             $data = array(
-                'menu'          => '1x',
-                'title'         => 'Pegawai [SI-Futsal]', 
-                'dtlv'          => session()->get('level'),
-                'unm'           => session()->get('username'), 
-                'dataIdentitas' => $dataIdentitas, 
-                'Provinsis'     => $Provinsis->findAll(), 
-                'getdatauserall' => $getdatauserall,
+                'menu'              => '1x',
+                'title'             => 'Pegawai [SI-Futsal]', 
+                'dtlv'              => session()->get('level'),
+                'unm'               => session()->get('username'), 
+                'dataIdentitas'     => $dataIdentitas,  
+                'getdatauserall'    => $getdatauserall,
             );
 
             
@@ -56,7 +54,7 @@ class Pegawai extends Controller{
     {
         if(session()->get('level') == 3) 
         {
-
+  
             if (!$this->validate([
                 'gambarnya' => [
                     'rules' =>  'is_image[gambarnya]'
@@ -100,8 +98,7 @@ class Pegawai extends Controller{
                         'min_length' => 'Nomer HP/Wa Minimal 9 Karakter.',
                         'max_length' => 'Nomer HP/Wa Maksimal 15 Karakter.',   
                     ]
-                ],  
-                    /*  */ 
+                ],   
                 'username' => [
                     'rules' => 'required|min_length[3]|max_length[15] ',
                     'errors' => [
@@ -117,9 +114,7 @@ class Pegawai extends Controller{
                         'min_length' => 'Password Minimal 3 Karakter.',
                         'max_length' => 'Password Maksimal 15 Karakter.',   
                     ]
-                ],  
-                    /*  */
-                
+                ],   
                 'alamat' => [
                     'rules' => 'required|min_length[6]',
                     'errors' => [
@@ -130,25 +125,25 @@ class Pegawai extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
                 'level' => [
@@ -178,8 +173,8 @@ class Pegawai extends Controller{
                 }  else{
                     $newName = "";
                 }
-            }
-            
+            }  
+          
             if ($new_id_users) { 
                 $Users->insert([ 
                     'id_users' => $new_id_users,
@@ -197,10 +192,10 @@ class Pegawai extends Controller{
                     'hp' => $this->request->getVar('hp'),
                     'tim' => "ADMIN FC",
                     'alamat' => $this->request->getVar('alamat'),
-                    'provinsi_id' => $this->request->getVar('provinsi'),
-                    'kabupaten_id' => $this->request->getVar('kabupaten'),
-                    'kecamatan_id' => $this->request->getVar('kecamatan'),
-                    'desa_id' => $this->request->getVar('desa'),
+                    'provinsi_name' => $this->request->getVar('provinsi'),
+                    'kabupaten_name' => $this->request->getVar('kabupaten'),
+                    'kecamatan_name' => $this->request->getVar('kecamatan'),
+                    'desa_name' => $this->request->getVar('desa'),
                     'tgl_pbt_identitas' => date('Y-m-d H:i:s'),
                 ]);
  
@@ -377,25 +372,25 @@ class Pegawai extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
                 'level' => [
@@ -465,10 +460,10 @@ class Pegawai extends Controller{
                         'email' => $this->request->getVar('email'),
                         'hp' => $this->request->getVar('hp'), 
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{ 
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -480,10 +475,10 @@ class Pegawai extends Controller{
                         'email' => $this->request->getVar('email'),
                         'hp' => $this->request->getVar('hp'), 
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -502,10 +497,10 @@ class Pegawai extends Controller{
                         'email' => $this->request->getVar('email'),
                         'hp' => $this->request->getVar('hp'), 
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ]; 
                 }else{
                     @unlink("uploads/".$dataIdentitas[0]->gambar);
@@ -517,10 +512,10 @@ class Pegawai extends Controller{
                         'email' => $this->request->getVar('email'),
                         'hp' => $this->request->getVar('hp'), 
                         'alamat' => $this->request->getVar('alamat'),
-                        'provinsi_id' => $this->request->getVar('provinsi'),
-                        'kabupaten_id' => $this->request->getVar('kabupaten'),
-                        'kecamatan_id' => $this->request->getVar('kecamatan'),
-                        'desa_id' => $this->request->getVar('desa'),  
+                        'provinsi_name' => $this->request->getVar('provinsi'),
+                        'kabupaten_name' => $this->request->getVar('kabupaten'),
+                        'kecamatan_name' => $this->request->getVar('kecamatan'),
+                        'desa_name' => $this->request->getVar('desa'),  
                     ];  
                 } 
 
@@ -545,24 +540,10 @@ class Pegawai extends Controller{
     }
 
 
+ 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    /* 
 
     function add_ajax_kab( $id = null)
     {  
@@ -692,7 +673,7 @@ class Pegawai extends Controller{
     
 
 
-
+ */
 
 
 

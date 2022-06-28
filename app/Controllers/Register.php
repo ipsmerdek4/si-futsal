@@ -3,10 +3,10 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UsersModel;  
-use App\Models\DesaModel;  
-use App\Models\KabupatenModel;  
-use App\Models\KecamatanModel;  
-use App\Models\ProvinsiModel;   
+//use App\Models\DesaModel;  
+//use App\Models\KabupatenModel;  
+//use App\Models\KecamatanModel;  
+//use App\Models\ProvinsiModel;   
 use App\Models\IdentitasModel;  
 
 class Register extends Controller{
@@ -15,13 +15,11 @@ class Register extends Controller{
     
     public function index()
     {   
-        $Provinsis = new ProvinsiModel();
-           
+            
          
         $data = array(
             'menu' => '1z',
-            'title' => 'Register [SI-Futsal]', 
-            'Provinsis' => $Provinsis->findAll(), 
+            'title' => 'Register [SI-Futsal]',  
         ); 
         echo view('v_register', $data); 
        
@@ -113,25 +111,25 @@ class Register extends Controller{
                 'provinsi' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Provinsi Harus di Pilih.',   
+                        'required'   => 'Provinsi Harus diisi.',   
                     ]
                 ], 
                 'kabupaten' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kabupaten Harus di Pilih.',   
+                        'required'   => 'Kabupaten Harus diisi.',   
                     ]
                 ], 
                 'kecamatan' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Kecamatan Harus di Pilih.',   
+                        'required'   => 'Kecamatan Harus diisi.',   
                     ]
                 ], 
                 'desa' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required'   => 'Desa Harus di Pilih.',   
+                        'required'   => 'Desa Harus diisi.',   
                     ]
                 ], 
             ])) {
@@ -165,10 +163,10 @@ class Register extends Controller{
                 'hp' => $this->request->getVar('hp'),
                 'tim' => $this->request->getVar('tim'),
                 'alamat' => $this->request->getVar('alamat'),
-                'provinsi_id' => $this->request->getVar('provinsi'),
-                'kabupaten_id' => $this->request->getVar('kabupaten'),
-                'kecamatan_id' => $this->request->getVar('kecamatan'),
-                'desa_id' => $this->request->getVar('desa'),
+                'provinsi_name' => $this->request->getVar('provinsi'),
+                'kabupaten_name' => $this->request->getVar('kabupaten'),
+                'kecamatan_name' => $this->request->getVar('kecamatan'),
+                'desa_name' => $this->request->getVar('desa'),
                 'tgl_pbt_identitas' => date('Y-m-d H:i:s'),
             ]);
 
@@ -189,7 +187,7 @@ class Register extends Controller{
 
 
 
-    
+    /* 
 
     function add_ajax_kab($id = null)
     {  
@@ -231,7 +229,7 @@ class Register extends Controller{
         }
         echo $data; 
     }
-    
+     */
 
 
 
